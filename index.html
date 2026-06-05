@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCA-F Mock Exam — Claude Certified Architect, Foundations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EEE2; --paper-2:#FBF8F1; --card:#FFFDF8;
+    --ink:#221E17; --ink-soft:#5E564A; --ink-faint:#8C8474;
+    --line:#E5DCCA; --line-2:#D8CCB5;
+    --clay:#B8532E; --clay-deep:#974019; --clay-soft:#F4E2D6;
+    --green:#4C7A48; --green-soft:#E5EEDD;
+    --amber:#A8761B; --amber-soft:#F5E9CF;
+    --red:#A4382E; --red-soft:#F6E0DB;
+    --blue:#3C5A78;
+    --shadow:0 1px 2px rgba(34,30,23,.05),0 8px 24px -12px rgba(34,30,23,.18);
+    --shadow-lg:0 2px 6px rgba(34,30,23,.06),0 24px 60px -24px rgba(34,30,23,.28);
+    --ui:'Hanken Grotesk',-apple-system,sans-serif;
+    --serif:'Newsreader',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--ui); color:var(--ink); background:var(--paper);
+    line-height:1.55; min-height:100vh; position:relative;
+    background-image:
+      radial-gradient(1200px 600px at 12% -8%, #FBF6EC 0%, transparent 55%),
+      radial-gradient(1000px 700px at 108% 4%, #F0E8D8 0%, transparent 50%);
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+  .wrap{position:relative; z-index:1; max-width:1120px; margin:0 auto; padding:32px 22px 80px}
+  button{font-family:var(--ui); cursor:pointer; border:none; background:none}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    font-weight:600; font-size:15px; padding:13px 22px; border-radius:11px;
+    transition:transform .12s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--clay); color:#FFF6EE; box-shadow:0 1px 0 rgba(0,0,0,.04), 0 10px 22px -12px var(--clay)}
+  .btn-primary:hover{background:var(--clay-deep)}
+  .btn-ghost{background:var(--card); color:var(--ink); border:1.5px solid var(--line-2)}
+  .btn-ghost:hover{border-color:var(--ink-faint); background:#fff}
+  .btn-sm{padding:9px 15px; font-size:13.5px; border-radius:9px}
+  .btn:disabled{opacity:.4; cursor:not-allowed; transform:none}
+  .eyebrow{font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--clay)}
+  .mono{font-variant-numeric:tabular-nums; font-feature-settings:"tnum"}
+
+  /* ---------- START ---------- */
+  .hero{opacity:0; animation:rise .6s .04s ease forwards}
+  @keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+  .badge-row{display:flex; align-items:center; gap:14px; margin-bottom:26px}
+  .seal{
+    width:54px; height:54px; border-radius:14px; flex:none; display:grid; place-items:center;
+    background:linear-gradient(150deg,var(--clay),var(--clay-deep)); color:#FBEFE6;
+    font-family:var(--serif); font-weight:600; font-size:22px; letter-spacing:.01em;
+    box-shadow:0 10px 24px -12px var(--clay), inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  h1.title{font-family:var(--serif); font-weight:500; font-size:clamp(34px,5.4vw,56px); line-height:1.02; letter-spacing:-.01em; margin:6px 0 10px}
+  h1.title em{font-style:italic; color:var(--clay)}
+  .lede{font-size:clamp(16px,2vw,19px); color:var(--ink-soft); max-width:60ch; margin-bottom:30px}
+  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-bottom:14px}
+  .fact{background:var(--card); padding:18px 20px}
+  .fact .k{font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:5px}
+  .fact .v{font-family:var(--serif); font-size:25px; font-weight:500; color:var(--ink)}
+  .fact .v small{font-size:14px; color:var(--ink-soft); font-family:var(--ui); font-weight:500}
+
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); padding:26px 28px; margin-top:22px}
+  .panel h2{font-family:var(--serif); font-weight:500; font-size:23px; margin-bottom:16px; letter-spacing:-.01em}
+  .domain-list{display:flex; flex-direction:column; gap:13px}
+  .domain{display:grid; grid-template-columns:1fr auto; align-items:center; gap:16px}
+  .domain .dn{font-weight:600; font-size:15px}
+  .domain .dn span{display:block; font-weight:400; font-size:13px; color:var(--ink-faint)}
+  .meter{position:relative; height:9px; background:var(--paper); border-radius:99px; overflow:hidden; margin-top:7px; border:1px solid var(--line)}
+  .meter > i{position:absolute; inset:0 auto 0 0; background:linear-gradient(90deg,var(--clay),var(--clay-deep)); border-radius:99px; display:block}
+  .domain .pct{font-family:var(--serif); font-size:18px; font-weight:500; min-width:46px; text-align:right; color:var(--ink)}
+
+  .mode-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:6px}
+  .mode-card{text-align:left; border:1.5px solid var(--line-2); background:var(--paper-2); border-radius:14px; padding:18px 18px 16px; transition:.15s; position:relative}
+  .mode-card:hover{border-color:var(--clay); background:#fff}
+  .mode-card.sel{border-color:var(--clay); background:#fff; box-shadow:0 0 0 3px var(--clay-soft)}
+  .mode-card .mt{font-weight:700; font-size:16px; display:flex; align-items:center; gap:8px; margin-bottom:4px}
+  .mode-card .md{font-size:13.5px; color:var(--ink-soft)}
+  .dot{width:11px; height:11px; border-radius:99px; border:2px solid var(--line-2); flex:none}
+  .mode-card.sel .dot{border-color:var(--clay); background:var(--clay)}
+  .disclaimer{font-size:12.5px; color:var(--ink-faint); margin-top:22px; line-height:1.5; max-width:74ch}
+  .start-cta{margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+
+  /* ---------- EXAM ---------- */
+  .examhead{
+    position:sticky; top:0; z-index:30; margin:-12px -22px 22px; padding:12px 22px;
+    background:rgba(244,238,226,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .examhead .brandmini{display:flex; align-items:center; gap:10px; font-weight:700; font-size:14px; letter-spacing:.01em}
+  .examhead .brandmini .s{width:30px; height:30px; border-radius:8px; background:linear-gradient(150deg,var(--clay),var(--clay-deep)); color:#FBEFE6; display:grid; place-items:center; font-family:var(--serif); font-weight:600; font-size:14px}
+  .timer{margin-left:auto; display:flex; align-items:center; gap:9px; font-weight:600; font-size:15px; padding:8px 14px; border-radius:10px; background:var(--card); border:1px solid var(--line-2)}
+  .timer .clk{font-family:var(--serif); font-size:19px; letter-spacing:.01em}
+  .timer.warn{border-color:var(--amber); background:var(--amber-soft); color:#7d560f}
+  .timer.crit{border-color:var(--red); background:var(--red-soft); color:#7e271f; animation:pulse 1.1s infinite}
+  @keyframes pulse{50%{opacity:.62}}
+  .progresspill{font-size:13px; font-weight:600; color:var(--ink-soft); padding:8px 13px; background:var(--card); border:1px solid var(--line); border-radius:10px}
+  .progresspill b{color:var(--ink)}
+
+  .examgrid{display:grid; grid-template-columns:minmax(0,1fr) 252px; gap:26px; align-items:start}
+  .qcard{background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); padding:30px 32px; min-height:340px}
+  .qmeta{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:18px}
+  .chip{font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:5px 10px; border-radius:7px}
+  .chip-dom{background:var(--clay-soft); color:var(--clay-deep)}
+  .chip-num{background:var(--paper); color:var(--ink-soft); border:1px solid var(--line)}
+  .chip-multi{background:var(--green-soft); color:#3a5c37}
+  .chip-scn{background:#E4EAF1; color:var(--blue)}
+  .scenario{background:linear-gradient(180deg,#FBF8F1,#F7F1E6); border:1px solid var(--line-2); border-left:4px solid var(--blue); border-radius:12px; padding:16px 18px; margin-bottom:20px}
+  .scenario .sl{font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:6px}
+  .scenario .st{font-family:var(--serif); font-size:17px; font-weight:600; margin-bottom:6px}
+  .scenario .sb{font-size:14.5px; color:var(--ink-soft); line-height:1.55}
+  .stem{font-family:var(--serif); font-size:21px; line-height:1.42; font-weight:400; letter-spacing:-.005em; margin-bottom:6px}
+  .multi-note{font-size:13px; color:var(--green); font-weight:600; margin:8px 0 2px}
+  .opts{display:flex; flex-direction:column; gap:11px; margin-top:18px}
+  .opt{
+    display:flex; align-items:flex-start; gap:13px; text-align:left; width:100%;
+    background:var(--paper-2); border:1.5px solid var(--line-2); border-radius:12px; padding:14px 16px;
+    font-size:15.5px; color:var(--ink); line-height:1.45; transition:.13s;
+  }
+  .opt:hover:not(.locked){border-color:var(--clay); background:#fff}
+  .opt .mark{width:22px; height:22px; flex:none; border:2px solid var(--line-2); display:grid; place-items:center; margin-top:1px; transition:.13s; color:#fff; font-size:13px; font-weight:800}
+  .opt.radio .mark{border-radius:99px}
+  .opt.check .mark{border-radius:6px}
+  .opt .lt{font-weight:700; margin-right:2px; color:var(--ink-faint)}
+  .opt.sel{border-color:var(--clay); background:#fff; box-shadow:0 0 0 3px var(--clay-soft)}
+  .opt.sel .mark{background:var(--clay); border-color:var(--clay)}
+  .opt.sel .lt{color:var(--clay-deep)}
+  .opt.locked{cursor:default}
+  /* study/review feedback */
+  .opt.correct{border-color:var(--green); background:var(--green-soft)}
+  .opt.correct .mark{background:var(--green); border-color:var(--green)}
+  .opt.wrong{border-color:var(--red); background:var(--red-soft)}
+  .opt.wrong .mark{background:var(--red); border-color:var(--red)}
+  .opt.miss{border-color:var(--green); background:transparent; border-style:dashed}
+  .explain{margin-top:20px; border-top:1px dashed var(--line-2); padding-top:18px; animation:fade .25s ease}
+  @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+  .explain .verdict{display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:13.5px; padding:6px 12px; border-radius:8px; margin-bottom:12px}
+  .v-right{background:var(--green-soft); color:#3a5c37}
+  .v-wrong{background:var(--red-soft); color:#7e271f}
+  .v-skip{background:var(--paper); color:var(--ink-soft); border:1px solid var(--line)}
+  .explain .ekey{font-size:13px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:6px}
+  .explain p{font-size:15px; color:var(--ink-soft); line-height:1.6}
+  .explain p b{color:var(--ink)}
+
+  .navfoot{display:flex; align-items:center; gap:12px; margin-top:22px; flex-wrap:wrap}
+  .flagbtn{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px; padding:11px 16px; border-radius:10px; background:var(--card); border:1.5px solid var(--line-2); color:var(--ink-soft); transition:.13s}
+  .flagbtn:hover{border-color:var(--amber)}
+  .flagbtn.on{background:var(--amber-soft); border-color:var(--amber); color:#7d560f}
+  .navfoot .spacer{flex:1}
+
+  /* navigator */
+  .navpanel{position:sticky; top:84px; background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:18px}
+  .navpanel h3{font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px}
+  .navgrid{display:grid; grid-template-columns:repeat(7,1fr); gap:7px}
+  .nq{aspect-ratio:1; border-radius:8px; font-size:13px; font-weight:600; border:1.5px solid var(--line-2); background:var(--paper-2); color:var(--ink-soft); position:relative; display:grid; place-items:center; transition:.1s}
+  .nq:hover{border-color:var(--ink-faint)}
+  .nq.answered{background:var(--clay-soft); border-color:var(--clay); color:var(--clay-deep)}
+  .nq.current{outline:2.5px solid var(--ink); outline-offset:1px; z-index:1}
+  .nq.flagged::after{content:""; position:absolute; top:3px; right:3px; width:7px; height:7px; border-radius:99px; background:var(--amber)}
+  .legend{margin-top:16px; display:flex; flex-direction:column; gap:7px; font-size:12.5px; color:var(--ink-soft)}
+  .legend i{display:inline-block; width:13px; height:13px; border-radius:4px; vertical-align:-2px; margin-right:8px; border:1.5px solid}
+  .lg-ans i{background:var(--clay-soft); border-color:var(--clay)}
+  .lg-unans i{background:var(--paper-2); border-color:var(--line-2)}
+  .lg-flag i{background:var(--amber); border-color:var(--amber)}
+  .submitbar{margin-top:16px; padding-top:16px; border-top:1px solid var(--line)}
+  .submitbar .cnt{font-size:12.5px; color:var(--ink-faint); margin-top:9px; text-align:center}
+
+  /* mobile nav toggle */
+  .navtoggle{display:none}
+
+  /* ---------- RESULTS ---------- */
+  .resulthero{text-align:center; padding:20px 0 8px; animation:rise .55s ease}
+  .scorering{position:relative; width:200px; height:200px; margin:6px auto 18px}
+  .scorering svg{transform:rotate(-90deg)}
+  .scorering .mid{position:absolute; inset:0; display:grid; place-content:center; text-align:center}
+  .scorering .num{font-family:var(--serif); font-size:52px; font-weight:500; line-height:1}
+  .scorering .den{font-size:13px; color:var(--ink-faint); font-weight:600; letter-spacing:.05em; margin-top:2px}
+  .verdictbig{display:inline-flex; align-items:center; gap:10px; font-family:var(--serif); font-size:27px; font-weight:500; padding:8px 22px; border-radius:14px; margin-bottom:6px}
+  .pass{background:var(--green-soft); color:#34552f}
+  .fail{background:var(--red-soft); color:#7e271f}
+  .subline{color:var(--ink-soft); font-size:15.5px}
+  .statrow{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:24px 0}
+  .statrow .fact{background:var(--card)}
+  .breakdown .drow{display:grid; grid-template-columns:1fr auto; gap:14px; align-items:center; padding:14px 0; border-bottom:1px solid var(--line)}
+  .breakdown .drow:last-child{border-bottom:none}
+  .breakdown .dname{font-weight:600; font-size:15px}
+  .breakdown .dname span{font-weight:400; color:var(--ink-faint); font-size:13px}
+  .dbar{height:10px; background:var(--paper); border:1px solid var(--line); border-radius:99px; overflow:hidden; margin-top:8px; max-width:420px}
+  .dbar > i{display:block; height:100%; border-radius:99px}
+  .dscore{font-family:var(--serif); font-size:18px; min-width:74px; text-align:right}
+  .reviewfilters{display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 20px}
+  .filt{font-size:13px; font-weight:600; padding:8px 14px; border-radius:9px; background:var(--card); border:1.5px solid var(--line-2); color:var(--ink-soft)}
+  .filt.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+  .reviewcard{background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:24px 26px; margin-bottom:16px}
+  .toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px); background:var(--ink); color:var(--paper); padding:13px 22px; border-radius:12px; font-size:14px; font-weight:600; opacity:0; transition:.25s; z-index:60; box-shadow:var(--shadow-lg)}
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+  .hidden{display:none !important}
+  .footnote{text-align:center; color:var(--ink-faint); font-size:12.5px; margin-top:30px}
+
+  @media (max-width:880px){
+    .examgrid{grid-template-columns:1fr}
+    .navpanel{position:fixed; left:0; right:0; bottom:0; top:auto; border-radius:18px 18px 0 0; z-index:40; max-height:62vh; overflow:auto; transform:translateY(100%); transition:transform .25s ease; box-shadow:var(--shadow-lg)}
+    .navpanel.open{transform:translateY(0)}
+    .navtoggle{display:inline-flex; position:fixed; right:16px; bottom:16px; z-index:41}
+    .navgrid{grid-template-columns:repeat(8,1fr)}
+    .mode-grid{grid-template-columns:1fr}
+    .qcard{padding:24px 20px}
+    .stem{font-size:19px}
+    .wrap{padding:22px 16px 90px}
+  }
+  @media (max-width:520px){ .navgrid{grid-template-columns:repeat(6,1fr)} }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<button class="btn btn-primary navtoggle" id="navToggle" onclick="toggleNav()">☰ Questions</button>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   CCA-F MOCK EXAM  —  data
+   Content aligned to the published CCA-F exam blueprint
+   (5 domains, 7 anti-patterns). Community practice material —
+   not official Anthropic exam items.
+   ============================================================ */
+
+const DOMAINS = {
+  D1:{name:"Agentic Architecture & Orchestration", weight:27},
+  D2:{name:"Tool Design & MCP Integration",         weight:18},
+  D3:{name:"Claude Code Configuration & Workflows", weight:20},
+  D4:{name:"Prompt Engineering & Structured Output",weight:20},
+  D5:{name:"Context Management & Reliability",       weight:15},
+};
+
+const SCN = {
+  S1:{title:"MeridianPay — fintech multi-agent platform",
+      body:"MeridianPay runs a coordinator agent that receives customer requests and delegates to specialized subagents: document-analysis (regulatory filings), account-lookup, and refund-processing. The system is moving from prototype to production under strict reliability and audit requirements."},
+  S2:{title:"HelixCare — patient triage agent",
+      body:"HelixCare deploys a Claude-based triage agent that answers patient questions and books appointments. Compliance mandates strict, predictable escalation to human clinicians, and the team is finalizing its escalation and orchestration policy."},
+  S3:{title:"CodeForge — Claude Code in CI/CD",
+      body:"CodeForge, a 40-engineer org, has standardized on Claude Code. They want consistent team behavior plus automated PR review and test generation inside their CI pipeline, while keeping changes safe in a large shared codebase."},
+  S4:{title:"LexBrief — legal contract extraction pipeline",
+      body:"LexBrief processes large volumes of contracts, extracting structured fields for downstream systems. Data is messy and often incomplete, accuracy is paramount, and much of the work runs as scheduled background jobs."},
+};
+
+/* type: 'single' | 'multi'   correct: array of option indices
+   weight: 1 (knowledge) | 2 (scenario / anti-pattern, higher value) */
+const QUESTIONS = [
+/* ===== DOMAIN 1 — Agentic Architecture & Orchestration (16) ===== */
+{d:"D1",t:"single",w:2,
+ q:"You are implementing the core agentic loop. After each API response your code must decide whether to execute a tool and continue, or stop and return the result. What is the correct, production-grade way to make this decision?",
+ o:["Parse Claude's text output for phrases like \"task complete\" or \"I'm done.\"",
+    "Inspect the <code>stop_reason</code> field: continue on <code>tool_use</code>, exit on <code>end_turn</code>.",
+    "Stop after a fixed cap of 10 iterations regardless of state.",
+    "Make a follow-up call asking Claude whether it considers the task finished."],
+ c:[1],
+ e:"<code>stop_reason</code> is the deterministic control signal — <code>tool_use</code> means execute the tool and loop again, <code>end_turn</code> means finished. Parsing natural language is an explicit anti-pattern; iteration caps are a backstop, not the primary mechanism; a confirmation call is just another unreliable generation."},
+{d:"D1",t:"single",w:1,
+ q:"A response returns with <code>stop_reason</code> set to <code>max_tokens</code>. How should a robust agentic loop treat this case?",
+ o:["Treat it identically to <code>end_turn</code> and return the partial output as final.",
+    "Immediately retry the same request unchanged.",
+    "Handle it as a distinct edge case — the response was truncated — e.g. by requesting a continuation.",
+    "Abort the session with a fatal error."],
+ c:[2],
+ e:"<code>max_tokens</code> means the response was cut off — it is neither completion (<code>end_turn</code>) nor a tool request (<code>tool_use</code>). Handle it explicitly, typically by continuing generation. Treating it as final loses content; blind retry/abort are wrong."},
+{d:"D1",t:"single",w:2,s:"S1",
+ q:"MeridianPay's coordinator receives requests and delegates to specialized subagents. What is the coordinator's correct role in a hub-and-spoke architecture?",
+ o:["Perform all tool calls itself and use subagents only as a fallback.",
+    "Route and delegate tasks to subagents and synthesize their results, without doing the specialized work itself.",
+    "Share its full conversation context with every subagent on each call.",
+    "Hold every tool in the system so it can bypass subagents when convenient."],
+ c:[1],
+ e:"The hub coordinates — routing, delegation, and synthesis — it does not do the specialized work. Sharing full context violates subagent isolation; holding every tool is the \"all tools to all agents\" anti-pattern."},
+{d:"D1",t:"single",w:2,s:"S1",
+ q:"MeridianPay's refund subagent keeps \"failing to access\" the customer's account tier, even though the user stated it earlier in the conversation with the coordinator. What is the most likely cause?",
+ o:["The subagent's model version is older than the coordinator's.",
+    "Subagents inherit context lazily and just need a <code>--resume</code> flag.",
+    "Subagents do not inherit the parent's conversation context; the account tier was never explicitly passed to the subagent.",
+    "The coordinator's context window overflowed and dropped the field."],
+ c:[2],
+ e:"Subagents start with a clean context <b>by design</b> — they do not inherit the parent thread. The fix is to explicitly pass the account tier (and any needed facts) when invoking the subagent."},
+{d:"D1",t:"single",w:1,
+ q:"Subagent context isolation is a deliberate design choice. Which of the following is <b>NOT</b> a benefit it provides?",
+ o:["Prevents context pollution from unrelated conversation threads.",
+    "Reduces the risk of leaking sensitive information to subagents that don't need it.",
+    "Makes each subagent's behavior more predictable and easier to debug.",
+    "Automatically shares retrieved tool results across all subagents to avoid duplicate work."],
+ c:[3],
+ e:"Isolation gives you reduced pollution, better security, and predictability. It specifically does <b>not</b> auto-share results between subagents — that would defeat the purpose of isolation."},
+{d:"D1",t:"multi",w:2,
+ q:"Your coordinator needs to query four independent data sources at once using parallel Task calls. Which principles apply?",
+ o:["Only parallelize tasks that are truly independent of one another's outputs.",
+    "The coordinator must aggregate and (where needed) deduplicate results from the parallel tasks.",
+    "If one task fails, the coordinator decides whether to retry, skip, or fail the whole operation based on criticality.",
+    "Tasks with a strict output dependency on each other should still be parallelized for speed."],
+ c:[0,1,2],
+ e:"Parallelize only independent work; the coordinator aggregates and deduplicates; failures are handled per task criticality. Dependent tasks must run sequentially — parallelizing them is incorrect."},
+{d:"D1",t:"single",w:1,
+ q:"A customer-service agent must explore two alternative resolution paths before committing to one, without polluting the main thread. Which session mechanism fits?",
+ o:["<code>--resume</code>, because it preserves history.",
+    "<code>fork_session</code>, which copies current history and diverges from that point.",
+    "<code>/compact</code>, to summarize before branching.",
+    "Spawn an isolated subagent with no shared history."],
+ c:[1],
+ e:"<code>fork_session</code> copies the current history and diverges — ideal for \"what-if\" exploration. <code>--resume</code> is for continuing interrupted work, not branching."},
+{d:"D1",t:"single",w:1,
+ q:"A long-running development agent was interrupted by a host restart mid-task. History should be preserved and work continued exactly where it stopped. Which mechanism is correct?",
+ o:["<code>fork_session</code>",
+    "<code>--resume</code>",
+    "Start a fresh session and re-paste the prior transcript manually.",
+    "<code>/compact</code> then restart."],
+ c:[1],
+ e:"<code>--resume</code> continues an existing session with history intact — the canonical pattern for resuming interrupted work."},
+{d:"D1",t:"single",w:2,s:"S2",
+ q:"HelixCare needs an agent answering a narrow set of FAQ-style questions and booking appointments through one scheduling tool. An engineer proposes a five-subagent hub-and-spoke design. What is the best guidance?",
+ o:["Approve it; more agents always improve reliability.",
+    "Match architecture to complexity — a single focused agent is appropriate here; reserve hub-and-spoke for genuinely multi-specialization tasks.",
+    "Use parallel Tasks for each FAQ category.",
+    "Require sentiment routing between the subagents."],
+ c:[1],
+ e:"The exam rewards matching complexity to architecture rather than defaulting to the most complex option. A narrow, single-tool task needs a single agent — hub-and-spoke adds cost and failure surface for no benefit."},
+{d:"D1",t:"single",w:2,
+ q:"Inside an agentic loop, a tool call fails with a transient network error. What is the recommended handling?",
+ o:["Exit the loop immediately and surface a fatal error to the user.",
+    "Silently return an empty result so the loop proceeds.",
+    "Return the error to Claude as a structured tool result so it can retry, try an alternative, or inform the user.",
+    "Permanently strip the failed tool from the agent and continue."],
+ c:[2],
+ e:"Keep the loop in control: return structured error information to Claude as a tool result so it can decide the next move. Exiting on the first failure or silently returning empty results are both anti-patterns."},
+{d:"D1",t:"single",w:1,
+ q:"Your team wants to control runaway cost in long agentic loops. Which statement best captures correct practice?",
+ o:["An iteration cap and a token budget are the same control; you only need one.",
+    "Use <code>stop_reason</code> as the primary terminator, an iteration cap as a safety net, and a separate token budget to cap cumulative cost.",
+    "Replace <code>stop_reason</code> checking with a strict 10-iteration cap to save tokens.",
+    "Token budgets are unnecessary if you set a low iteration cap."],
+ c:[1],
+ e:"These controls are complementary: <code>stop_reason</code> is the primary terminator, the iteration cap is a backstop (a generous limit that logs a warning when hit), and a token budget independently caps cumulative spend."},
+{d:"D1",t:"single",w:1,
+ q:"When streaming an agent's responses to users in real time, where do you obtain <code>stop_reason</code>?",
+ o:["At the start of the stream, before any content.",
+    "Inferred from the text of the last content chunk.",
+    "In the final event of the stream; your handler must process both content events and that final stop event.",
+    "Streaming responses omit it; you must make a second non-streaming call."],
+ c:[2],
+ e:"<code>stop_reason</code> arrives in the final stream event. A correct streaming implementation handles the content events and the terminal stop event together."},
+{d:"D1",t:"single",w:2,s:"S1",
+ q:"MeridianPay's volume triples. An engineer wants to make each subagent \"smarter\" by adding more tools and longer prompts to absorb the load. What is the better approach?",
+ o:["Consolidate everything into one large agent to reduce overhead.",
+    "Scale throughput via parallelization / more agent instances while keeping individual agents simple and focused.",
+    "Add 15 more tools to the coordinator so it can handle spikes.",
+    "Maximize each subagent's context window."],
+ c:[1],
+ e:"Scale by parallelism and horizontal instances, not by making individual agents more complex. Piling tools onto an agent triggers routing degradation; the exam favors keeping architecture simple while scaling throughput."},
+{d:"D1",t:"single",w:1,
+ q:"A multi-agent system returns incorrect results. Which is a commonly correct diagnosis the exam emphasizes?",
+ o:["The coordinator should have done all the work itself.",
+    "A subagent isn't receiving necessary context (isolation violation), the coordinator is routing to the wrong subagent (weak tool descriptions), or the loop isn't checking <code>stop_reason</code>.",
+    "The model temperature is too low.",
+    "<code>stop_reason</code> allowed too few iterations."],
+ c:[1],
+ e:"The classic culprits are context-isolation violations, mis-routing from poor tool descriptions, or improper loop termination — all directly testable diagnoses."},
+{d:"D1",t:"single",w:1,
+ q:"Which statement best distinguishes when to choose an agentic architecture over a simpler fixed workflow?",
+ o:["Always choose agents; workflows are deprecated.",
+    "Use an agent when the task needs dynamic tool use and autonomous, variable action sequences; use a simpler workflow when steps are fixed and predictable.",
+    "Use agents only for single-turn API calls.",
+    "Workflows are for production; agents are only for demos."],
+ c:[1],
+ e:"Agentic patterns suit autonomy, tool use, and variable action loops. Deterministic, fixed-step tasks are better served by a simpler workflow. Match the pattern to the problem rather than defaulting to maximum complexity."},
+{d:"D1",t:"single",w:2,s:"S2",
+ q:"HelixCare wants to (1) verify a patient's insurance and (2) summarize their prior visit notes, then combine both into one reply. The two operations don't depend on each other. What is the most efficient correct design?",
+ o:["Run them sequentially because all medical tasks must be ordered.",
+    "Launch them as parallel Tasks, then have the coordinator aggregate both results into the reply.",
+    "Merge both into a single 20-tool agent.",
+    "Use <code>fork_session</code> to run each, then discard one branch."],
+ c:[1],
+ e:"Independent operations → parallel Tasks plus coordinator aggregation. Sequencing is unnecessary overhead, and forking is for exploration, not result aggregation."},
+
+/* ===== DOMAIN 2 — Tool Design & MCP Integration (11) ===== */
+{d:"D2",t:"single",w:1,
+ q:"In a single agent with several tools, what is the primary mechanism Claude uses to decide which tool to call?",
+ o:["The order tools are listed in the request.",
+    "The tools' JSON-schema field types.",
+    "The tool descriptions.",
+    "The <code>tool_choice</code> value alone."],
+ c:[2],
+ e:"Tool descriptions are the primary routing signal. They must be clear, specific, differentiating between similar tools, and honest about limitations."},
+{d:"D2",t:"single",w:1,
+ q:"What does CCA-F guidance say about the number of tools per agent?",
+ o:["Unlimited; Claude handles any count equally well.",
+    "4–5 tools is optimal; routing accuracy degrades significantly above ~18 tools.",
+    "Exactly 10 tools maximizes accuracy.",
+    "Fewer than 3 tools is always required."],
+ c:[1],
+ e:"4–5 tools is the optimal range; beyond roughly 18 tools, routing accuracy drops sharply. The fix for complex systems is better architecture (hub-and-spoke with focused tool sets), not more tools."},
+{d:"D2",t:"single",w:2,s:"S1",
+ q:"After MeridianPay adds many new tools to one agent, Claude increasingly calls the wrong tool. What is the best fix?",
+ o:["Rewrite the tool descriptions and keep the count as-is.",
+    "Lower the temperature to make routing deterministic.",
+    "Restructure into hub-and-spoke with specialized subagents, each holding a focused 4–5 tool set.",
+    "Set <code>tool_choice: any</code> to force a selection."],
+ c:[2],
+ e:"The root cause is exceeding the optimal tool count. The correct response is architectural — split into specialized subagents with focused toolsets. Improving descriptions helps only marginally; forcing a tool choice doesn't fix mis-routing."},
+{d:"D2",t:"single",w:1,
+ q:"Which <code>tool_choice</code> setting forces Claude to use one of the available tools while letting it choose which one?",
+ o:["<code>auto</code>","<code>any</code>","<code>{type:\"tool\", name:\"...\"}</code>","<code>none</code>"],
+ c:[1],
+ e:"<code>any</code> requires a tool call but lets the model pick which. <code>auto</code> lets it decide whether to use a tool at all; the named form forces a specific tool; <code>none</code> forbids tools."},
+{d:"D2",t:"single",w:1,
+ q:"You want a synthesis step where tool use would be inappropriate and only a text response is desired. Which <code>tool_choice</code> is correct?",
+ o:["<code>auto</code>","<code>any</code>","<code>none</code>","<code>{type:\"tool\", name:\"synthesize\"}</code>"],
+ c:[2],
+ e:"<code>none</code> prevents tool use — exactly right for analysis or synthesis steps where calling a tool would be wrong."},
+{d:"D2",t:"single",w:1,
+ q:"Which file configures MCP servers shared with everyone on a project and is typically committed to version control?",
+ o:["<code>~/.claude.json</code> (user-level)",
+    "<code>.mcp.json</code> in the project root (project-level)",
+    "<code>~/.claude/CLAUDE.md</code>",
+    "<code>.claude/skills/</code>"],
+ c:[1],
+ e:"Project-level <code>.mcp.json</code> holds shared servers and is committed to source control. <code>~/.claude.json</code> is personal/user-scoped."},
+{d:"D2",t:"single",w:2,
+ q:"An MCP-based tool works for one developer but not their teammates. What is the most likely cause and fix?",
+ o:["The teammates need newer hardware.",
+    "The working developer has the config in their user-level <code>~/.claude.json</code>; the shared <code>.mcp.json</code> is missing or misconfigured. Fix: add the shared config to the project's <code>.mcp.json</code>.",
+    "MCP requires per-user license keys.",
+    "The project must switch from stdio to SSE transport."],
+ c:[1],
+ e:"This is a scoping bug. Servers that the whole team needs belong in the project-level <code>.mcp.json</code>, not in one person's user-level config."},
+{d:"D2",t:"single",w:2,
+ q:"How should authentication credentials be supplied to an MCP server defined in <code>.mcp.json</code>?",
+ o:["Hardcode the token string directly in <code>.mcp.json</code>.",
+    "Reference an environment variable via <code>${GITHUB_TOKEN}</code> so secrets aren't committed.",
+    "Place the token in a comment in the file.",
+    "Pass it as a literal inside the tool description."],
+ c:[1],
+ e:"MCP configs support <code>${VAR}</code> environment-variable expansion at runtime. Reference env vars; never hardcode secrets in a committed file."},
+{d:"D2",t:"single",w:2,
+ q:"A search tool hits an authentication timeout. What must it return so Claude responds correctly?",
+ o:["An empty result array so the loop proceeds.",
+    "A structured error distinguishing an access failure (type + <code>isRetryable</code> + context) from a genuine empty result.",
+    "The string \"error\" with no metadata.",
+    "A fabricated best-guess result."],
+ c:[1],
+ e:"Returning empty on failure makes Claude confidently report \"no results\" when the search actually failed. Distinguish access failures from true empty results using structured error information."},
+{d:"D2",t:"multi",w:1,
+ q:"A well-designed structured tool error should include which of the following?",
+ o:["The error type/category (auth, rate-limit, not-found, server error).",
+    "An <code>isRetryable</code> flag indicating transient vs permanent.",
+    "Contextual information about what the tool was attempting.",
+    "A self-assessed confidence score from Claude about the failure."],
+ c:[0,1,2],
+ e:"Error type, an <code>isRetryable</code> flag, and context are the recommended fields. A model self-confidence score is neither part of a structured tool error nor a reliable signal."},
+{d:"D2",t:"single",w:1,
+ q:"For a structured-extraction step where you programmatically know exactly which tool must run, which <code>tool_choice</code> is most appropriate?",
+ o:["<code>auto</code>","<code>none</code>","<code>{type:\"tool\", name:\"extract_fields\"}</code>","<code>any</code>"],
+ c:[2],
+ e:"Naming the specific tool forces that exact call — ideal for deterministic structured extraction where any other tool (or a plain text reply) would be wrong."},
+
+/* ===== DOMAIN 3 — Claude Code Configuration & Workflows (12) ===== */
+{d:"D3",t:"single",w:1,
+ q:"Given user-level, project-level, and directory-level <code>CLAUDE.md</code> files with a conflicting instruction, which takes precedence?",
+ o:["User-level overrides everything.",
+    "Project-level always wins.",
+    "The more specific (directory-level) instruction overrides the more general ones where they conflict; all applicable levels are loaded and combined.",
+    "Whichever file was modified most recently."],
+ c:[2],
+ e:"Precedence is by specificity: directory &gt; project &gt; user. All applicable levels load and combine, with the more specific instruction winning conflicts."},
+{d:"D3",t:"single",w:2,s:"S3",
+ q:"CodeForge's tech lead added the team's coding standards to their own <code>~/.claude/CLAUDE.md</code>, but other engineers' Claude Code sessions ignore them. Why, and what's the fix?",
+ o:["The standards file is corrupted; recreate it.",
+    "User-level <code>CLAUDE.md</code> is personal and not shared; move shared standards to the project-level <code>./CLAUDE.md</code> (committed) or <code>.claude/rules/</code>.",
+    "<code>CLAUDE.md</code> doesn't support coding standards; use a linter only.",
+    "Each engineer must run <code>--resume</code> to load the lead's session."],
+ c:[1],
+ e:"User-level instructions apply only to that user. Shared team standards belong in the committed project-level <code>CLAUDE.md</code> (or rules files) so every engineer's session picks them up."},
+{d:"D3",t:"single",w:1,
+ q:"How do <code>.claude/rules/</code> files apply conditionally to specific file types?",
+ o:["They run on every file regardless of type.",
+    "They apply based on file glob patterns (e.g. <code>*.tsx</code>), giving granular, type-specific rules.",
+    "They only apply to files in the project root.",
+    "They require a directory-level <code>CLAUDE.md</code> to function."],
+ c:[1],
+ e:"Rules files apply conditionally via glob patterns — a more granular alternative to directory-level <code>CLAUDE.md</code> when different file types in the same directory need different treatment."},
+{d:"D3",t:"single",w:1,
+ q:"A reusable Claude Code skill should run in a copy of the conversation and NOT alter the main thread when it finishes. Which frontmatter setting achieves this?",
+ o:["<code>allowed-tools: all</code>","<code>context: fork</code>","<code>mode: plan</code>","<code>scope: project</code>"],
+ c:[1],
+ e:"<code>context: fork</code> runs the skill in a forked context — useful for exploratory or analytical skills that shouldn't modify the main conversation."},
+{d:"D3",t:"single",w:1,
+ q:"What is the purpose of the <code>allowed-tools</code> field in a skill's frontmatter?",
+ o:["To list which models the skill can call.",
+    "To define a security boundary specifying which tools the skill may use.",
+    "To auto-install missing tools.",
+    "To set the skill's token budget."],
+ c:[1],
+ e:"<code>allowed-tools</code> restricts a skill's tool access — a security boundary that keeps the skill within its intended scope."},
+{d:"D3",t:"single",w:2,s:"S3",
+ q:"CodeForge plans a refactor touching 12 files across core billing logic. Which Claude Code mode is appropriate and why?",
+ o:["Direct Execution, because Claude Code is fast.",
+    "Plan Mode, because the change is large, high-risk, and touches core business logic — review the plan before any changes.",
+    "Direct Execution, since billing is well understood.",
+    "Neither; disable Claude Code for billing."],
+ c:[1],
+ e:"Plan Mode suits large, high-risk, or ambiguous changes — refactors touching more than 3–5 files or core logic. Direct Execution is for small, well-defined, low-risk edits."},
+{d:"D3",t:"single",w:1,
+ q:"Which task is the best fit for Direct Execution rather than Plan Mode?",
+ o:["Renaming a single local variable in one well-understood utility function.",
+    "Migrating the authentication layer across the codebase.",
+    "Rewriting the production data model.",
+    "A refactor spanning 10 files."],
+ c:[0],
+ e:"Direct Execution fits small, well-understood, low-risk changes. The other options are large or high-risk and call for Plan Mode."},
+{d:"D3",t:"single",w:2,s:"S3",
+ q:"CodeForge wants Claude Code to run non-interactively inside CI to review PRs (reading stdin, writing stdout). Which flag enables this?",
+ o:["<code>--resume</code>","<code>-p</code> (pipe / non-interactive mode)","<code>--plan</code>","<code>/compact</code>"],
+ c:[1],
+ e:"The <code>-p</code> flag enables non-interactive pipe mode for CI/CD: read from stdin, process, write to stdout, no human interaction."},
+{d:"D3",t:"single",w:2,s:"S3",
+ q:"In CodeForge's CI, the same Claude Code instance that generated the code is also reviewing it. Why change this, and to what?",
+ o:["Keep it — self-review is more efficient and equally effective.",
+    "Use an independent reviewing instance; a self-reviewing instance shares the generator's blind spots and catches fewer issues.",
+    "Replace review with a higher iteration cap.",
+    "Have the same instance review twice for redundancy."],
+ c:[1],
+ e:"Independent review beats self-review: a model retains its generation reasoning in-session and is less likely to question its own decisions. A separate instance (no prior reasoning context) catches subtle issues."},
+{d:"D3",t:"single",w:1,
+ q:"Claude Code isn't following an expected instruction. Per CCA-F, what is the single most common real-world (and most-tested) misconfiguration?",
+ o:["The instruction was written in Markdown instead of plain text.",
+    "Shared team standards were placed at the user level instead of the project level.",
+    "The project lacked a <code>.mcp.json</code>.",
+    "Plan Mode was left enabled."],
+ c:[1],
+ e:"The recurring trap: shared standards placed at the user level (personal, not shared) instead of the committed project level."},
+{d:"D3",t:"multi",w:2,
+ q:"Designing Claude Code into CI/CD pipelines, which practices are recommended?",
+ o:["Use <code>-p</code> for non-interactive operation.",
+    "For PR review, use a separate instance from the one that generated the code.",
+    "For a test-generation job, scope the instance to only testing-related tools and files.",
+    "Have the generating instance review its own output to save resources."],
+ c:[0,1,2],
+ e:"Pipe mode, independent review, and scoped tool/file access are all recommended. Having the generator review itself contradicts the independent-review principle."},
+{d:"D3",t:"single",w:1,
+ q:"Where should shared, version-controlled team instructions for Claude Code be placed?",
+ o:["Each developer's <code>~/.claude/CLAUDE.md</code>.",
+    "The project-level <code>./CLAUDE.md</code> (committed) or <code>.claude/rules/</code> files.",
+    "A pinned chat message.",
+    "The <code>.mcp.json</code> file."],
+ c:[1],
+ e:"Project-level <code>CLAUDE.md</code> (committed) or rules files are the shared, team-wide mechanism. User-level config is personal."},
+
+/* ===== DOMAIN 4 — Prompt Engineering & Structured Output (12) ===== */
+{d:"D4",t:"single",w:1,
+ q:"An agent's summaries are inconsistent in length, tone, and content. Which prompt change most directly addresses this?",
+ o:["Add \"please be consistent\" to the prompt.",
+    "Replace vague guidance (\"write a good summary\") with explicit, measurable criteria (length range, required elements, tone, exclusions).",
+    "Raise the temperature for variety.",
+    "Switch to the Batch API."],
+ c:[1],
+ e:"Explicit, measurable criteria produce consistent, verifiable output. Vague terms like \"good\" are unmeasurable, so they can't be validated or enforced programmatically."},
+{d:"D4",t:"single",w:1,
+ q:"What is the recommended number of few-shot examples for improving output consistency?",
+ o:["0–1",
+    "2–4, ideally covering edge cases and demonstrating the exact output format.",
+    "10–12 for maximum coverage.",
+    "As many as fit in the context window."],
+ c:[1],
+ e:"2–4 is optimal: fewer may not establish the pattern, more gives diminishing returns and wastes context. Examples should be diverse and cover edge cases, not just the happy path."},
+{d:"D4",t:"single",w:2,
+ q:"You use a <code>tool_use</code> JSON schema to constrain Claude's output. What does the schema guarantee?",
+ o:["Both the structure and the correctness/meaning of the values.",
+    "Structural correctness (fields, types, shape) only — not whether the values are semantically valid.",
+    "That values fall within business-rule ranges.",
+    "That the output is free of hallucinated facts."],
+ c:[1],
+ e:"Schemas enforce <b>syntax</b>, not <b>semantics</b>. A schema can guarantee an \"age\" field is an integer but not that the integer is a plausible age. You still need programmatic validation plus a retry loop."},
+{d:"D4",t:"single",w:2,s:"S4",
+ q:"LexBrief extracts fields from contracts where some values are genuinely absent or ambiguous. How should the schema be designed?",
+ o:["Make all fields required so nothing is missed.",
+    "Use nullable fields for possibly-absent data and add an \"unclear\"/\"ambiguous\" option to enum fields so Claude can signal uncertainty instead of guessing.",
+    "Force a default value for every missing field.",
+    "Drop any record with missing data before extraction."],
+ c:[1],
+ e:"Nullable fields plus an \"unclear\" enum value let Claude flag uncertainty rather than hallucinate. Those records can then be routed to human review instead of proceeding with confident-but-wrong data."},
+{d:"D4",t:"multi",w:2,
+ q:"Designing a validation retry loop for structured output, which elements are correct?",
+ o:["Validate the schema-constrained output against semantic/business rules in code.",
+    "On failure, send BOTH the invalid output and the specific validation errors back to Claude.",
+    "Cap retries at a maximum count.",
+    "Keep retrying with the identical prompt and no error detail until it passes."],
+ c:[0,1,2],
+ e:"Validate semantics in code, return the invalid output plus the specific errors so Claude can correct itself, and cap retries. Re-sending the same prompt with no error detail just repeats the mistake."},
+{d:"D4",t:"single",w:2,s:"S4",
+ q:"What is the complete, production-grade pipeline for reliable structured extraction at LexBrief?",
+ o:["A very detailed prompt instructing valid JSON, nothing more.",
+    "<code>tool_use</code> schema (syntax) + programmatic validation (semantics) + a retry loop that returns validation errors to Claude.",
+    "Schema enforcement alone, since it guarantees correctness.",
+    "Manual human entry for every contract."],
+ c:[1],
+ e:"The recommended three layers are schema + validation + retry. Prompt-only JSON is the weakest approach, and schema-only is incomplete because it doesn't catch semantic errors."},
+{d:"D4",t:"single",w:2,
+ q:"A high-volume system relies solely on the prompt instruction \"always return valid JSON\" and sees occasional malformed output. Best fix?",
+ o:["Strengthen the wording to \"you MUST always return valid JSON.\"",
+    "Add <code>tool_use</code> schema enforcement, then programmatic validation, then a retry loop.",
+    "Lower temperature to 0 and keep prompt-only enforcement.",
+    "Post-process by stripping characters until it parses."],
+ c:[1],
+ e:"Prompt-only enforcement is probabilistic — at scale even a 1% failure rate is thousands of errors. Use the schema + validation + retry stack; prompt wording is the weakest lever."},
+{d:"D4",t:"single",w:2,s:"S4",
+ q:"LexBrief must process 80,000 archived contracts overnight; nothing downstream waits on individual results in real time, and cost matters. Is the Batch API appropriate?",
+ o:["No — the Batch API can't process documents.",
+    "Yes — non-blocking, high-volume background processing is the ideal Batch API use case, capturing the ~50% cost savings.",
+    "No — only the real-time API can extract structured data.",
+    "Yes, but only if multi-turn conversation is enabled per request."],
+ c:[1],
+ e:"Batch fits non-blocking, large-volume background work and offers ~50% savings. (It also doesn't support multi-turn, which is irrelevant for independent extraction requests.)"},
+{d:"D4",t:"single",w:2,
+ q:"A request/response pipeline where the user waits for output proposes switching to the Batch API to cut cost. Correct assessment?",
+ o:["Approve — the 50% savings always justifies it.",
+    "Reject for this use case — Batch has no SLA within its 24-hour window, so it is inappropriate for any blocking/real-time workflow.",
+    "Approve if average latency is under one minute.",
+    "Approve if multi-turn is disabled."],
+ c:[1],
+ e:"Batch returns within 24 hours with no in-window SLA — results might arrive in minutes or hours. Using it for blocking workflows is a named anti-pattern, regardless of cost savings."},
+{d:"D4",t:"multi",w:1,
+ q:"Which statements about the Batch API are correct?",
+ o:["~50% cost reduction versus real-time calls.",
+    "Results returned within 24 hours, with no guaranteed SLA inside that window.",
+    "Does not support multi-turn conversations; each request is independent.",
+    "Guarantees sub-minute latency suitable for live chat."],
+ c:[0,1,2],
+ e:"Cost savings, a 24-hour window without an internal SLA, and no multi-turn support are all true. There is no real-time latency guarantee, so it's unsuitable for live chat."},
+{d:"D4",t:"single",w:2,
+ q:"For a critical output you add a review step. What is the key requirement for it to be effective?",
+ o:["The reviewing instance should be the same one that generated the output, for consistency.",
+    "The reviewing instance must be independent of the generating instance (no shared generation context), since it catches errors the generator overlooks.",
+    "Use extended thinking on the generator instead of a separate reviewer.",
+    "Ask the generator to rate its own confidence."],
+ c:[1],
+ e:"Independent review &gt; self-review. An instance without the generator's prior reasoning context catches subtle issues that self-review (or extended thinking on the same instance) misses."},
+{d:"D4",t:"single",w:1,
+ q:"Beyond using 2–4 examples, what makes few-shot examples most effective?",
+ o:["They should all illustrate the simplest happy-path input.",
+    "They should be diverse, cover edge cases (e.g. ambiguous inputs), and demonstrate the exact expected output format.",
+    "They should be as long and detailed as possible.",
+    "They should omit the output to avoid biasing Claude."],
+ c:[1],
+ e:"Diversity, edge-case coverage, and exact-format demonstration drive consistency. Happy-path-only examples fail on messy real-world inputs; omitting the output defeats the purpose."},
+
+/* ===== DOMAIN 5 — Context Management & Reliability (9) ===== */
+{d:"D5",t:"single",w:2,
+ q:"An agent reliably \"forgets\" instructions placed in the middle of a long context but honors those at the start and end. What phenomenon is this, and a correct mitigation?",
+ o:["Token starvation; raise <code>max_tokens</code>.",
+    "The \"lost-in-the-middle\" effect; mitigate by placing persistent critical facts at the top, trimming verbose outputs, and adding summaries at the top.",
+    "Temperature drift; set temperature to 0.",
+    "A model bug; switch models."],
+ c:[1],
+ e:"Models attend most to the beginning and end of a long context. Reposition critical facts to the top, trim verbose tool outputs, and keep summaries at the top of the high-attention zone."},
+{d:"D5",t:"multi",w:2,s:"S2",
+ q:"HelixCare must define when its triage agent escalates to a human. Which are VALID escalation triggers?",
+ o:["The user explicitly asks for a human.",
+    "The applicable policy is ambiguous.",
+    "The agent has made no progress after N attempts.",
+    "Sentiment analysis indicates the patient \"seems upset.\""],
+ c:[0,1,2],
+ e:"Valid triggers: explicit human request, ambiguous policy, and no progress after N attempts — all observable and programmatic. Sentiment is poorly calibrated and is <b>not</b> a valid trigger."},
+{d:"D5",t:"single",w:2,s:"S2",
+ q:"An engineer proposes adding sentiment-based escalation \"as an additional safety measure\" on top of the valid triggers. Best response per CCA-F?",
+ o:["Approve — extra safety never hurts.",
+    "Reject — sentiment is unreliable and injects a poorly-calibrated signal into escalation logic, causing false positives and negatives, even as an add-on.",
+    "Approve only for high-risk cases.",
+    "Replace the valid triggers with sentiment entirely."],
+ c:[1],
+ e:"The exam flags sentiment-based escalation as incorrect even when framed as an extra safeguard — it introduces an unreliable signal that mis-escalates polite-but-frustrated and informal-but-satisfied users alike."},
+{d:"D5",t:"single",w:2,
+ q:"Is asking Claude \"how confident are you (1–10)?\" and escalating below a threshold a sound escalation mechanism?",
+ o:["Yes — it directly measures answer accuracy.",
+    "No — LLM self-assessed confidence is poorly calibrated; it's effectively another generation, not an independent measurement.",
+    "Yes, if you average several confidence scores.",
+    "Yes, for low-risk domains only."],
+ c:[1],
+ e:"Self-reported confidence is unreliable — high confidence on wrong answers, low on right ones. Use observable, programmatic triggers instead of self-assessment."},
+{d:"D5",t:"single",w:1,
+ q:"Which context-degradation strategy best fits an interactive Claude Code session where a human can manually trigger context management?",
+ o:["The scratchpad pattern only.",
+    "Subagent delegation only.",
+    "The <code>/compact</code> command, which summarizes the conversation and starts a fresh context with the summary.",
+    "Raising the iteration cap."],
+ c:[2],
+ e:"<code>/compact</code> is the manual trigger for interactive sessions. Scratchpads suit single-agent gradually-growing context; subagent delegation suits large, diverse volumes."},
+{d:"D5",t:"single",w:2,s:"S4",
+ q:"LexBrief sees accuracy drop when 50 contracts are stuffed into one context for cross-document comparison. Best approach?",
+ o:["Increase the context window and include all 50 at once.",
+    "Use per-document passes to extract key facts individually, then compare the extracted facts in a synthesis pass — avoid one giant context.",
+    "Randomly drop half the documents.",
+    "Use a single very long prompt with all documents and a \"pay attention to everything\" instruction."],
+ c:[1],
+ e:"\"Larger context = better attention\" is an anti-pattern. Use per-file passes plus a synthesis pass; reduce per-call context rather than maximizing it."},
+{d:"D5",t:"single",w:2,s:"S4",
+ q:"LexBrief's overnight batch job crashes midway. Which recovery pattern ensures no work is lost or duplicated?",
+ o:["Restart the whole job from scratch.",
+    "The manifest-file pattern: write a manifest of all tasks up front, update completion status as each finishes, and on restart read it to retry only incomplete tasks.",
+    "<code>fork_session</code> from the last response.",
+    "Increase the token budget and rerun."],
+ c:[1],
+ e:"Manifest files track the task list, completion status, and partial results, so recovery retries only what's incomplete — the right pattern for batch operations."},
+{d:"D5",t:"single",w:1,
+ q:"Match the recovery approach to the operational context. Which pairing is correct?",
+ o:["Interactive interrupted session → manifest files.",
+    "Batch processing operation → <code>--resume</code>.",
+    "Interactive interrupted session → <code>--resume</code>; batch processing operation → manifest files.",
+    "Both contexts → <code>fork_session</code>."],
+ c:[2],
+ e:"Interactive interrupted work → <code>--resume</code>; batch operations → manifest files; multi-stage pipelines → checkpointing. Match the recovery pattern to the context."},
+{d:"D5",t:"single",w:2,
+ q:"You can't human-review every output, and reviewing randomly misses the riskiest ones. What does CCA-F recommend?",
+ o:["Review 100% of outputs regardless of cost.",
+    "Stratified sampling — classify outputs by risk and review a higher percentage of high-risk categories, feeding results back to improve the system.",
+    "Review only the first 10 outputs each day.",
+    "Review a fixed random 5% with no risk weighting."],
+ c:[1],
+ e:"Stratified sampling gives the best QA coverage per review budget: sample more heavily from high-risk strata and use findings to improve prompts, validation, and sampling rates."},
+];
+
+/* ============================================================
+   ENGINE
+   ============================================================ */
+const TOTAL_SECONDS = 120*60;
+const PASS = 720;
+const state = {
+  screen:"start", mode:"exam",
+  current:0, answers:{}, flagged:new Set(),
+  remaining:TOTAL_SECONDS, timer:null, submitted:false,
+  reviewFilter:"all", navOpen:false,
+};
+const app = document.getElementById('app');
+const letters = ["A","B","C","D","E","F"];
+const totalWeight = QUESTIONS.reduce((s,q)=>s+q.w,0);
+
+function setEqual(a,b){ if(a.length!==b.length) return false; const x=[...a].sort(),y=[...b].sort(); return x.every((v,i)=>v===y[i]); }
+function isAnswered(i){ const a=state.answers[i]; return a && a.length>0; }
+function isCorrect(i){ const a=state.answers[i]||[]; return setEqual(a,QUESTIONS[i].c); }
+function fmt(sec){ const m=Math.floor(sec/60),s=sec%60; return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`; }
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),1900); }
+function toggleNav(){ state.navOpen=!state.navOpen; const p=document.querySelector('.navpanel'); if(p) p.classList.toggle('open',state.navOpen); }
+
+/* ---------- START ---------- */
+function renderStart(){
+  document.getElementById('navToggle').classList.add('hidden');
+  const dl = Object.entries(DOMAINS).map(([k,v])=>`
+    <div class="domain">
+      <div class="dn">${v.name}<span>Domain ${k.slice(1)}</span>
+        <div class="meter"><i style="width:${v.weight/27*100}%"></i></div>
+      </div>
+      <div class="pct">${v.weight}%</div>
+    </div>`).join("");
+  app.innerHTML = `
+  <div class="hero">
+    <div class="badge-row">
+      <div class="seal">C</div>
+      <div>
+        <div class="eyebrow">Anthropic · Certification Practice</div>
+        <div style="font-weight:700; font-size:15px; margin-top:2px">CCA-F · Claude Certified Architect — Foundations</div>
+      </div>
+    </div>
+    <h1 class="title">A full-length <em>mock exam</em>,<br>built to feel like the real thing.</h1>
+    <p class="lede">Sixty questions, a two-hour clock, scenario-based items, and scaled scoring against the 720 pass line — mirroring the published CCA-F format and domain weights.</p>
+
+    <div class="facts">
+      <div class="fact"><div class="k">Questions</div><div class="v">60</div></div>
+      <div class="fact"><div class="k">Time limit</div><div class="v">120 <small>min</small></div></div>
+      <div class="fact"><div class="k">Pass score</div><div class="v">720<small> / 1000</small></div></div>
+      <div class="fact"><div class="k">Domains</div><div class="v">5</div></div>
+      <div class="fact"><div class="k">Format</div><div class="v" style="font-size:18px">Single &amp;<br><small>multi-select</small></div></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Domain weighting</h2>
+    <div class="domain-list">${dl}</div>
+  </div>
+
+  <div class="panel">
+    <h2>Choose how you want to sit it</h2>
+    <div class="mode-grid">
+      <button class="mode-card sel" id="m-exam" onclick="pickMode('exam')">
+        <div class="mt"><span class="dot"></span>Exam mode</div>
+        <div class="md">120-minute countdown, no feedback until you submit, auto-submit at zero. The realistic run.</div>
+      </button>
+      <button class="mode-card" id="m-study" onclick="pickMode('study')">
+        <div class="mt"><span class="dot"></span>Study mode</div>
+        <div class="md">Untimed. Each answer is locked on selection and the explanation appears immediately. Best for learning.</div>
+      </button>
+    </div>
+
+    <div class="start-cta">
+      <button class="btn btn-primary" onclick="startExam()">Begin exam →</button>
+      <span style="font-size:13.5px; color:var(--ink-soft)">Multi-select items are scored all-or-nothing, as on the real exam.</span>
+    </div>
+
+    <p class="disclaimer"><b>Note on accuracy:</b> these are original community-style practice questions written to match the public CCA-F exam blueprint (the five domains and the seven anti-patterns). They are not official Anthropic exam items, and the live exam is currently gated behind Claude Partner Network access. Anchor your answers to current models and to <code>stop_reason</code>-driven, programmatic-over-prompt patterns.</p>
+  </div>
+
+  <div class="footnote">Tip: the reliable tiebreaker across every domain is “programmatic enforcement beats prompt-based guidance.”</div>`;
+}
+function pickMode(m){ state.mode=m; document.getElementById('m-exam').classList.toggle('sel',m==='exam'); document.getElementById('m-study').classList.toggle('sel',m==='study'); }
+
+/* ---------- EXAM ---------- */
+function startExam(){
+  state.screen="exam"; state.current=0; state.answers={}; state.flagged=new Set(); state.submitted=false; state.remaining=TOTAL_SECONDS;
+  if(state.timer){clearInterval(state.timer); state.timer=null;}
+  if(state.mode==='exam'){
+    state.timer=setInterval(()=>{ state.remaining--; updateTimer(); if(state.remaining<=0){ clearInterval(state.timer); state.timer=null; toast("Time's up — submitting."); finishExam(); } },1000);
+  }
+  renderExam();
+  window.scrollTo(0,0);
+}
+function updateTimer(){
+  const el=document.getElementById('timer'); if(!el) return;
+  el.querySelector('.clk').textContent=fmt(state.remaining);
+  el.classList.toggle('warn', state.remaining<=600 && state.remaining>120);
+  el.classList.toggle('crit', state.remaining<=120);
+}
+function renderExam(){
+  document.getElementById('navToggle').classList.remove('hidden');
+  const i=state.current, q=QUESTIONS[i];
+  const studyLocked = state.mode==='study' && isAnswered(i);
+  const dom=DOMAINS[q.d];
+  const answeredCount=QUESTIONS.filter((_,j)=>isAnswered(j)).length;
+
+  const scn = q.s ? `<div class="scenario"><div class="sl">Production scenario</div><div class="st">${SCN[q.s].title}</div><div class="sb">${SCN[q.s].body}</div></div>` : "";
+
+  const sel=state.answers[i]||[];
+  const opts=q.o.map((text,oi)=>{
+    let cls = q.t==='single' ? 'opt radio' : 'opt check';
+    const chosen=sel.includes(oi);
+    if(chosen) cls+=' sel';
+    let mark = chosen ? (q.t==='single'?'●':'✓') : '';
+    if(studyLocked){
+      cls+=' locked';
+      const correct=q.c.includes(oi);
+      if(correct && chosen){ cls=cls.replace('sel','')+' correct'; mark='✓'; }
+      else if(correct && !chosen){ cls+=' miss'; mark=''; }
+      else if(!correct && chosen){ cls=cls.replace('sel','')+' wrong'; mark='✕'; }
+    }
+    return `<button class="${cls}" onclick="selectOpt(${oi})" ${studyLocked?'disabled':''}>
+        <span class="mark">${mark}</span>
+        <span><span class="lt">${letters[oi]}.</span> ${text}</span>
+      </button>`;
+  }).join("");
+
+  let explain="";
+  if(studyLocked){
+    const ok=isCorrect(i);
+    explain=`<div class="explain">
+      <div class="verdict ${ok?'v-right':'v-wrong'}">${ok?'✓ Correct':'✕ Not quite'}</div>
+      <div class="ekey">Why</div><p>${q.e}</p></div>`;
+  }
+
+  app.innerHTML = `
+  <div class="examhead">
+    <div class="brandmini"><span class="s">C</span> CCA-F Mock Exam</div>
+    <div class="progresspill"><b>${answeredCount}</b> / 60 answered${state.mode==='study'?' · study mode':''}</div>
+    ${state.mode==='exam'?`<div class="timer" id="timer"><span>⏱</span><span class="clk mono">${fmt(state.remaining)}</span></div>`:`<div class="timer" id="timer" style="margin-left:auto"><span>∞</span><span class="clk">untimed</span></div>`}
+  </div>
+
+  <div class="examgrid">
+    <div>
+      <div class="qcard">
+        <div class="qmeta">
+          <span class="chip chip-num mono">Q${i+1}</span>
+          <span class="chip chip-dom">${dom.name}</span>
+          ${q.t==='multi'?'<span class="chip chip-multi">Select all that apply</span>':''}
+          ${q.s?'<span class="chip chip-scn">Scenario</span>':''}
+        </div>
+        ${scn}
+        <div class="stem">${q.q}</div>
+        ${q.t==='multi'?'<div class="multi-note">▸ More than one answer is correct.</div>':''}
+        <div class="opts">${opts}</div>
+        ${explain}
+      </div>
+
+      <div class="navfoot">
+        <button class="btn btn-ghost btn-sm" onclick="go(-1)" ${i===0?'disabled':''}>← Previous</button>
+        <button class="flagbtn ${state.flagged.has(i)?'on':''}" onclick="toggleFlag()">
+          ${state.flagged.has(i)?'★ Flagged':'☆ Flag for review'}
+        </button>
+        <span class="spacer"></span>
+        ${ i===QUESTIONS.length-1
+            ? `<button class="btn btn-primary btn-sm" onclick="confirmSubmit()">Review &amp; submit</button>`
+            : `<button class="btn btn-primary btn-sm" onclick="go(1)">Next →</button>` }
+      </div>
+    </div>
+
+    <aside class="navpanel ${state.navOpen?'open':''}">
+      <h3>Question navigator</h3>
+      <div class="navgrid">${navCells()}</div>
+      <div class="legend">
+        <span class="lg-ans"><i></i>Answered</span>
+        <span class="lg-unans"><i></i>Not answered</span>
+        <span class="lg-flag"><i></i>Flagged</span>
+      </div>
+      <div class="submitbar">
+        <button class="btn btn-primary btn-sm" style="width:100%" onclick="confirmSubmit()">Submit exam</button>
+        <div class="cnt">${60-answeredCount} unanswered · ${state.flagged.size} flagged</div>
+      </div>
+    </aside>
+  </div>`;
+  updateTimer();
+}
+function navCells(){
+  return QUESTIONS.map((_,j)=>{
+    let cls='nq';
+    if(isAnswered(j)) cls+=' answered';
+    if(state.flagged.has(j)) cls+=' flagged';
+    if(j===state.current) cls+=' current';
+    return `<button class="${cls}" onclick="jump(${j})">${j+1}</button>`;
+  }).join("");
+}
+function selectOpt(oi){
+  const i=state.current, q=QUESTIONS[i];
+  if(state.mode==='study' && isAnswered(i)) return;
+  let cur=state.answers[i]?[...state.answers[i]]:[];
+  if(q.t==='single'){ cur=[oi]; }
+  else { cur.includes(oi)? cur=cur.filter(x=>x!==oi) : cur.push(oi); }
+  state.answers[i]=cur;
+  renderExam();
+}
+function toggleFlag(){ const i=state.current; state.flagged.has(i)?state.flagged.delete(i):state.flagged.add(i); renderExam(); }
+function go(step){ const n=state.current+step; if(n<0||n>=QUESTIONS.length) return; state.current=n; renderExam(); window.scrollTo({top:0,behavior:'smooth'}); }
+function jump(j){ state.current=j; state.navOpen=false; renderExam(); window.scrollTo({top:0,behavior:'smooth'}); }
+function confirmSubmit(){
+  const unans=60-QUESTIONS.filter((_,j)=>isAnswered(j)).length;
+  const msg = unans>0
+    ? `You have ${unans} unanswered question${unans>1?'s':''}. Submit anyway and score now?`
+    : `All 60 answered. Submit and score now?`;
+  if(confirm(msg)) finishExam();
+}
+function finishExam(){
+  if(state.timer){clearInterval(state.timer); state.timer=null;}
+  state.submitted=true; state.timeUsed=TOTAL_SECONDS-state.remaining; state.screen="results";
+  renderResults(); window.scrollTo(0,0);
+}
+
+/* ---------- RESULTS ---------- */
+function computeScore(){
+  let earned=0; const dom={};
+  for(const k in DOMAINS) dom[k]={c:0,t:0,wc:0,wt:0};
+  QUESTIONS.forEach((q,i)=>{
+    dom[q.d].t++; dom[q.d].wt+=q.w;
+    if(isCorrect(i)){ earned+=q.w; dom[q.d].c++; dom[q.d].wc+=q.w; }
+  });
+  const scaled=Math.round(earned/totalWeight*1000);
+  return {scaled, pass:scaled>=PASS, dom, rawCorrect:QUESTIONS.filter((_,i)=>isCorrect(i)).length};
+}
+function renderResults(){
+  document.getElementById('navToggle').classList.add('hidden');
+  const r=computeScore();
+  const circ=2*Math.PI*86, frac=Math.min(r.scaled/1000,1);
+  const col = r.pass? 'var(--green)':'var(--red)';
+  const passX=(PASS/1000); // marker position fraction along the arc
+
+  const breakdown=Object.entries(DOMAINS).map(([k,v])=>{
+    const d=r.dom[k]; const pct=Math.round(d.c/d.t*100);
+    const bc = pct>=72?'var(--green)':(pct>=50?'var(--amber)':'var(--red)');
+    return `<div class="drow">
+      <div>
+        <div class="dname">${v.name} <span>· Domain ${k.slice(1)} · ${v.weight}% of exam</span></div>
+        <div class="dbar"><i style="width:${pct}%; background:${bc}"></i></div>
+      </div>
+      <div class="dscore" style="color:${bc}">${d.c}/${d.t}<span style="display:block; font-size:12px; color:var(--ink-faint); font-family:var(--ui); font-weight:600">${pct}%</span></div>
+    </div>`;
+  }).join("");
+
+  app.innerHTML=`
+  <div class="resulthero">
+    <div class="eyebrow">Result · CCA-F Mock Exam</div>
+    <div class="scorering">
+      <svg width="200" height="200" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="86" fill="none" stroke="var(--line)" stroke-width="14"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round"
+          stroke-dasharray="${circ}" stroke-dashoffset="${circ}" id="arc"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="var(--ink)" stroke-width="14"
+          stroke-dasharray="2 ${circ}" stroke-dashoffset="${-(circ*passX)+1}" opacity="0.55"/>
+      </svg>
+      <div class="mid"><div class="num" style="color:${col}">${r.scaled}</div><div class="den">OUT OF 1000</div></div>
+    </div>
+    <div><span class="verdictbig ${r.pass?'pass':'fail'}">${r.pass?'✓ Pass':'✕ Did not pass'}</span></div>
+    <div class="subline">${r.pass
+        ? `Above the ${PASS} pass line by ${r.scaled-PASS} point${r.scaled-PASS===1?'':'s'}.`
+        : `${PASS-r.scaled} point${PASS-r.scaled===1?'':'s'} short of the ${PASS} pass line.`} The tick on the ring marks 720.</div>
+
+    <div class="statrow">
+      <div class="fact"><div class="k">Raw correct</div><div class="v">${r.rawCorrect}<small> / 60</small></div></div>
+      <div class="fact"><div class="k">Accuracy</div><div class="v">${Math.round(r.rawCorrect/60*100)}<small>%</small></div></div>
+      <div class="fact"><div class="k">Time used</div><div class="v mono" style="font-size:21px">${fmt(state.timeUsed||0)}</div></div>
+      <div class="fact"><div class="k">Mode</div><div class="v" style="font-size:19px; text-transform:capitalize">${state.mode}</div></div>
+    </div>
+  </div>
+
+  <div class="panel breakdown">
+    <h2>Performance by domain</h2>
+    <p style="color:var(--ink-soft); font-size:14px; margin:-6px 0 12px">Scaled scoring weights scenario and anti-pattern items more heavily, so your point total can differ from raw accuracy. Aim for ~80%+ per domain before sitting the real exam.</p>
+    ${breakdown}
+  </div>
+
+  <div class="panel">
+    <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+      <h2 style="margin:0">Review every question</h2>
+      <button class="btn btn-ghost btn-sm" onclick="restart()">↻ Retake exam</button>
+    </div>
+    <div class="reviewfilters" style="margin-top:14px">
+      <button class="filt on" data-f="all" onclick="setFilter('all')">All 60</button>
+      <button class="filt" data-f="wrong" onclick="setFilter('wrong')">Incorrect (${60-r.rawCorrect})</button>
+      <button class="filt" data-f="right" onclick="setFilter('right')">Correct (${r.rawCorrect})</button>
+      <button class="filt" data-f="flag" onclick="setFilter('flag')">Flagged (${state.flagged.size})</button>
+    </div>
+    <div id="reviewList"></div>
+  </div>
+
+  <div class="footnote">Original practice items aligned to the public CCA-F blueprint · not official Anthropic exam content.</div>`;
+
+  // animate arc
+  requestAnimationFrame(()=>{ const arc=document.getElementById('arc'); if(arc){ arc.style.transition='stroke-dashoffset 1.1s cubic-bezier(.16,1,.3,1)'; arc.style.strokeDashoffset=`${circ*(1-frac)}`; } });
+  renderReviewList();
+}
+function setFilter(f){ state.reviewFilter=f; document.querySelectorAll('.filt').forEach(b=>b.classList.toggle('on',b.dataset.f===f)); renderReviewList(); }
+function renderReviewList(){
+  const host=document.getElementById('reviewList'); if(!host) return;
+  const f=state.reviewFilter;
+  const items=QUESTIONS.map((q,i)=>({q,i})).filter(({i})=>{
+    if(f==='wrong') return !isCorrect(i);
+    if(f==='right') return isCorrect(i);
+    if(f==='flag') return state.flagged.has(i);
+    return true;
+  });
+  if(items.length===0){ host.innerHTML=`<p style="color:var(--ink-faint); padding:18px 0">Nothing here.</p>`; return; }
+  host.innerHTML=items.map(({q,i})=>{
+    const sel=state.answers[i]||[]; const ok=isCorrect(i); const dom=DOMAINS[q.d];
+    const scn = q.s ? `<div class="scenario" style="margin-bottom:14px"><div class="sl">${SCN[q.s].title}</div><div class="sb">${SCN[q.s].body}</div></div>` : "";
+    const opts=q.o.map((text,oi)=>{
+      let cls=q.t==='single'?'opt radio locked':'opt check locked'; let mark='';
+      const correct=q.c.includes(oi), chosen=sel.includes(oi);
+      if(correct && chosen){ cls+=' correct'; mark='✓'; }
+      else if(correct && !chosen){ cls+=' miss'; mark=''; }
+      else if(!correct && chosen){ cls+=' wrong'; mark='✕'; }
+      return `<div class="${cls}"><span class="mark">${mark}</span><span><span class="lt">${letters[oi]}.</span> ${text}</span></div>`;
+    }).join("");
+    const verdict = sel.length===0
+        ? `<div class="verdict v-skip">○ Skipped</div>`
+        : (ok?`<div class="verdict v-right">✓ Correct</div>`:`<div class="verdict v-wrong">✕ Incorrect</div>`);
+    return `<div class="reviewcard">
+      <div class="qmeta">
+        <span class="chip chip-num mono">Q${i+1}</span>
+        <span class="chip chip-dom">${dom.name}</span>
+        ${q.t==='multi'?'<span class="chip chip-multi">Multi-select</span>':''}
+        ${q.s?'<span class="chip chip-scn">Scenario</span>':''}
+      </div>
+      ${scn}
+      <div class="stem" style="font-size:18px">${q.q}</div>
+      <div class="opts" style="margin-top:14px">${opts}</div>
+      <div class="explain">${verdict}<div class="ekey">Why</div><p>${q.e}</p></div>
+    </div>`;
+  }).join("");
+}
+function restart(){ state.screen="start"; state.reviewFilter="all"; renderStart(); window.scrollTo(0,0); }
+
+/* boot */
+renderStart();
+</script>
+</body>
+</html>
