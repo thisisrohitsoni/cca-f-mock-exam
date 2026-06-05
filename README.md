@@ -11,6 +11,9 @@ A free, full-length **practice exam** for Anthropic's **CCA-F (Claude Certified 
 
 **▶ Live demo:** `https://thisisrohitsoni.github.io/cca-f-mock-exam/`
 
+**▶ Live demo:** `https://<your-username>.github.io/cca-f-mock-exam/`
+*(replace with your own URL after deploying — see [Deploy your own](#deploy-your-own))*
+
 ---
 
 ## What's inside
