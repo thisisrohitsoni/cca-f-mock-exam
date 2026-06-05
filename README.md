@@ -9,7 +9,7 @@ A free, full-length **practice exam** for Anthropic's **CCA-F (Claude Certified 
 ![No Tracking](https://img.shields.io/badge/tracking-none-3C5A78)
 ![Cost](https://img.shields.io/badge/cost-free-4C7A48)
 
-**▶ [Live Demo](https://thisisrohitsoni.github.io/cca-f-mock-exam/)**
+**▶ Live demo:** [https://thisisrohitsoni.github.io/cca-f-mock-exam/](https://thisisrohitsoni.github.io/cca-f-mock-exam/)
 
 ---
 
