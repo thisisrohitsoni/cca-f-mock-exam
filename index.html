@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CCA-F Mock Exam — Claude Certified Architect, Foundations</title>
+<meta name="description" content="Free, full-length practice exam for Anthropic's CCA-F (Claude Certified Architect – Foundations). A fresh randomized 60-question paper every time, timed or study mode, scored out of 1000. Browser-based, no signup. Unofficial.">
+<!-- Social / link preview (Open Graph + Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CCA-F Mock Exam">
+<meta property="og:title" content="CCA-F Mock Exam — Claude Certified Architect (Foundations)">
+<meta property="og:description" content="A free, full-length CCA-F practice exam: a fresh randomized 60-question paper every load, timed or study mode, scored out of 1000 with a 720 pass line. Browser-based, no signup. Unofficial.">
+<meta property="og:url" content="https://thisisrohitsoni.github.io/cca-f-mock-exam/">
+<meta property="og:image" content="https://thisisrohitsoni.github.io/cca-f-mock-exam/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CCA-F Mock Exam — Claude Certified Architect, Foundations">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CCA-F Mock Exam — Claude Certified Architect (Foundations)">
+<meta name="twitter:description" content="A free, full-length CCA-F practice exam: a fresh randomized 60-question paper every load, timed or study mode. Browser-based, no signup. Unofficial.">
+<meta name="twitter:image" content="https://thisisrohitsoni.github.io/cca-f-mock-exam/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,11 +52,7 @@
   }
   .wrap{position:relative; z-index:1; max-width:1120px; margin:0 auto; padding:32px 22px 80px}
   button{font-family:var(--ui); cursor:pointer; border:none; background:none}
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:9px;
-    font-weight:600; font-size:15px; padding:13px 22px; border-radius:11px;
-    transition:transform .12s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
-  }
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; font-weight:600; font-size:15px; padding:13px 22px; border-radius:11px; transition:transform .12s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease}
   .btn:active{transform:translateY(1px)}
   .btn-primary{background:var(--clay); color:#FFF6EE; box-shadow:0 1px 0 rgba(0,0,0,.04), 0 10px 22px -12px var(--clay)}
   .btn-primary:hover{background:var(--clay-deep)}
@@ -52,20 +63,14 @@
   .eyebrow{font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--clay)}
   .mono{font-variant-numeric:tabular-nums; font-feature-settings:"tnum"}
 
-  /* ---------- START ---------- */
   .hero{opacity:0; animation:rise .6s .04s ease forwards}
   @keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
   .badge-row{display:flex; align-items:center; gap:14px; margin-bottom:26px}
-  .seal{
-    width:54px; height:54px; border-radius:14px; flex:none; display:grid; place-items:center;
-    background:linear-gradient(150deg,var(--clay),var(--clay-deep)); color:#FBEFE6;
-    font-family:var(--serif); font-weight:600; font-size:22px; letter-spacing:.01em;
-    box-shadow:0 10px 24px -12px var(--clay), inset 0 1px 0 rgba(255,255,255,.25);
-  }
+  .seal{width:54px; height:54px; border-radius:14px; flex:none; display:grid; place-items:center; background:linear-gradient(150deg,var(--clay),var(--clay-deep)); color:#FBEFE6; font-family:var(--serif); font-weight:600; font-size:22px; box-shadow:0 10px 24px -12px var(--clay), inset 0 1px 0 rgba(255,255,255,.25)}
   h1.title{font-family:var(--serif); font-weight:500; font-size:clamp(34px,5.4vw,56px); line-height:1.02; letter-spacing:-.01em; margin:6px 0 10px}
   h1.title em{font-style:italic; color:var(--clay)}
-  .lede{font-size:clamp(16px,2vw,19px); color:var(--ink-soft); max-width:60ch; margin-bottom:30px}
-  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-bottom:14px}
+  .lede{font-size:clamp(16px,2vw,19px); color:var(--ink-soft); max-width:62ch; margin-bottom:30px}
+  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-bottom:14px}
   .fact{background:var(--card); padding:18px 20px}
   .fact .k{font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:5px}
   .fact .v{font-family:var(--serif); font-size:25px; font-weight:500; color:var(--ink)}
@@ -79,7 +84,9 @@
   .domain .dn span{display:block; font-weight:400; font-size:13px; color:var(--ink-faint)}
   .meter{position:relative; height:9px; background:var(--paper); border-radius:99px; overflow:hidden; margin-top:7px; border:1px solid var(--line)}
   .meter > i{position:absolute; inset:0 auto 0 0; background:linear-gradient(90deg,var(--clay),var(--clay-deep)); border-radius:99px; display:block}
-  .domain .pct{font-family:var(--serif); font-size:18px; font-weight:500; min-width:46px; text-align:right; color:var(--ink)}
+  .domain .pct{font-family:var(--serif); font-size:18px; font-weight:500; min-width:96px; text-align:right; color:var(--ink)}
+  .domain .pct b{font-weight:500}
+  .domain .pct span{display:block; font-size:12px; color:var(--ink-faint); font-family:var(--ui); font-weight:600}
 
   .mode-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:6px}
   .mode-card{text-align:left; border:1.5px solid var(--line-2); background:var(--paper-2); border-radius:14px; padding:18px 18px 16px; transition:.15s; position:relative}
@@ -89,24 +96,24 @@
   .mode-card .md{font-size:13.5px; color:var(--ink-soft)}
   .dot{width:11px; height:11px; border-radius:99px; border:2px solid var(--line-2); flex:none}
   .mode-card.sel .dot{border-color:var(--clay); background:var(--clay)}
-  .disclaimer{font-size:12.5px; color:var(--ink-faint); margin-top:22px; line-height:1.5; max-width:74ch}
+  .disclaimer{font-size:12.5px; color:var(--ink-faint); margin-top:22px; line-height:1.5; max-width:78ch}
   .start-cta{margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+  .randnote{display:flex; gap:11px; align-items:flex-start; background:linear-gradient(180deg,#FBF8F1,#F6F0E5); border:1px solid var(--line-2); border-left:4px solid var(--clay); border-radius:12px; padding:15px 17px; margin-top:18px; font-size:14px; color:var(--ink-soft)}
+  .randnote b{color:var(--ink)}
 
-  /* ---------- EXAM ---------- */
-  .examhead{
-    position:sticky; top:0; z-index:30; margin:-12px -22px 22px; padding:12px 22px;
-    background:rgba(244,238,226,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
-    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
-  }
-  .examhead .brandmini{display:flex; align-items:center; gap:10px; font-weight:700; font-size:14px; letter-spacing:.01em}
+  .examhead{position:sticky; top:0; z-index:100; margin:-12px -22px 22px; padding:12px 22px; background:rgba(244,238,226,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+  .examhead .brandmini{display:flex; align-items:center; gap:10px; font-weight:700; font-size:14px}
   .examhead .brandmini .s{width:30px; height:30px; border-radius:8px; background:linear-gradient(150deg,var(--clay),var(--clay-deep)); color:#FBEFE6; display:grid; place-items:center; font-family:var(--serif); font-weight:600; font-size:14px}
   .timer{margin-left:auto; display:flex; align-items:center; gap:9px; font-weight:600; font-size:15px; padding:8px 14px; border-radius:10px; background:var(--card); border:1px solid var(--line-2)}
-  .timer .clk{font-family:var(--serif); font-size:19px; letter-spacing:.01em}
+  .timer .clk{font-family:var(--serif); font-size:19px}
   .timer.warn{border-color:var(--amber); background:var(--amber-soft); color:#7d560f}
   .timer.crit{border-color:var(--red); background:var(--red-soft); color:#7e271f; animation:pulse 1.1s infinite}
   @keyframes pulse{50%{opacity:.62}}
   .progresspill{font-size:13px; font-weight:600; color:var(--ink-soft); padding:8px 13px; background:var(--card); border:1px solid var(--line); border-radius:10px}
   .progresspill b{color:var(--ink)}
+  .homebtn{display:inline-flex; align-items:center; gap:7px; font-weight:600; font-size:13px; padding:8px 13px; border-radius:10px; background:var(--card); border:1px solid var(--line-2); color:var(--ink-soft); transition:.13s; cursor:pointer}
+  .homebtn svg{width:15px; height:15px; flex:none}
+  .homebtn:hover{border-color:var(--clay); color:var(--clay-deep); background:#fff}
 
   .examgrid{display:grid; grid-template-columns:minmax(0,1fr) 252px; gap:26px; align-items:start}
   .qcard{background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); padding:30px 32px; min-height:340px}
@@ -123,12 +130,8 @@
   .stem{font-family:var(--serif); font-size:21px; line-height:1.42; font-weight:400; letter-spacing:-.005em; margin-bottom:6px}
   .multi-note{font-size:13px; color:var(--green); font-weight:600; margin:8px 0 2px}
   .opts{display:flex; flex-direction:column; gap:11px; margin-top:18px}
-  .opt{
-    display:flex; align-items:flex-start; gap:13px; text-align:left; width:100%;
-    background:var(--paper-2); border:1.5px solid var(--line-2); border-radius:12px; padding:14px 16px;
-    font-size:15.5px; color:var(--ink); line-height:1.45; transition:.13s;
-  }
-  .opt:hover:not(.locked){border-color:var(--clay); background:#fff}
+  .opt{display:flex; align-items:flex-start; gap:13px; text-align:left; width:100%; background:var(--paper-2); border:1.5px solid var(--line-2); border-radius:12px; padding:15px 16px; font-size:15.5px; color:var(--ink); line-height:1.45; cursor:pointer; transition:background .13s ease, border-color .13s ease, box-shadow .13s ease, transform .1s ease}
+  .opt:hover:not(.locked){border-color:var(--clay); background:#FFFCF7; box-shadow:0 4px 14px -8px rgba(184,83,46,.45); transform:translateY(-1px)}
   .opt .mark{width:22px; height:22px; flex:none; border:2px solid var(--line-2); display:grid; place-items:center; margin-top:1px; transition:.13s; color:#fff; font-size:13px; font-weight:800}
   .opt.radio .mark{border-radius:99px}
   .opt.check .mark{border-radius:6px}
@@ -137,12 +140,12 @@
   .opt.sel .mark{background:var(--clay); border-color:var(--clay)}
   .opt.sel .lt{color:var(--clay-deep)}
   .opt.locked{cursor:default}
-  /* study/review feedback */
   .opt.correct{border-color:var(--green); background:var(--green-soft)}
   .opt.correct .mark{background:var(--green); border-color:var(--green)}
   .opt.wrong{border-color:var(--red); background:var(--red-soft)}
   .opt.wrong .mark{background:var(--red); border-color:var(--red)}
   .opt.miss{border-color:var(--green); background:transparent; border-style:dashed}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em; background:rgba(184,83,46,.09); color:var(--clay-deep); padding:1px 5px; border-radius:5px}
   .explain{margin-top:20px; border-top:1px dashed var(--line-2); padding-top:18px; animation:fade .25s ease}
   @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
   .explain .verdict{display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:13.5px; padding:6px 12px; border-radius:8px; margin-bottom:12px}
@@ -159,7 +162,6 @@
   .flagbtn.on{background:var(--amber-soft); border-color:var(--amber); color:#7d560f}
   .navfoot .spacer{flex:1}
 
-  /* navigator */
   .navpanel{position:sticky; top:84px; background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:18px}
   .navpanel h3{font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:14px}
   .navgrid{display:grid; grid-template-columns:repeat(7,1fr); gap:7px}
@@ -175,11 +177,8 @@
   .lg-flag i{background:var(--amber); border-color:var(--amber)}
   .submitbar{margin-top:16px; padding-top:16px; border-top:1px solid var(--line)}
   .submitbar .cnt{font-size:12.5px; color:var(--ink-faint); margin-top:9px; text-align:center}
-
-  /* mobile nav toggle */
   .navtoggle{display:none}
 
-  /* ---------- RESULTS ---------- */
   .resulthero{text-align:center; padding:20px 0 8px; animation:rise .55s ease}
   .scorering{position:relative; width:200px; height:200px; margin:6px auto 18px}
   .scorering svg{transform:rotate(-90deg)}
@@ -189,7 +188,7 @@
   .verdictbig{display:inline-flex; align-items:center; gap:10px; font-family:var(--serif); font-size:27px; font-weight:500; padding:8px 22px; border-radius:14px; margin-bottom:6px}
   .pass{background:var(--green-soft); color:#34552f}
   .fail{background:var(--red-soft); color:#7e271f}
-  .subline{color:var(--ink-soft); font-size:15.5px}
+  .subline{color:var(--ink-soft); font-size:15.5px; max-width:60ch; margin:0 auto}
   .statrow{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:24px 0}
   .statrow .fact{background:var(--card)}
   .breakdown .drow{display:grid; grid-template-columns:1fr auto; gap:14px; align-items:center; padding:14px 0; border-bottom:1px solid var(--line)}
@@ -206,7 +205,7 @@
   .toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px); background:var(--ink); color:var(--paper); padding:13px 22px; border-radius:12px; font-size:14px; font-weight:600; opacity:0; transition:.25s; z-index:60; box-shadow:var(--shadow-lg)}
   .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
   .hidden{display:none !important}
-  .footnote{text-align:center; color:var(--ink-faint); font-size:12.5px; margin-top:30px}
+  .footnote{text-align:center; color:var(--ink-faint); font-size:12.5px; margin-top:30px; line-height:1.6}
 
   @media (max-width:880px){
     .examgrid{grid-template-columns:1fr}
@@ -229,10 +228,12 @@
 
 <script>
 /* ============================================================
-   CCA-F MOCK EXAM  —  data
-   Content aligned to the published CCA-F exam blueprint
-   (5 domains, 7 anti-patterns). Community practice material —
-   not official Anthropic exam items.
+   CCA-F MOCK EXAM  —  randomized engine
+   Each load draws a fresh weighted sample (16/11/12/12/9 = 60)
+   from five domain pools, then shuffles question + option order.
+   Content aligned to the published CCA-F blueprint (5 domains,
+   7 anti-patterns). Community practice material — not official
+   Anthropic exam items.
    ============================================================ */
 
 const DOMAINS = {
@@ -242,528 +243,657 @@ const DOMAINS = {
   D4:{name:"Prompt Engineering & Structured Output",weight:20},
   D5:{name:"Context Management & Reliability",       weight:15},
 };
+// questions drawn per domain each sitting -> 16+11+12+12+9 = 60
+const DRAW = { D1:16, D2:11, D3:12, D4:12, D5:9 };
 
 const SCN = {
   S1:{title:"MeridianPay — fintech multi-agent platform",
-      body:"MeridianPay runs a coordinator agent that receives customer requests and delegates to specialized subagents: document-analysis (regulatory filings), account-lookup, and refund-processing. The system is moving from prototype to production under strict reliability and audit requirements."},
+      body:"MeridianPay runs a coordinator agent that delegates to specialized subagents: document-analysis (regulatory filings), account-lookup, and refund-processing. It is moving from prototype to production under strict reliability and audit requirements."},
   S2:{title:"HelixCare — patient triage agent",
-      body:"HelixCare deploys a Claude-based triage agent that answers patient questions and books appointments. Compliance mandates strict, predictable escalation to human clinicians, and the team is finalizing its escalation and orchestration policy."},
+      body:"HelixCare deploys a Claude-based triage agent that answers patient questions and books appointments. Compliance mandates strict, predictable escalation to human clinicians."},
   S3:{title:"CodeForge — Claude Code in CI/CD",
-      body:"CodeForge, a 40-engineer org, has standardized on Claude Code. They want consistent team behavior plus automated PR review and test generation inside their CI pipeline, while keeping changes safe in a large shared codebase."},
+      body:"CodeForge, a 40-engineer org, has standardized on Claude Code. They want consistent team behavior plus automated PR review and test generation in CI, while keeping changes safe in a large shared codebase."},
   S4:{title:"LexBrief — legal contract extraction pipeline",
-      body:"LexBrief processes large volumes of contracts, extracting structured fields for downstream systems. Data is messy and often incomplete, accuracy is paramount, and much of the work runs as scheduled background jobs."},
+      body:"LexBrief extracts structured fields from large volumes of contracts. Data is messy and often incomplete, accuracy is paramount, and much of the work runs as scheduled background jobs."},
+  S5:{title:"Atlas Logistics — routing & dispatch agent",
+      body:"Atlas runs an agent that answers shipment-status questions, reschedules pickups, and files exceptions. It integrates several internal tools and is scaling to more regions."},
+  S6:{title:"Sentinel Claims — insurance claim intake",
+      body:"Sentinel extracts structured fields from submitted insurance claims (amounts, dates, codes), then routes them downstream. Volume is high, data is inconsistent, and accuracy drives payouts."},
 };
 
-/* type: 'single' | 'multi'   correct: array of option indices
-   weight: 1 (knowledge) | 2 (scenario / anti-pattern, higher value) */
-const QUESTIONS = [
-/* ===== DOMAIN 1 — Agentic Architecture & Orchestration (16) ===== */
-{d:"D1",t:"single",w:2,
- q:"You are implementing the core agentic loop. After each API response your code must decide whether to execute a tool and continue, or stop and return the result. What is the correct, production-grade way to make this decision?",
- o:["Parse Claude's text output for phrases like \"task complete\" or \"I'm done.\"",
-    "Inspect the <code>stop_reason</code> field: continue on <code>tool_use</code>, exit on <code>end_turn</code>.",
-    "Stop after a fixed cap of 10 iterations regardless of state.",
-    "Make a follow-up call asking Claude whether it considers the task finished."],
- c:[1],
- e:"<code>stop_reason</code> is the deterministic control signal — <code>tool_use</code> means execute the tool and loop again, <code>end_turn</code> means finished. Parsing natural language is an explicit anti-pattern; iteration caps are a backstop, not the primary mechanism; a confirmation call is just another unreliable generation."},
-{d:"D1",t:"single",w:1,
- q:"A response returns with <code>stop_reason</code> set to <code>max_tokens</code>. How should a robust agentic loop treat this case?",
- o:["Treat it identically to <code>end_turn</code> and return the partial output as final.",
-    "Immediately retry the same request unchanged.",
-    "Handle it as a distinct edge case — the response was truncated — e.g. by requesting a continuation.",
-    "Abort the session with a fatal error."],
- c:[2],
- e:"<code>max_tokens</code> means the response was cut off — it is neither completion (<code>end_turn</code>) nor a tool request (<code>tool_use</code>). Handle it explicitly, typically by continuing generation. Treating it as final loses content; blind retry/abort are wrong."},
-{d:"D1",t:"single",w:2,s:"S1",
- q:"MeridianPay's coordinator receives requests and delegates to specialized subagents. What is the coordinator's correct role in a hub-and-spoke architecture?",
- o:["Perform all tool calls itself and use subagents only as a fallback.",
-    "Route and delegate tasks to subagents and synthesize their results, without doing the specialized work itself.",
-    "Share its full conversation context with every subagent on each call.",
-    "Hold every tool in the system so it can bypass subagents when convenient."],
- c:[1],
- e:"The hub coordinates — routing, delegation, and synthesis — it does not do the specialized work. Sharing full context violates subagent isolation; holding every tool is the \"all tools to all agents\" anti-pattern."},
-{d:"D1",t:"single",w:2,s:"S1",
- q:"MeridianPay's refund subagent keeps \"failing to access\" the customer's account tier, even though the user stated it earlier in the conversation with the coordinator. What is the most likely cause?",
- o:["The subagent's model version is older than the coordinator's.",
-    "Subagents inherit context lazily and just need a <code>--resume</code> flag.",
-    "Subagents do not inherit the parent's conversation context; the account tier was never explicitly passed to the subagent.",
-    "The coordinator's context window overflowed and dropped the field."],
- c:[2],
- e:"Subagents start with a clean context <b>by design</b> — they do not inherit the parent thread. The fix is to explicitly pass the account tier (and any needed facts) when invoking the subagent."},
-{d:"D1",t:"single",w:1,
- q:"Subagent context isolation is a deliberate design choice. Which of the following is <b>NOT</b> a benefit it provides?",
- o:["Prevents context pollution from unrelated conversation threads.",
-    "Reduces the risk of leaking sensitive information to subagents that don't need it.",
-    "Makes each subagent's behavior more predictable and easier to debug.",
-    "Automatically shares retrieved tool results across all subagents to avoid duplicate work."],
- c:[3],
- e:"Isolation gives you reduced pollution, better security, and predictability. It specifically does <b>not</b> auto-share results between subagents — that would defeat the purpose of isolation."},
-{d:"D1",t:"multi",w:2,
- q:"Your coordinator needs to query four independent data sources at once using parallel Task calls. Which principles apply?",
- o:["Only parallelize tasks that are truly independent of one another's outputs.",
-    "The coordinator must aggregate and (where needed) deduplicate results from the parallel tasks.",
-    "If one task fails, the coordinator decides whether to retry, skip, or fail the whole operation based on criticality.",
-    "Tasks with a strict output dependency on each other should still be parallelized for speed."],
- c:[0,1,2],
- e:"Parallelize only independent work; the coordinator aggregates and deduplicates; failures are handled per task criticality. Dependent tasks must run sequentially — parallelizing them is incorrect."},
-{d:"D1",t:"single",w:1,
- q:"A customer-service agent must explore two alternative resolution paths before committing to one, without polluting the main thread. Which session mechanism fits?",
- o:["<code>--resume</code>, because it preserves history.",
-    "<code>fork_session</code>, which copies current history and diverges from that point.",
-    "<code>/compact</code>, to summarize before branching.",
-    "Spawn an isolated subagent with no shared history."],
- c:[1],
- e:"<code>fork_session</code> copies the current history and diverges — ideal for \"what-if\" exploration. <code>--resume</code> is for continuing interrupted work, not branching."},
-{d:"D1",t:"single",w:1,
- q:"A long-running development agent was interrupted by a host restart mid-task. History should be preserved and work continued exactly where it stopped. Which mechanism is correct?",
- o:["<code>fork_session</code>",
-    "<code>--resume</code>",
-    "Start a fresh session and re-paste the prior transcript manually.",
-    "<code>/compact</code> then restart."],
- c:[1],
- e:"<code>--resume</code> continues an existing session with history intact — the canonical pattern for resuming interrupted work."},
-{d:"D1",t:"single",w:2,s:"S2",
- q:"HelixCare needs an agent answering a narrow set of FAQ-style questions and booking appointments through one scheduling tool. An engineer proposes a five-subagent hub-and-spoke design. What is the best guidance?",
- o:["Approve it; more agents always improve reliability.",
-    "Match architecture to complexity — a single focused agent is appropriate here; reserve hub-and-spoke for genuinely multi-specialization tasks.",
-    "Use parallel Tasks for each FAQ category.",
-    "Require sentiment routing between the subagents."],
- c:[1],
- e:"The exam rewards matching complexity to architecture rather than defaulting to the most complex option. A narrow, single-tool task needs a single agent — hub-and-spoke adds cost and failure surface for no benefit."},
-{d:"D1",t:"single",w:2,
- q:"Inside an agentic loop, a tool call fails with a transient network error. What is the recommended handling?",
- o:["Exit the loop immediately and surface a fatal error to the user.",
-    "Silently return an empty result so the loop proceeds.",
-    "Return the error to Claude as a structured tool result so it can retry, try an alternative, or inform the user.",
-    "Permanently strip the failed tool from the agent and continue."],
- c:[2],
- e:"Keep the loop in control: return structured error information to Claude as a tool result so it can decide the next move. Exiting on the first failure or silently returning empty results are both anti-patterns."},
-{d:"D1",t:"single",w:1,
- q:"Your team wants to control runaway cost in long agentic loops. Which statement best captures correct practice?",
- o:["An iteration cap and a token budget are the same control; you only need one.",
-    "Use <code>stop_reason</code> as the primary terminator, an iteration cap as a safety net, and a separate token budget to cap cumulative cost.",
-    "Replace <code>stop_reason</code> checking with a strict 10-iteration cap to save tokens.",
-    "Token budgets are unnecessary if you set a low iteration cap."],
- c:[1],
- e:"These controls are complementary: <code>stop_reason</code> is the primary terminator, the iteration cap is a backstop (a generous limit that logs a warning when hit), and a token budget independently caps cumulative spend."},
-{d:"D1",t:"single",w:1,
- q:"When streaming an agent's responses to users in real time, where do you obtain <code>stop_reason</code>?",
- o:["At the start of the stream, before any content.",
-    "Inferred from the text of the last content chunk.",
-    "In the final event of the stream; your handler must process both content events and that final stop event.",
-    "Streaming responses omit it; you must make a second non-streaming call."],
- c:[2],
- e:"<code>stop_reason</code> arrives in the final stream event. A correct streaming implementation handles the content events and the terminal stop event together."},
-{d:"D1",t:"single",w:2,s:"S1",
- q:"MeridianPay's volume triples. An engineer wants to make each subagent \"smarter\" by adding more tools and longer prompts to absorb the load. What is the better approach?",
- o:["Consolidate everything into one large agent to reduce overhead.",
-    "Scale throughput via parallelization / more agent instances while keeping individual agents simple and focused.",
-    "Add 15 more tools to the coordinator so it can handle spikes.",
-    "Maximize each subagent's context window."],
- c:[1],
- e:"Scale by parallelism and horizontal instances, not by making individual agents more complex. Piling tools onto an agent triggers routing degradation; the exam favors keeping architecture simple while scaling throughput."},
-{d:"D1",t:"single",w:1,
- q:"A multi-agent system returns incorrect results. Which is a commonly correct diagnosis the exam emphasizes?",
- o:["The coordinator should have done all the work itself.",
-    "A subagent isn't receiving necessary context (isolation violation), the coordinator is routing to the wrong subagent (weak tool descriptions), or the loop isn't checking <code>stop_reason</code>.",
-    "The model temperature is too low.",
-    "<code>stop_reason</code> allowed too few iterations."],
- c:[1],
- e:"The classic culprits are context-isolation violations, mis-routing from poor tool descriptions, or improper loop termination — all directly testable diagnoses."},
-{d:"D1",t:"single",w:1,
- q:"Which statement best distinguishes when to choose an agentic architecture over a simpler fixed workflow?",
- o:["Always choose agents; workflows are deprecated.",
-    "Use an agent when the task needs dynamic tool use and autonomous, variable action sequences; use a simpler workflow when steps are fixed and predictable.",
-    "Use agents only for single-turn API calls.",
-    "Workflows are for production; agents are only for demos."],
- c:[1],
- e:"Agentic patterns suit autonomy, tool use, and variable action loops. Deterministic, fixed-step tasks are better served by a simpler workflow. Match the pattern to the problem rather than defaulting to maximum complexity."},
-{d:"D1",t:"single",w:2,s:"S2",
- q:"HelixCare wants to (1) verify a patient's insurance and (2) summarize their prior visit notes, then combine both into one reply. The two operations don't depend on each other. What is the most efficient correct design?",
- o:["Run them sequentially because all medical tasks must be ordered.",
-    "Launch them as parallel Tasks, then have the coordinator aggregate both results into the reply.",
-    "Merge both into a single 20-tool agent.",
-    "Use <code>fork_session</code> to run each, then discard one branch."],
- c:[1],
- e:"Independent operations → parallel Tasks plus coordinator aggregation. Sequencing is unnecessary overhead, and forking is for exploration, not result aggregation."},
-
-/* ===== DOMAIN 2 — Tool Design & MCP Integration (11) ===== */
-{d:"D2",t:"single",w:1,
- q:"In a single agent with several tools, what is the primary mechanism Claude uses to decide which tool to call?",
- o:["The order tools are listed in the request.",
-    "The tools' JSON-schema field types.",
-    "The tool descriptions.",
-    "The <code>tool_choice</code> value alone."],
- c:[2],
- e:"Tool descriptions are the primary routing signal. They must be clear, specific, differentiating between similar tools, and honest about limitations."},
-{d:"D2",t:"single",w:1,
- q:"What does CCA-F guidance say about the number of tools per agent?",
- o:["Unlimited; Claude handles any count equally well.",
-    "4–5 tools is optimal; routing accuracy degrades significantly above ~18 tools.",
-    "Exactly 10 tools maximizes accuracy.",
-    "Fewer than 3 tools is always required."],
- c:[1],
- e:"4–5 tools is the optimal range; beyond roughly 18 tools, routing accuracy drops sharply. The fix for complex systems is better architecture (hub-and-spoke with focused tool sets), not more tools."},
-{d:"D2",t:"single",w:2,s:"S1",
- q:"After MeridianPay adds many new tools to one agent, Claude increasingly calls the wrong tool. What is the best fix?",
- o:["Rewrite the tool descriptions and keep the count as-is.",
-    "Lower the temperature to make routing deterministic.",
-    "Restructure into hub-and-spoke with specialized subagents, each holding a focused 4–5 tool set.",
-    "Set <code>tool_choice: any</code> to force a selection."],
- c:[2],
- e:"The root cause is exceeding the optimal tool count. The correct response is architectural — split into specialized subagents with focused toolsets. Improving descriptions helps only marginally; forcing a tool choice doesn't fix mis-routing."},
-{d:"D2",t:"single",w:1,
- q:"Which <code>tool_choice</code> setting forces Claude to use one of the available tools while letting it choose which one?",
- o:["<code>auto</code>","<code>any</code>","<code>{type:\"tool\", name:\"...\"}</code>","<code>none</code>"],
- c:[1],
- e:"<code>any</code> requires a tool call but lets the model pick which. <code>auto</code> lets it decide whether to use a tool at all; the named form forces a specific tool; <code>none</code> forbids tools."},
-{d:"D2",t:"single",w:1,
- q:"You want a synthesis step where tool use would be inappropriate and only a text response is desired. Which <code>tool_choice</code> is correct?",
- o:["<code>auto</code>","<code>any</code>","<code>none</code>","<code>{type:\"tool\", name:\"synthesize\"}</code>"],
- c:[2],
- e:"<code>none</code> prevents tool use — exactly right for analysis or synthesis steps where calling a tool would be wrong."},
-{d:"D2",t:"single",w:1,
- q:"Which file configures MCP servers shared with everyone on a project and is typically committed to version control?",
- o:["<code>~/.claude.json</code> (user-level)",
-    "<code>.mcp.json</code> in the project root (project-level)",
-    "<code>~/.claude/CLAUDE.md</code>",
-    "<code>.claude/skills/</code>"],
- c:[1],
- e:"Project-level <code>.mcp.json</code> holds shared servers and is committed to source control. <code>~/.claude.json</code> is personal/user-scoped."},
-{d:"D2",t:"single",w:2,
- q:"An MCP-based tool works for one developer but not their teammates. What is the most likely cause and fix?",
- o:["The teammates need newer hardware.",
-    "The working developer has the config in their user-level <code>~/.claude.json</code>; the shared <code>.mcp.json</code> is missing or misconfigured. Fix: add the shared config to the project's <code>.mcp.json</code>.",
-    "MCP requires per-user license keys.",
-    "The project must switch from stdio to SSE transport."],
- c:[1],
- e:"This is a scoping bug. Servers that the whole team needs belong in the project-level <code>.mcp.json</code>, not in one person's user-level config."},
-{d:"D2",t:"single",w:2,
- q:"How should authentication credentials be supplied to an MCP server defined in <code>.mcp.json</code>?",
- o:["Hardcode the token string directly in <code>.mcp.json</code>.",
-    "Reference an environment variable via <code>${GITHUB_TOKEN}</code> so secrets aren't committed.",
-    "Place the token in a comment in the file.",
-    "Pass it as a literal inside the tool description."],
- c:[1],
- e:"MCP configs support <code>${VAR}</code> environment-variable expansion at runtime. Reference env vars; never hardcode secrets in a committed file."},
-{d:"D2",t:"single",w:2,
- q:"A search tool hits an authentication timeout. What must it return so Claude responds correctly?",
- o:["An empty result array so the loop proceeds.",
-    "A structured error distinguishing an access failure (type + <code>isRetryable</code> + context) from a genuine empty result.",
-    "The string \"error\" with no metadata.",
-    "A fabricated best-guess result."],
- c:[1],
- e:"Returning empty on failure makes Claude confidently report \"no results\" when the search actually failed. Distinguish access failures from true empty results using structured error information."},
-{d:"D2",t:"multi",w:1,
- q:"A well-designed structured tool error should include which of the following?",
- o:["The error type/category (auth, rate-limit, not-found, server error).",
-    "An <code>isRetryable</code> flag indicating transient vs permanent.",
-    "Contextual information about what the tool was attempting.",
-    "A self-assessed confidence score from Claude about the failure."],
- c:[0,1,2],
- e:"Error type, an <code>isRetryable</code> flag, and context are the recommended fields. A model self-confidence score is neither part of a structured tool error nor a reliable signal."},
-{d:"D2",t:"single",w:1,
- q:"For a structured-extraction step where you programmatically know exactly which tool must run, which <code>tool_choice</code> is most appropriate?",
- o:["<code>auto</code>","<code>none</code>","<code>{type:\"tool\", name:\"extract_fields\"}</code>","<code>any</code>"],
- c:[2],
- e:"Naming the specific tool forces that exact call — ideal for deterministic structured extraction where any other tool (or a plain text reply) would be wrong."},
-
-/* ===== DOMAIN 3 — Claude Code Configuration & Workflows (12) ===== */
-{d:"D3",t:"single",w:1,
- q:"Given user-level, project-level, and directory-level <code>CLAUDE.md</code> files with a conflicting instruction, which takes precedence?",
- o:["User-level overrides everything.",
-    "Project-level always wins.",
-    "The more specific (directory-level) instruction overrides the more general ones where they conflict; all applicable levels are loaded and combined.",
-    "Whichever file was modified most recently."],
- c:[2],
- e:"Precedence is by specificity: directory &gt; project &gt; user. All applicable levels load and combine, with the more specific instruction winning conflicts."},
-{d:"D3",t:"single",w:2,s:"S3",
- q:"CodeForge's tech lead added the team's coding standards to their own <code>~/.claude/CLAUDE.md</code>, but other engineers' Claude Code sessions ignore them. Why, and what's the fix?",
- o:["The standards file is corrupted; recreate it.",
-    "User-level <code>CLAUDE.md</code> is personal and not shared; move shared standards to the project-level <code>./CLAUDE.md</code> (committed) or <code>.claude/rules/</code>.",
-    "<code>CLAUDE.md</code> doesn't support coding standards; use a linter only.",
-    "Each engineer must run <code>--resume</code> to load the lead's session."],
- c:[1],
- e:"User-level instructions apply only to that user. Shared team standards belong in the committed project-level <code>CLAUDE.md</code> (or rules files) so every engineer's session picks them up."},
-{d:"D3",t:"single",w:1,
- q:"How do <code>.claude/rules/</code> files apply conditionally to specific file types?",
- o:["They run on every file regardless of type.",
-    "They apply based on file glob patterns (e.g. <code>*.tsx</code>), giving granular, type-specific rules.",
-    "They only apply to files in the project root.",
-    "They require a directory-level <code>CLAUDE.md</code> to function."],
- c:[1],
- e:"Rules files apply conditionally via glob patterns — a more granular alternative to directory-level <code>CLAUDE.md</code> when different file types in the same directory need different treatment."},
-{d:"D3",t:"single",w:1,
- q:"A reusable Claude Code skill should run in a copy of the conversation and NOT alter the main thread when it finishes. Which frontmatter setting achieves this?",
- o:["<code>allowed-tools: all</code>","<code>context: fork</code>","<code>mode: plan</code>","<code>scope: project</code>"],
- c:[1],
- e:"<code>context: fork</code> runs the skill in a forked context — useful for exploratory or analytical skills that shouldn't modify the main conversation."},
-{d:"D3",t:"single",w:1,
- q:"What is the purpose of the <code>allowed-tools</code> field in a skill's frontmatter?",
- o:["To list which models the skill can call.",
-    "To define a security boundary specifying which tools the skill may use.",
-    "To auto-install missing tools.",
-    "To set the skill's token budget."],
- c:[1],
- e:"<code>allowed-tools</code> restricts a skill's tool access — a security boundary that keeps the skill within its intended scope."},
-{d:"D3",t:"single",w:2,s:"S3",
- q:"CodeForge plans a refactor touching 12 files across core billing logic. Which Claude Code mode is appropriate and why?",
- o:["Direct Execution, because Claude Code is fast.",
-    "Plan Mode, because the change is large, high-risk, and touches core business logic — review the plan before any changes.",
-    "Direct Execution, since billing is well understood.",
-    "Neither; disable Claude Code for billing."],
- c:[1],
- e:"Plan Mode suits large, high-risk, or ambiguous changes — refactors touching more than 3–5 files or core logic. Direct Execution is for small, well-defined, low-risk edits."},
-{d:"D3",t:"single",w:1,
- q:"Which task is the best fit for Direct Execution rather than Plan Mode?",
- o:["Renaming a single local variable in one well-understood utility function.",
-    "Migrating the authentication layer across the codebase.",
-    "Rewriting the production data model.",
-    "A refactor spanning 10 files."],
- c:[0],
- e:"Direct Execution fits small, well-understood, low-risk changes. The other options are large or high-risk and call for Plan Mode."},
-{d:"D3",t:"single",w:2,s:"S3",
- q:"CodeForge wants Claude Code to run non-interactively inside CI to review PRs (reading stdin, writing stdout). Which flag enables this?",
- o:["<code>--resume</code>","<code>-p</code> (pipe / non-interactive mode)","<code>--plan</code>","<code>/compact</code>"],
- c:[1],
- e:"The <code>-p</code> flag enables non-interactive pipe mode for CI/CD: read from stdin, process, write to stdout, no human interaction."},
-{d:"D3",t:"single",w:2,s:"S3",
- q:"In CodeForge's CI, the same Claude Code instance that generated the code is also reviewing it. Why change this, and to what?",
- o:["Keep it — self-review is more efficient and equally effective.",
-    "Use an independent reviewing instance; a self-reviewing instance shares the generator's blind spots and catches fewer issues.",
-    "Replace review with a higher iteration cap.",
-    "Have the same instance review twice for redundancy."],
- c:[1],
- e:"Independent review beats self-review: a model retains its generation reasoning in-session and is less likely to question its own decisions. A separate instance (no prior reasoning context) catches subtle issues."},
-{d:"D3",t:"single",w:1,
- q:"Claude Code isn't following an expected instruction. Per CCA-F, what is the single most common real-world (and most-tested) misconfiguration?",
- o:["The instruction was written in Markdown instead of plain text.",
-    "Shared team standards were placed at the user level instead of the project level.",
-    "The project lacked a <code>.mcp.json</code>.",
-    "Plan Mode was left enabled."],
- c:[1],
- e:"The recurring trap: shared standards placed at the user level (personal, not shared) instead of the committed project level."},
-{d:"D3",t:"multi",w:2,
- q:"Designing Claude Code into CI/CD pipelines, which practices are recommended?",
- o:["Use <code>-p</code> for non-interactive operation.",
-    "For PR review, use a separate instance from the one that generated the code.",
-    "For a test-generation job, scope the instance to only testing-related tools and files.",
-    "Have the generating instance review its own output to save resources."],
- c:[0,1,2],
- e:"Pipe mode, independent review, and scoped tool/file access are all recommended. Having the generator review itself contradicts the independent-review principle."},
-{d:"D3",t:"single",w:1,
- q:"Where should shared, version-controlled team instructions for Claude Code be placed?",
- o:["Each developer's <code>~/.claude/CLAUDE.md</code>.",
-    "The project-level <code>./CLAUDE.md</code> (committed) or <code>.claude/rules/</code> files.",
-    "A pinned chat message.",
-    "The <code>.mcp.json</code> file."],
- c:[1],
- e:"Project-level <code>CLAUDE.md</code> (committed) or rules files are the shared, team-wide mechanism. User-level config is personal."},
-
-/* ===== DOMAIN 4 — Prompt Engineering & Structured Output (12) ===== */
-{d:"D4",t:"single",w:1,
- q:"An agent's summaries are inconsistent in length, tone, and content. Which prompt change most directly addresses this?",
- o:["Add \"please be consistent\" to the prompt.",
-    "Replace vague guidance (\"write a good summary\") with explicit, measurable criteria (length range, required elements, tone, exclusions).",
-    "Raise the temperature for variety.",
-    "Switch to the Batch API."],
- c:[1],
- e:"Explicit, measurable criteria produce consistent, verifiable output. Vague terms like \"good\" are unmeasurable, so they can't be validated or enforced programmatically."},
-{d:"D4",t:"single",w:1,
- q:"What is the recommended number of few-shot examples for improving output consistency?",
- o:["0–1",
-    "2–4, ideally covering edge cases and demonstrating the exact output format.",
-    "10–12 for maximum coverage.",
-    "As many as fit in the context window."],
- c:[1],
- e:"2–4 is optimal: fewer may not establish the pattern, more gives diminishing returns and wastes context. Examples should be diverse and cover edge cases, not just the happy path."},
-{d:"D4",t:"single",w:2,
- q:"You use a <code>tool_use</code> JSON schema to constrain Claude's output. What does the schema guarantee?",
- o:["Both the structure and the correctness/meaning of the values.",
-    "Structural correctness (fields, types, shape) only — not whether the values are semantically valid.",
-    "That values fall within business-rule ranges.",
-    "That the output is free of hallucinated facts."],
- c:[1],
- e:"Schemas enforce <b>syntax</b>, not <b>semantics</b>. A schema can guarantee an \"age\" field is an integer but not that the integer is a plausible age. You still need programmatic validation plus a retry loop."},
-{d:"D4",t:"single",w:2,s:"S4",
- q:"LexBrief extracts fields from contracts where some values are genuinely absent or ambiguous. How should the schema be designed?",
- o:["Make all fields required so nothing is missed.",
-    "Use nullable fields for possibly-absent data and add an \"unclear\"/\"ambiguous\" option to enum fields so Claude can signal uncertainty instead of guessing.",
-    "Force a default value for every missing field.",
-    "Drop any record with missing data before extraction."],
- c:[1],
- e:"Nullable fields plus an \"unclear\" enum value let Claude flag uncertainty rather than hallucinate. Those records can then be routed to human review instead of proceeding with confident-but-wrong data."},
-{d:"D4",t:"multi",w:2,
- q:"Designing a validation retry loop for structured output, which elements are correct?",
- o:["Validate the schema-constrained output against semantic/business rules in code.",
-    "On failure, send BOTH the invalid output and the specific validation errors back to Claude.",
-    "Cap retries at a maximum count.",
-    "Keep retrying with the identical prompt and no error detail until it passes."],
- c:[0,1,2],
- e:"Validate semantics in code, return the invalid output plus the specific errors so Claude can correct itself, and cap retries. Re-sending the same prompt with no error detail just repeats the mistake."},
-{d:"D4",t:"single",w:2,s:"S4",
- q:"What is the complete, production-grade pipeline for reliable structured extraction at LexBrief?",
- o:["A very detailed prompt instructing valid JSON, nothing more.",
-    "<code>tool_use</code> schema (syntax) + programmatic validation (semantics) + a retry loop that returns validation errors to Claude.",
-    "Schema enforcement alone, since it guarantees correctness.",
-    "Manual human entry for every contract."],
- c:[1],
- e:"The recommended three layers are schema + validation + retry. Prompt-only JSON is the weakest approach, and schema-only is incomplete because it doesn't catch semantic errors."},
-{d:"D4",t:"single",w:2,
- q:"A high-volume system relies solely on the prompt instruction \"always return valid JSON\" and sees occasional malformed output. Best fix?",
- o:["Strengthen the wording to \"you MUST always return valid JSON.\"",
-    "Add <code>tool_use</code> schema enforcement, then programmatic validation, then a retry loop.",
-    "Lower temperature to 0 and keep prompt-only enforcement.",
-    "Post-process by stripping characters until it parses."],
- c:[1],
- e:"Prompt-only enforcement is probabilistic — at scale even a 1% failure rate is thousands of errors. Use the schema + validation + retry stack; prompt wording is the weakest lever."},
-{d:"D4",t:"single",w:2,s:"S4",
- q:"LexBrief must process 80,000 archived contracts overnight; nothing downstream waits on individual results in real time, and cost matters. Is the Batch API appropriate?",
- o:["No — the Batch API can't process documents.",
-    "Yes — non-blocking, high-volume background processing is the ideal Batch API use case, capturing the ~50% cost savings.",
-    "No — only the real-time API can extract structured data.",
-    "Yes, but only if multi-turn conversation is enabled per request."],
- c:[1],
- e:"Batch fits non-blocking, large-volume background work and offers ~50% savings. (It also doesn't support multi-turn, which is irrelevant for independent extraction requests.)"},
-{d:"D4",t:"single",w:2,
- q:"A request/response pipeline where the user waits for output proposes switching to the Batch API to cut cost. Correct assessment?",
- o:["Approve — the 50% savings always justifies it.",
-    "Reject for this use case — Batch has no SLA within its 24-hour window, so it is inappropriate for any blocking/real-time workflow.",
-    "Approve if average latency is under one minute.",
-    "Approve if multi-turn is disabled."],
- c:[1],
- e:"Batch returns within 24 hours with no in-window SLA — results might arrive in minutes or hours. Using it for blocking workflows is a named anti-pattern, regardless of cost savings."},
-{d:"D4",t:"multi",w:1,
- q:"Which statements about the Batch API are correct?",
- o:["~50% cost reduction versus real-time calls.",
-    "Results returned within 24 hours, with no guaranteed SLA inside that window.",
-    "Does not support multi-turn conversations; each request is independent.",
-    "Guarantees sub-minute latency suitable for live chat."],
- c:[0,1,2],
- e:"Cost savings, a 24-hour window without an internal SLA, and no multi-turn support are all true. There is no real-time latency guarantee, so it's unsuitable for live chat."},
-{d:"D4",t:"single",w:2,
- q:"For a critical output you add a review step. What is the key requirement for it to be effective?",
- o:["The reviewing instance should be the same one that generated the output, for consistency.",
-    "The reviewing instance must be independent of the generating instance (no shared generation context), since it catches errors the generator overlooks.",
-    "Use extended thinking on the generator instead of a separate reviewer.",
-    "Ask the generator to rate its own confidence."],
- c:[1],
- e:"Independent review &gt; self-review. An instance without the generator's prior reasoning context catches subtle issues that self-review (or extended thinking on the same instance) misses."},
-{d:"D4",t:"single",w:1,
- q:"Beyond using 2–4 examples, what makes few-shot examples most effective?",
- o:["They should all illustrate the simplest happy-path input.",
-    "They should be diverse, cover edge cases (e.g. ambiguous inputs), and demonstrate the exact expected output format.",
-    "They should be as long and detailed as possible.",
-    "They should omit the output to avoid biasing Claude."],
- c:[1],
- e:"Diversity, edge-case coverage, and exact-format demonstration drive consistency. Happy-path-only examples fail on messy real-world inputs; omitting the output defeats the purpose."},
-
-/* ===== DOMAIN 5 — Context Management & Reliability (9) ===== */
-{d:"D5",t:"single",w:2,
- q:"An agent reliably \"forgets\" instructions placed in the middle of a long context but honors those at the start and end. What phenomenon is this, and a correct mitigation?",
- o:["Token starvation; raise <code>max_tokens</code>.",
-    "The \"lost-in-the-middle\" effect; mitigate by placing persistent critical facts at the top, trimming verbose outputs, and adding summaries at the top.",
-    "Temperature drift; set temperature to 0.",
-    "A model bug; switch models."],
- c:[1],
- e:"Models attend most to the beginning and end of a long context. Reposition critical facts to the top, trim verbose tool outputs, and keep summaries at the top of the high-attention zone."},
-{d:"D5",t:"multi",w:2,s:"S2",
- q:"HelixCare must define when its triage agent escalates to a human. Which are VALID escalation triggers?",
- o:["The user explicitly asks for a human.",
-    "The applicable policy is ambiguous.",
-    "The agent has made no progress after N attempts.",
-    "Sentiment analysis indicates the patient \"seems upset.\""],
- c:[0,1,2],
- e:"Valid triggers: explicit human request, ambiguous policy, and no progress after N attempts — all observable and programmatic. Sentiment is poorly calibrated and is <b>not</b> a valid trigger."},
-{d:"D5",t:"single",w:2,s:"S2",
- q:"An engineer proposes adding sentiment-based escalation \"as an additional safety measure\" on top of the valid triggers. Best response per CCA-F?",
- o:["Approve — extra safety never hurts.",
-    "Reject — sentiment is unreliable and injects a poorly-calibrated signal into escalation logic, causing false positives and negatives, even as an add-on.",
-    "Approve only for high-risk cases.",
-    "Replace the valid triggers with sentiment entirely."],
- c:[1],
- e:"The exam flags sentiment-based escalation as incorrect even when framed as an extra safeguard — it introduces an unreliable signal that mis-escalates polite-but-frustrated and informal-but-satisfied users alike."},
-{d:"D5",t:"single",w:2,
- q:"Is asking Claude \"how confident are you (1–10)?\" and escalating below a threshold a sound escalation mechanism?",
- o:["Yes — it directly measures answer accuracy.",
-    "No — LLM self-assessed confidence is poorly calibrated; it's effectively another generation, not an independent measurement.",
-    "Yes, if you average several confidence scores.",
-    "Yes, for low-risk domains only."],
- c:[1],
- e:"Self-reported confidence is unreliable — high confidence on wrong answers, low on right ones. Use observable, programmatic triggers instead of self-assessment."},
-{d:"D5",t:"single",w:1,
- q:"Which context-degradation strategy best fits an interactive Claude Code session where a human can manually trigger context management?",
- o:["The scratchpad pattern only.",
-    "Subagent delegation only.",
-    "The <code>/compact</code> command, which summarizes the conversation and starts a fresh context with the summary.",
-    "Raising the iteration cap."],
- c:[2],
- e:"<code>/compact</code> is the manual trigger for interactive sessions. Scratchpads suit single-agent gradually-growing context; subagent delegation suits large, diverse volumes."},
-{d:"D5",t:"single",w:2,s:"S4",
- q:"LexBrief sees accuracy drop when 50 contracts are stuffed into one context for cross-document comparison. Best approach?",
- o:["Increase the context window and include all 50 at once.",
-    "Use per-document passes to extract key facts individually, then compare the extracted facts in a synthesis pass — avoid one giant context.",
-    "Randomly drop half the documents.",
-    "Use a single very long prompt with all documents and a \"pay attention to everything\" instruction."],
- c:[1],
- e:"\"Larger context = better attention\" is an anti-pattern. Use per-file passes plus a synthesis pass; reduce per-call context rather than maximizing it."},
-{d:"D5",t:"single",w:2,s:"S4",
- q:"LexBrief's overnight batch job crashes midway. Which recovery pattern ensures no work is lost or duplicated?",
- o:["Restart the whole job from scratch.",
-    "The manifest-file pattern: write a manifest of all tasks up front, update completion status as each finishes, and on restart read it to retry only incomplete tasks.",
-    "<code>fork_session</code> from the last response.",
-    "Increase the token budget and rerun."],
- c:[1],
- e:"Manifest files track the task list, completion status, and partial results, so recovery retries only what's incomplete — the right pattern for batch operations."},
-{d:"D5",t:"single",w:1,
- q:"Match the recovery approach to the operational context. Which pairing is correct?",
- o:["Interactive interrupted session → manifest files.",
-    "Batch processing operation → <code>--resume</code>.",
-    "Interactive interrupted session → <code>--resume</code>; batch processing operation → manifest files.",
-    "Both contexts → <code>fork_session</code>."],
- c:[2],
- e:"Interactive interrupted work → <code>--resume</code>; batch operations → manifest files; multi-stage pipelines → checkpointing. Match the recovery pattern to the context."},
-{d:"D5",t:"single",w:2,
- q:"You can't human-review every output, and reviewing randomly misses the riskiest ones. What does CCA-F recommend?",
- o:["Review 100% of outputs regardless of cost.",
-    "Stratified sampling — classify outputs by risk and review a higher percentage of high-risk categories, feeding results back to improve the system.",
-    "Review only the first 10 outputs each day.",
-    "Review a fixed random 5% with no risk weighting."],
- c:[1],
- e:"Stratified sampling gives the best QA coverage per review budget: sample more heavily from high-risk strata and use findings to improve prompts, validation, and sampling rates."},
-];
+/* Each: d(domain) t(single|multi) w(weight 1|2) q(stem) o[options] c[correct idx] e(explanation) s?(scenario) */
+const BANK = {
+D1:[
+ {t:"single",w:2,q:"You implement the core agentic loop. After each API response your code must decide whether to execute a tool and continue, or stop. What is the correct, production-grade way to decide?",
+  o:["Parse Claude's text for phrases like \"task complete.\"","Inspect <code>stop_reason</code>: continue on <code>tool_use</code>, exit on <code>end_turn</code>.","Stop after a fixed cap of 10 iterations regardless of state.","Make a follow-up call asking Claude whether it's finished."],c:[1],
+  e:"<code>stop_reason</code> is the deterministic control signal. Parsing natural language is an explicit anti-pattern; an iteration cap is a backstop, not the primary mechanism."},
+ {t:"single",w:1,q:"A response returns with <code>stop_reason</code> = <code>max_tokens</code>. How should a robust loop treat this?",
+  o:["Treat it like <code>end_turn</code> and return the partial output as final.","Retry the same request unchanged.","Handle it as a distinct edge case — output was truncated — e.g. request a continuation.","Abort the session with a fatal error."],c:[2],
+  e:"<code>max_tokens</code> means truncation — neither completion nor a tool request. Handle it explicitly, typically by continuing generation."},
+ {t:"single",w:2,s:"S1",q:"MeridianPay's coordinator delegates to specialized subagents. What is the coordinator's correct role in a hub-and-spoke architecture?",
+  o:["Do all tool calls itself, using subagents only as fallback.","Route and delegate to subagents and synthesize their results, without doing the specialized work itself.","Share its full conversation context with every subagent.","Hold every tool so it can bypass subagents."],c:[1],
+  e:"The hub coordinates — routing, delegation, synthesis — not the specialized work. Sharing full context breaks isolation; holding all tools is the \"all tools to all agents\" anti-pattern."},
+ {t:"single",w:2,s:"S1",q:"MeridianPay's refund subagent keeps \"failing to access\" the customer's account tier, though the user stated it earlier to the coordinator. Most likely cause?",
+  o:["The subagent's model version is older.","Subagents inherit context lazily and need <code>--resume</code>.","Subagents don't inherit the parent's conversation context; the tier was never explicitly passed.","The coordinator's context overflowed."],c:[2],
+  e:"Subagents start clean by design. The fix is to explicitly pass the needed information when invoking the subagent."},
+ {t:"single",w:1,q:"Subagent context isolation is a deliberate design choice. Which is NOT a benefit it provides?",
+  o:["Prevents context pollution from unrelated threads.","Reduces risk of leaking sensitive info to subagents that don't need it.","Makes each subagent more predictable and easier to debug.","Automatically shares retrieved results across all subagents."],c:[3],
+  e:"Isolation reduces pollution, improves security, and aids predictability. It specifically does not auto-share results — that would defeat isolation."},
+ {t:"multi",w:2,q:"Your coordinator queries four independent data sources at once with parallel Task calls. Which principles apply?",
+  o:["Only parallelize tasks truly independent of one another's outputs.","The coordinator aggregates and (where needed) deduplicates results.","On a task failure, decide retry/skip/fail based on criticality.","Tasks with strict output dependencies should still be parallelized for speed."],c:[0,1,2],
+  e:"Parallelize only independent work; aggregate and dedupe; handle failures per criticality. Dependent tasks must run sequentially."},
+ {t:"single",w:1,q:"An agent must explore two alternative resolution paths before committing, without polluting the main thread. Which session mechanism fits?",
+  o:["<code>--resume</code>, because it preserves history.","<code>fork_session</code>, which copies current history and diverges.","<code>/compact</code>, to summarize before branching.","An isolated subagent with no shared history."],c:[1],
+  e:"<code>fork_session</code> copies history and diverges — ideal for \"what-if\" exploration. <code>--resume</code> is for continuing interrupted work."},
+ {t:"single",w:1,q:"A long-running agent was interrupted by a host restart mid-task. History should be preserved and work continued exactly where it stopped. Which mechanism?",
+  o:["<code>fork_session</code>","<code>--resume</code>","Start fresh and re-paste the transcript.","<code>/compact</code> then restart."],c:[1],
+  e:"<code>--resume</code> continues an existing session with history intact — the canonical pattern for resuming interrupted work."},
+ {t:"single",w:2,s:"S2",q:"HelixCare needs an agent answering a narrow FAQ set and booking via one scheduling tool. An engineer proposes a five-subagent hub-and-spoke design. Best guidance?",
+  o:["Approve it; more agents always improve reliability.","Match architecture to complexity — a single focused agent fits; reserve hub-and-spoke for genuinely multi-specialization tasks.","Use parallel Tasks per FAQ category.","Require sentiment routing between subagents."],c:[1],
+  e:"Match complexity to architecture rather than defaulting to the most complex option. A narrow, single-tool task needs a single agent."},
+ {t:"single",w:2,q:"Inside an agentic loop, a tool call fails with a transient network error. Recommended handling?",
+  o:["Exit the loop and surface a fatal error.","Silently return an empty result so the loop proceeds.","Return the error to Claude as a structured tool result so it can retry, try an alternative, or inform the user.","Permanently strip the failed tool and continue."],c:[2],
+  e:"Keep the loop in control: return structured error info as a tool result. Exiting on first failure or silently returning empty are anti-patterns."},
+ {t:"single",w:1,q:"You want to control runaway cost in long loops. Which statement best captures correct practice?",
+  o:["An iteration cap and a token budget are the same control.","Use <code>stop_reason</code> as primary terminator, an iteration cap as safety net, and a token budget to cap cumulative cost.","Replace <code>stop_reason</code> with a strict 10-iteration cap.","Token budgets are unnecessary if you cap iterations."],c:[1],
+  e:"Complementary controls: <code>stop_reason</code> primary, iteration cap as backstop (logs when hit), token budget caps cumulative spend."},
+ {t:"single",w:1,q:"When streaming responses in real time, where do you obtain <code>stop_reason</code>?",
+  o:["At the start of the stream.","Inferred from the last content chunk's text.","In the final stream event; your handler processes content events and the final stop event.","Streaming omits it; make a second non-streaming call."],c:[2],
+  e:"<code>stop_reason</code> arrives in the final stream event. A correct implementation handles content events plus the terminal stop event."},
+ {t:"single",w:2,s:"S1",q:"MeridianPay's volume triples. An engineer wants each subagent \"smarter\" via more tools and longer prompts to absorb load. Better approach?",
+  o:["Consolidate everything into one large agent.","Scale throughput via parallelization / more instances while keeping individual agents simple and focused.","Add 15 more tools to the coordinator.","Maximize each subagent's context window."],c:[1],
+  e:"Scale by parallelism and horizontal instances, not by making agents more complex. Piling on tools triggers routing degradation."},
+ {t:"single",w:1,q:"A multi-agent system returns incorrect results. Which is a commonly correct diagnosis?",
+  o:["The coordinator should have done all the work itself.","A subagent isn't receiving needed context (isolation violation), the coordinator routes to the wrong subagent (weak descriptions), or the loop isn't checking <code>stop_reason</code>.","Temperature is too low.","<code>stop_reason</code> allowed too few iterations."],c:[1],
+  e:"Classic culprits: context-isolation violations, mis-routing from poor descriptions, or improper loop termination."},
+ {t:"single",w:1,q:"Which best distinguishes when to choose an agentic architecture over a fixed workflow?",
+  o:["Always choose agents; workflows are deprecated.","Use an agent when the task needs dynamic tool use and variable action sequences; use a workflow when steps are fixed.","Use agents only for single-turn calls.","Workflows are for production; agents only for demos."],c:[1],
+  e:"Agentic patterns suit autonomy and variable action loops; deterministic fixed-step tasks suit simpler workflows."},
+ {t:"single",w:2,s:"S2",q:"HelixCare must verify insurance and summarize prior visit notes, then combine both. The two don't depend on each other. Most efficient correct design?",
+  o:["Run them sequentially because medical tasks must be ordered.","Launch them as parallel Tasks, then have the coordinator aggregate both.","Merge both into a single 20-tool agent.","Use <code>fork_session</code> to run each, discarding one branch."],c:[1],
+  e:"Independent operations → parallel Tasks plus coordinator aggregation. Sequencing is needless; forking is for exploration, not aggregation."},
+ {t:"single",w:1,q:"A single response contains two <code>tool_use</code> blocks. Correct handling?",
+  o:["Execute only the first.","Execute both tools and return both <code>tool_result</code> blocks in the next turn before continuing.","Ignore them and ask Claude to pick one.","Raise an error."],c:[1],
+  e:"A response can request multiple tools; execute all and return all corresponding <code>tool_result</code> blocks together, then continue."},
+ {t:"single",w:1,q:"When returning a tool result to Claude, what links it to the originating request?",
+  o:["The tool name.","The matching <code>tool_use_id</code>.","Array position only.","A timestamp."],c:[1],
+  e:"Each <code>tool_result</code> carries the <code>tool_use_id</code> of its <code>tool_use</code> block so Claude maps results to calls."},
+ {t:"single",w:2,s:"S5",q:"Atlas must handle \"reroute all delayed shipments in a region,\" decomposing into a number of subtasks not known in advance. Which pattern fits?",
+  o:["Prompt chaining with fixed steps.","Orchestrator-worker: a coordinator dynamically decomposes the task and delegates to workers.","A single tool call.","Evaluator-optimizer."],c:[1],
+  e:"Orchestrator-worker suits tasks dynamically decomposed at runtime into a variable number of subtasks."},
+ {t:"single",w:1,q:"Which describes the prompt-chaining workflow?",
+  o:["Many agents vote on an answer.","Decompose a task into a fixed sequence of steps where each output feeds the next.","Route input to one of several handlers.","One model grades another's output."],c:[1],
+  e:"Prompt chaining = fixed, ordered steps each consuming the prior output; best when the decomposition is known and stable."},
+ {t:"single",w:1,q:"A support system must send billing questions to one path and technical questions to another. Which workflow pattern?",
+  o:["Routing / classification.","Parallelization.","Orchestrator-worker.","Evaluator-optimizer."],c:[0],
+  e:"Routing classifies the input and directs it to a specialized path — fitting when categories are distinct and known."},
+ {t:"single",w:1,q:"One call generates a draft and another critiques and requests revisions in a loop until criteria are met. Pattern?",
+  o:["Routing.","Evaluator-optimizer.","Prompt chaining.","Hub-and-spoke."],c:[1],
+  e:"Evaluator-optimizer pairs a generator with an evaluator that drives iterative improvement against explicit criteria."},
+ {t:"single",w:2,q:"For a task a single well-prompted call handles reliably, a team builds a four-agent orchestrator. Guidance?",
+  o:["Always prefer multi-agent.","Prefer the simplest pattern that works; add agentic complexity only when the task genuinely needs autonomy or dynamic decomposition.","Use evaluator-optimizer instead.","Add more workers."],c:[1],
+  e:"Start simple; introduce orchestration only when warranted — unnecessary complexity adds cost, latency, and failure surface."},
+ {t:"single",w:1,q:"What should you give a subagent when delegating?",
+  o:["The entire parent transcript.","A focused task description plus exactly the context it needs.","Nothing; it infers from history.","All system tools."],c:[1],
+  e:"Subagents get a clear, scoped task and the specific context required — not the whole parent conversation."},
+ {t:"multi",w:2,q:"Select all that contribute to a coordinator routing to the wrong subagent.",
+  o:["Vague or overlapping subagent/tool descriptions.","Too many similar choices to select among.","Missing differentiation about when each is appropriate.","Returning structured errors from tools."],c:[0,1,2],
+  e:"Mis-routing stems from unclear, overlapping, or undifferentiated descriptions and too many choices; structured errors actually help."},
+ {t:"single",w:1,q:"Task B needs Task A's output. How should they run?",
+  o:["In parallel for speed.","Sequentially — A then B.","Via <code>fork_session</code>.","As one giant prompt."],c:[1],
+  e:"Output dependencies force sequential execution; only independent tasks parallelize."},
+ {t:"single",w:2,s:"S1",q:"MeridianPay wants a backstop so a malfunctioning loop can't run forever. Best practice?",
+  o:["Rely solely on <code>stop_reason</code>.","Keep <code>stop_reason</code> primary and add a generous max-iteration cap that halts and logs when exceeded.","Cap at 2 iterations.","Ask Claude each turn if it's stuck."],c:[1],
+  e:"<code>stop_reason</code> terminates normally; a generous iteration cap is the safety backstop that logs when hit, signaling a bug."},
+ {t:"single",w:1,q:"A tool that charges a card is retried after a network error. What prevents a double charge?",
+  o:["Lowering temperature.","An idempotency key so the retry is recognized as the same operation.","A longer timeout.","Returning empty on failure."],c:[1],
+  e:"Side-effecting tools should use idempotency keys so retries don't duplicate effects."},
+ {t:"single",w:1,q:"Where should durable task state (e.g., collected fields) live across a multi-turn interaction?",
+  o:["Only in Claude's context, hoping it remembers.","In your application state, passed or reconstructed each turn as needed.","In a CLAUDE.md file.","In the tool descriptions."],c:[1],
+  e:"The application owns durable state; don't rely on the model to retain it implicitly across turns."},
+ {t:"single",w:2,s:"S5",q:"Atlas chains eight sequential tool calls and users complain about latency. The steps are mostly independent. Fix?",
+  o:["Add more sequential steps.","Parallelize the independent calls and only sequence true dependencies.","Increase max_tokens.","Switch to the Batch API."],c:[1],
+  e:"Collapse needless sequencing — run independent calls in parallel — to cut end-to-end latency."},
+ {t:"single",w:1,q:"What best justifies introducing a new specialized subagent?",
+  o:["To make the diagram look complete.","A distinct specialization with its own focused toolset that would bloat the coordinator if merged.","Any time tool count hits 6.","To share the coordinator's full context."],c:[1],
+  e:"Add a subagent for a genuine specialization that keeps each agent's tools focused — not arbitrarily."},
+ {t:"single",w:1,q:"Subagents return correct partial results but the final answer is wrong. Likely cause?",
+  o:["Subagent isolation.","The coordinator is mis-synthesizing/aggregating the subagent outputs.","<code>stop_reason</code>.","Too few tools."],c:[1],
+  e:"When the parts are right but the whole is wrong, suspect the coordinator's synthesis/aggregation step."},
+ {t:"single",w:1,q:"<code>stop_reason</code> = <code>end_turn</code> indicates…",
+  o:["The response was truncated.","Claude finished its turn naturally with no pending tool call.","A tool must be executed.","An error occurred."],c:[1],
+  e:"<code>end_turn</code> = natural completion; exit the loop and return the result."},
+ {t:"single",w:1,q:"<code>stop_reason</code> = <code>tool_use</code> indicates…",
+  o:["The task is complete.","Claude is requesting tool execution; run the tool(s) and continue the loop.","The context overflowed.","Stop and ask the user."],c:[1],
+  e:"<code>tool_use</code> = execute requested tool(s), append <code>tool_result</code>(s), and continue."},
+ {t:"single",w:2,s:"S2",q:"When HelixCare's agent escalates to a human, what should it pass along?",
+  o:["Nothing; the human will re-ask.","A structured handoff with the conversation summary, what was attempted, and why it's escalating.","Only the last user message.","Its self-rated confidence."],c:[1],
+  e:"Effective handoffs include a concise summary, actions taken, and the escalation reason so the human has context."},
+ {t:"single",w:1,q:"After parallel Tasks complete, results may arrive out of order. The coordinator should…",
+  o:["Assume arrival order equals request order.","Associate each result with its task explicitly before aggregating.","Discard late results.","Re-run everything."],c:[1],
+  e:"Don't rely on completion order — map each result back to its task before synthesis."},
+ {t:"single",w:1,q:"Which signals you need an agent loop rather than a single API call?",
+  o:["A one-shot classification.","The task requires taking actions, observing results, and deciding next steps iteratively.","A fixed template fill.","A simple summary."],c:[1],
+  e:"Agentic loops fit act-observe-decide cycles; one-shot tasks don't need them."},
+ {t:"multi",w:2,q:"Select all recommended for a coordinator-led multi-agent system.",
+  o:["Give each subagent a focused toolset.","Pass only needed context to each subagent.","Handle subagent failures explicitly (retry/skip/fail).","Share the coordinator's full history with every subagent."],c:[0,1,2],
+  e:"Focused tools, scoped context, explicit failure handling — yes; sharing full history breaks isolation."},
+],
+D2:[
+ {t:"single",w:1,q:"In a single agent with several tools, what is the primary mechanism Claude uses to decide which tool to call?",
+  o:["The order tools are listed.","The tools' JSON-schema field types.","The tool descriptions.","The <code>tool_choice</code> value alone."],c:[2],
+  e:"Tool descriptions are the primary routing signal — clear, differentiating, and honest about limitations."},
+ {t:"single",w:1,q:"What does CCA-F guidance say about the number of tools per agent?",
+  o:["Unlimited; Claude handles any count equally.","4–5 tools is optimal; routing accuracy degrades significantly above ~18 tools.","Exactly 10 maximizes accuracy.","Fewer than 3 is always required."],c:[1],
+  e:"4–5 optimal; beyond ~18 routing degrades. Fix complex systems with architecture, not more tools."},
+ {t:"single",w:2,s:"S1",q:"After MeridianPay adds many new tools to one agent, Claude increasingly calls the wrong tool. Best fix?",
+  o:["Rewrite the descriptions and keep the count.","Lower the temperature.","Restructure into hub-and-spoke with specialized subagents, each holding a focused 4–5 tool set.","Set <code>tool_choice: any</code>."],c:[2],
+  e:"Root cause is exceeding the optimal tool count. The fix is architectural — split into focused subagents."},
+ {t:"single",w:1,q:"Which <code>tool_choice</code> forces a tool call while letting Claude choose which?",
+  o:["<code>auto</code>","<code>any</code>","<code>{type:\"tool\", name:\"...\"}</code>","<code>none</code>"],c:[1],
+  e:"<code>any</code> requires a tool call but lets the model pick which."},
+ {t:"single",w:1,q:"You want a synthesis step where tool use is inappropriate and only text is desired. Which <code>tool_choice</code>?",
+  o:["<code>auto</code>","<code>any</code>","<code>none</code>","<code>{type:\"tool\", name:\"synthesize\"}</code>"],c:[2],
+  e:"<code>none</code> prevents tool use — right for analysis/synthesis steps."},
+ {t:"single",w:1,q:"Which file configures MCP servers shared with everyone on a project and is committed to version control?",
+  o:["<code>~/.claude.json</code> (user-level)","<code>.mcp.json</code> in the project root (project-level)","<code>~/.claude/CLAUDE.md</code>","<code>.claude/skills/</code>"],c:[1],
+  e:"Project-level <code>.mcp.json</code> holds shared servers and is committed."},
+ {t:"single",w:2,q:"An MCP-based tool works for one developer but not their teammates. Most likely cause and fix?",
+  o:["The teammates need newer hardware.","The working dev has it in user-level <code>~/.claude.json</code>; the shared <code>.mcp.json</code> is missing/misconfigured — add the shared config to the project's <code>.mcp.json</code>.","MCP requires per-user license keys.","Switch from stdio to SSE."],c:[1],
+  e:"A scoping bug — servers the whole team needs belong in project-level <code>.mcp.json</code>, not one person's user config."},
+ {t:"single",w:2,q:"How should credentials be supplied to an MCP server defined in <code>.mcp.json</code>?",
+  o:["Hardcode the token in <code>.mcp.json</code>.","Reference an env var via <code>${GITHUB_TOKEN}</code> so secrets aren't committed.","Put the token in a comment.","Pass it as a literal in the tool description."],c:[1],
+  e:"MCP configs support <code>${VAR}</code> expansion; reference env vars, never hardcode secrets."},
+ {t:"single",w:2,q:"A search tool hits an auth timeout. What must it return so Claude responds correctly?",
+  o:["An empty result array so the loop proceeds.","A structured error distinguishing access failure (type + <code>isRetryable</code> + context) from a genuine empty result.","The string \"error\" with no metadata.","A fabricated best-guess result."],c:[1],
+  e:"Empty on failure makes Claude confidently report \"no results.\" Distinguish failure from empty with structured errors."},
+ {t:"multi",w:1,q:"A well-designed structured tool error should include which of the following?",
+  o:["The error type/category (auth, rate-limit, not-found, server).","An <code>isRetryable</code> flag for transient vs permanent.","Context about what the tool was attempting.","A self-assessed confidence score from Claude."],c:[0,1,2],
+  e:"Type, retryability, and context — yes. A model self-confidence score isn't part of a structured error."},
+ {t:"single",w:1,q:"For a structured-extraction step where you programmatically know exactly which tool must run, which <code>tool_choice</code>?",
+  o:["<code>auto</code>","<code>none</code>","<code>{type:\"tool\", name:\"extract_fields\"}</code>","<code>any</code>"],c:[2],
+  e:"Naming the specific tool forces that exact call — ideal for deterministic extraction."},
+ {t:"single",w:1,q:"Two tools have similar descriptions and Claude picks inconsistently. Best fix?",
+  o:["Add a third similar tool.","Rewrite descriptions to clearly differentiate scope and when to use each.","Set <code>tool_choice: any</code>.","Remove all descriptions."],c:[1],
+  e:"Disambiguate by making each description state its distinct purpose and conditions for use."},
+ {t:"single",w:1,q:"A tool only supports US addresses but its description doesn't say so. Risk?",
+  o:["None.","Claude may call it for non-US addresses and fail; descriptions must state limitations.","Faster routing.","Lower cost."],c:[1],
+  e:"Accurate descriptions, including limitations, prevent inappropriate calls."},
+ {t:"single",w:2,s:"S5",q:"Atlas's single dispatch agent now exposes 22 tools and routing accuracy drops. Best response?",
+  o:["Keep all 22 and tweak temperature.","Split into specialized agents so each holds ~4–5 focused tools.","Merge tools into one mega-tool.","Force <code>tool_choice: any</code>."],c:[1],
+  e:"Past ~18 tools, routing degrades; restructure into focused agents rather than overload one."},
+ {t:"single",w:1,q:"A tool's input JSON schema primarily…",
+  o:["Guarantees semantic correctness of arguments.","Constrains the structure/types of arguments Claude must provide.","Routes between tools.","Stores secrets."],c:[1],
+  e:"Input schemas shape argument structure; they don't guarantee the values are semantically valid."},
+ {t:"single",w:1,q:"An MCP server only you use across all your projects belongs in…",
+  o:["The project <code>.mcp.json</code>.","Your user-level <code>~/.claude.json</code>.","A rules file.","The tool description."],c:[1],
+  e:"Personal, cross-project servers live in user-level config, not the shared project file."},
+ {t:"single",w:2,q:"A teammate hardcoded an API key in <code>.mcp.json</code> and committed it. Problems?",
+  o:["None.","The secret is now in version history; use <code>${ENV_VAR}</code> expansion and rotate the exposed key.","It improves portability.","It speeds builds."],c:[1],
+  e:"Never commit secrets; reference env vars and rotate anything already exposed."},
+ {t:"single",w:1,q:"The default behavior letting Claude decide whether to call a tool at all is…",
+  o:["<code>any</code>","<code>auto</code>","<code>none</code>","specific tool"],c:[1],
+  e:"<code>auto</code> lets the model choose to use a tool or just respond."},
+ {t:"single",w:2,s:"S1",q:"MeridianPay's account-lookup returns <code>[]</code> both when an account truly has no transactions and when the DB is unreachable. Impact?",
+  o:["Harmless.","Claude can't tell 'no data' from 'lookup failed' and may report no transactions during an outage; return a structured error for failures.","Faster.","Prevents retries."],c:[1],
+  e:"Collapsing failure into empty results causes confidently wrong answers; separate them with structured errors."},
+ {t:"multi",w:2,q:"Good tool-result design includes which of these?",
+  o:["Clear success payloads with the data Claude needs.","Distinct, structured error objects on failure.","An <code>isRetryable</code> hint for transient errors.","Silent empty arrays when something breaks."],c:[0,1,2],
+  e:"Clear successes, structured errors, retryability hints — yes; silent empties on failure — no."},
+ {t:"single",w:1,q:"A tool returns 50 KB of JSON but Claude needs three fields. Best practice?",
+  o:["Return everything to be safe.","Return only the relevant fields to conserve context and improve attention.","Return it all as one long string.","Base64-encode it."],c:[1],
+  e:"Trim tool outputs to what's needed; bloated results waste context and degrade attention."},
+ {t:"single",w:1,q:"Tool names should be…",
+  o:["Random hashes.","Clear and descriptive of the action (e.g. <code>search_orders</code>).","As short as possible regardless of clarity.","Identical across tools."],c:[1],
+  e:"Descriptive names aid correct routing alongside descriptions."},
+ {t:"single",w:2,s:"S5",q:"Atlas's <code>cancel_shipment</code> tool is destructive. Safer design?",
+  o:["Call it automatically whenever mentioned.","Require explicit confirmation/guardrails before executing irreversible actions.","Hide it from the agent.","Make it idempotent only."],c:[1],
+  e:"Gate destructive/irreversible tools behind confirmation or guardrails."},
+ {t:"single",w:1,q:"MCP (Model Context Protocol) primarily provides…",
+  o:["A model-training format.","A standard way to connect Claude to external tools/data sources via servers.","A billing system.","A prompt-template language."],c:[1],
+  e:"MCP standardizes tool/data integration through servers Claude can call."},
+ {t:"single",w:1,q:"To guarantee a turn produces text and never a tool call, use…",
+  o:["<code>any</code>","<code>none</code>","<code>auto</code>","specific tool"],c:[1],
+  e:"<code>none</code> forbids tools, forcing a text-only response."},
+ {t:"single",w:1,q:"Compared to 30 tools on one agent, giving it ~5 focused tools generally…",
+  o:["Worsens routing.","Improves routing accuracy.","Has no effect.","Requires the Batch API."],c:[1],
+  e:"Fewer, focused tools (around 4–5) route more accurately than large sets."},
+ {t:"single",w:2,q:"A single <code>manage_user</code> tool takes a <code>mode</code> arg doing create/update/delete/list. Cleaner design often…",
+  o:["Keep one tool always.","Split into distinct, clearly-described tools so routing and intent are explicit.","Add more modes.","Remove the schema."],c:[1],
+  e:"Distinct tools with clear scope usually beat one mode-switch mega-tool for routing clarity."},
+ {t:"single",w:1,q:"In <code>.mcp.json</code>, the supported way to inject a token from the environment is…",
+  o:["<code>{{TOKEN}}</code>","<code>${TOKEN}</code>","<code>%TOKEN%</code>","<code>$TOKEN$</code>"],c:[1],
+  e:"MCP configs expand <code>${VAR}</code>-style references at runtime."},
+ {t:"single",w:1,q:"An MCP server in <code>.mcp.json</code> fails only for a teammate. First thing to check?",
+  o:["Their GPU.","Whether their required env vars/credentials are set and the server's dependencies are installed locally.","Their LinkedIn.","The model version."],c:[1],
+  e:"Project config is shared, but each user still needs the referenced env vars/credentials and local prerequisites."},
+ {t:"single",w:1,q:"Beyond what a tool does, a strong description should also state…",o:["Only the parameter names.","When to use it and when NOT to — its boundaries and limits.","The model version.","The pricing tier."],c:[1],e:"Descriptions that include usage boundaries and when not to call the tool reduce mis-routing between similar tools."},
+],
+D3:[
+ {t:"single",w:1,q:"Given user-, project-, and directory-level <code>CLAUDE.md</code> files with a conflicting instruction, which takes precedence?",
+  o:["User-level overrides everything.","Project-level always wins.","The more specific (directory-level) instruction overrides the general ones; all applicable levels combine.","Whichever was modified most recently."],c:[2],
+  e:"Precedence is by specificity: directory > project > user, with all levels combined and specific overriding general."},
+ {t:"single",w:2,s:"S3",q:"CodeForge's lead added team standards to their own <code>~/.claude/CLAUDE.md</code>, but other engineers' sessions ignore them. Why, and fix?",
+  o:["The file is corrupted; recreate it.","User-level <code>CLAUDE.md</code> is personal and not shared; move shared standards to project-level <code>./CLAUDE.md</code> (committed) or <code>.claude/rules/</code>.","CLAUDE.md doesn't support standards; use a linter.","Each engineer must <code>--resume</code> the lead's session."],c:[1],
+  e:"User-level instructions apply only to that user. Shared standards belong in committed project-level config."},
+ {t:"single",w:1,q:"How do <code>.claude/rules/</code> files apply conditionally to specific file types?",
+  o:["They run on every file regardless of type.","They apply based on file glob patterns (e.g. <code>*.tsx</code>), giving granular type-specific rules.","They only apply to files in the project root.","They require a directory-level <code>CLAUDE.md</code>."],c:[1],
+  e:"Rules files apply conditionally via glob patterns — a more granular alternative to directory-level CLAUDE.md."},
+ {t:"single",w:1,q:"A reusable skill should run in a copy of the conversation and NOT alter the main thread. Which frontmatter setting?",
+  o:["<code>allowed-tools: all</code>","<code>context: fork</code>","<code>mode: plan</code>","<code>scope: project</code>"],c:[1],
+  e:"<code>context: fork</code> runs the skill in a forked context — for exploratory work that shouldn't modify the main conversation."},
+ {t:"single",w:1,q:"What is the purpose of the <code>allowed-tools</code> field in a skill's frontmatter?",
+  o:["To list which models the skill can call.","To define a security boundary specifying which tools the skill may use.","To auto-install missing tools.","To set the skill's token budget."],c:[1],
+  e:"<code>allowed-tools</code> restricts the skill's tool access — a security boundary."},
+ {t:"single",w:2,s:"S3",q:"CodeForge plans a refactor touching 12 files across core billing logic. Which Claude Code mode, and why?",
+  o:["Direct Execution, because it's fast.","Plan Mode, because the change is large, high-risk, and touches core logic — review the plan first.","Direct Execution, since billing is well understood.","Neither; disable Claude Code for billing."],c:[1],
+  e:"Plan Mode suits large/high-risk/ambiguous changes; Direct Execution suits small, well-defined, low-risk edits."},
+ {t:"single",w:1,q:"Which task is the best fit for Direct Execution rather than Plan Mode?",
+  o:["Renaming a single local variable in one well-understood function.","Migrating the auth layer across the codebase.","Rewriting the production data model.","A refactor spanning 10 files."],c:[0],
+  e:"Direct Execution fits small, well-understood, low-risk changes; the others call for Plan Mode."},
+ {t:"single",w:2,s:"S3",q:"CodeForge wants Claude Code to run non-interactively in CI to review PRs (stdin→stdout, no prompts). Which flag?",
+  o:["<code>--resume</code>","<code>-p</code> (pipe / non-interactive mode)","<code>--plan</code>","<code>/compact</code>"],c:[1],
+  e:"<code>-p</code> enables non-interactive pipe mode for CI/CD automation."},
+ {t:"single",w:2,s:"S3",q:"In CodeForge's CI, the same instance that generated the code also reviews it. Why change this, and to what?",
+  o:["Keep it — self-review is efficient and equally effective.","Use an independent reviewing instance; a self-reviewing one shares the generator's blind spots.","Replace review with a higher iteration cap.","Have the same instance review twice."],c:[1],
+  e:"Independent review beats self-review; a separate instance without the generation reasoning catches what the author missed."},
+ {t:"single",w:1,q:"Claude Code isn't following an expected instruction. The single most common real-world misconfiguration is…",
+  o:["The instruction was written in Markdown.","Shared team standards placed at the user level instead of project level.","The project lacked a <code>.mcp.json</code>.","Plan Mode was left enabled."],c:[1],
+  e:"The recurring trap: shared standards at the user level (personal) instead of the committed project level."},
+ {t:"multi",w:2,q:"Designing Claude Code into CI/CD pipelines, which practices are recommended?",
+  o:["Use <code>-p</code> for non-interactive operation.","For PR review, use a separate instance from the generator.","Scope a test-gen job to only testing-related tools/files.","Have the generating instance review its own output."],c:[0,1,2],
+  e:"Pipe mode, independent review, and least-privilege scoping — yes; self-review contradicts the independence principle."},
+ {t:"single",w:1,q:"Where should shared, version-controlled team instructions for Claude Code live?",
+  o:["Each developer's <code>~/.claude/CLAUDE.md</code>.","The project-level <code>./CLAUDE.md</code> (committed) or <code>.claude/rules/</code>.","A pinned chat message.","The <code>.mcp.json</code> file."],c:[1],
+  e:"Project-level CLAUDE.md (committed) or rules files are the shared, team-wide mechanism."},
+ {t:"single",w:1,q:"<code>CLAUDE.md</code> primarily provides…",
+  o:["Secret storage.","Persistent project/context instructions Claude Code loads automatically.","A CI pipeline.","An MCP server."],c:[1],
+  e:"CLAUDE.md holds standing instructions/context loaded into Claude Code sessions."},
+ {t:"single",w:2,s:"S3",q:"CodeForge wants stricter rules only inside <code>/src/payments</code>. Best mechanism?",
+  o:["Edit the user-level CLAUDE.md.","Add a directory-level CLAUDE.md (or a glob-scoped rules file) for that path.","A global env var.","A commit message."],c:[1],
+  e:"Directory-level CLAUDE.md or glob-scoped rules apply more specific instructions to a subtree."},
+ {t:"single",w:1,q:"To apply a rule only to TypeScript React files, you'd scope it with…",
+  o:["A CLAUDE.md in root.","A glob like <code>*.tsx</code> in a rules file.","An env var.","<code>tool_choice</code>."],c:[1],
+  e:"Rules files target file types via glob patterns."},
+ {t:"single",w:2,s:"S3",q:"Why isn't having the generating instance review its own diff sufficient at CodeForge?",
+  o:["It's slower.","It shares the generator's assumptions/blind spots and tends not to question its own choices; use an independent reviewer.","It costs more tokens.","It needs Plan Mode."],c:[1],
+  e:"Self-review inherits generation reasoning; independent review catches what the author missed."},
+ {t:"single",w:1,q:"Do project and user <code>CLAUDE.md</code> files combine, or does one replace the other?",
+  o:["Only one is ever used.","Applicable levels combine, with specific overriding general on conflicts.","They cancel out.","The newest wins entirely."],c:[1],
+  e:"Instructions accumulate across levels; conflicts resolve by specificity."},
+ {t:"single",w:2,s:"S3",q:"CodeForge's CI job generates tests. Best scoping?",
+  o:["Give it full repo write and all tools.","Restrict it to test directories and only the tools it needs.","Let it modify production code too.","Disable review."],c:[1],
+  e:"Scope automated instances to the files/tools required — least privilege."},
+ {t:"single",w:1,q:"The main value of Plan Mode is…",
+  o:["Faster edits.","Reviewing the intended changes before any code is modified.","Bypassing tests.","Hiding diffs."],c:[1],
+  e:"Plan Mode surfaces the plan for approval before execution, reducing risk on big changes."},
+ {t:"single",w:1,q:"Claude Code reads project MCP servers from…",
+  o:["<code>README.md</code>.","<code>.mcp.json</code> (project) / <code>~/.claude.json</code> (user).","<code>package.json</code> only.","<code>CLAUDE.md</code>."],c:[1],
+  e:"The same MCP config locations apply: project <code>.mcp.json</code> and user <code>~/.claude.json</code>."},
+ {t:"single",w:2,s:"S3",q:"How should CodeForge wire PR review to avoid self-review?",
+  o:["Same session generates and reviews.","A separate Claude Code invocation (fresh context) reviews the PR.","Review twice in the same session.","Skip review under deadline."],c:[1],
+  e:"Use an independent invocation without the generation context for review."},
+ {t:"single",w:1,q:"Which is the best practice for a destructive refactor across many files where you want to inspect the approach first?",
+  o:["Direct Execution with auto-accept.","Plan Mode, then review and approve before changes are applied.","No configuration; just run it.","Lower the temperature."],c:[1],
+  e:"Plan Mode lets you review the plan before any file is touched — right for high-risk, multi-file work."},
+ {t:"single",w:2,s:"S3",q:"A CodeForge engineer wants personal scratch instructions that must not affect teammates. Where do they belong?",o:["The committed project-level CLAUDE.md.","The user-level config (e.g. ~/.claude), which is personal and not shared.","A glob rules file in the repo.","The team Slack channel."],c:[1],e:"Personal, non-shared instructions go in user-level config; the committed project config is for the whole team."},
+ {t:"single",w:1,q:"In Plan Mode, Claude Code…",o:["Edits files immediately for speed.","Researches and proposes a plan, making no file changes until you approve.","Skips the diff entirely.","Disables the test suite."],c:[1],e:"Plan Mode is read-and-plan: it surfaces the intended approach for approval before any file is modified."},
+ {t:"single",w:2,s:"S3",q:"CodeForge needs a one-line tweak to a well-understood config value. Best mode?",o:["Plan Mode, to be safe on everything.","Direct Execution — the change is small, clear, and low-risk.","Neither; only edit it by hand.","Lower the temperature first."],c:[1],e:"Small, clear, low-risk edits are the canonical case for Direct Execution; Plan Mode is for large or risky work."},
+ {t:"single",w:1,q:"You need guidance that applies only to <code>*.py</code> files, while CLAUDE.md applies broadly. Better mechanism?",o:["Put it in the root CLAUDE.md.","Use a glob-scoped rules file targeting <code>*.py</code>.","Use an environment variable.","Use <code>tool_choice</code>."],c:[1],e:"Glob-scoped rules files apply file-type-specific guidance more precisely than a broad CLAUDE.md."},
+ {t:"single",w:1,q:"If a skill does not specify <code>allowed-tools</code>, the safer posture is to…",o:["Assume it may use every available tool.","Explicitly scope its tools to only what it needs (least privilege).","Disable the skill entirely.","Grant it network access."],c:[1],e:"Least privilege: scope a skill's tool access explicitly rather than granting broad capability by default."},
+ {t:"single",w:1,q:"A skill whose changes must persist into the main workflow should NOT use <code>context: fork</code> because…",o:["Forking is slower.","Forked work runs in an isolated copy and would not carry back to the main thread.","It needs Plan Mode.","Forking deletes history."],c:[1],e:"<code>context: fork</code> isolates the skill; use it for exploration, not for changes that must persist to the main conversation."},
+ {t:"single",w:2,s:"S3",q:"CodeForge wants the same standards enforced both locally and in CI. Best approach?",o:["Keep them in each developer's user config.","Put them in committed project-level config so humans and CI runs both inherit them.","Paste them into each CI job manually.","Rely on people remembering them."],c:[1],e:"Committed project-level config is the single source both interactive sessions and CI invocations load."},
+ {t:"single",w:1,q:"A directory-level CLAUDE.md placed in <code>/src/api</code> applies to…",o:["The whole repository equally.","Files under that directory, layering on top of project- and user-level instructions.","Only the README.","Nothing unless merged to main."],c:[1],e:"Directory-level instructions scope to that subtree and combine with the broader levels, overriding them on conflict."},
+],
+D4:[
+ {t:"single",w:1,q:"An agent's summaries vary in length, tone, and content. Which prompt change most directly addresses this?",
+  o:["Add \"please be consistent.\"","Replace vague guidance with explicit, measurable criteria (length range, required elements, tone, exclusions).","Raise temperature for variety.","Switch to the Batch API."],c:[1],
+  e:"Explicit, measurable criteria produce consistent, verifiable output; vague terms like \"good\" can't be enforced."},
+ {t:"single",w:1,q:"Recommended number of few-shot examples for output consistency?",
+  o:["0–1","2–4, ideally covering edge cases and the exact format.","10–12 for max coverage.","As many as fit in the context."],c:[1],
+  e:"2–4 is the sweet spot; fewer may not establish the pattern, more gives diminishing returns and wastes context."},
+ {t:"single",w:2,s:"S4",q:"LexBrief extracts fields from contracts where values are sometimes absent or ambiguous. Schema design?",
+  o:["Make all fields required so nothing is missed.","Use nullable fields for possibly-absent data and add an \"unclear\"/\"ambiguous\" enum option so Claude can flag uncertainty.","Force a default for every missing field.","Drop records with missing data."],c:[1],
+  e:"Nullable fields plus an \"unclear\" enum value let Claude signal uncertainty for human review instead of guessing."},
+ {t:"single",w:2,q:"A <code>tool_use</code> JSON schema guarantees…",
+  o:["Both structure and the correctness/meaning of values.","Structural correctness (fields, types, shape) only — not semantic validity.","That values fall in business-rule ranges.","Output free of hallucinated facts."],c:[1],
+  e:"Schemas enforce syntax, not semantics. You still need programmatic validation plus a retry loop."},
+ {t:"multi",w:2,q:"Designing a validation retry loop for structured output, which elements are correct?",
+  o:["Validate the schema-constrained output against semantic/business rules in code.","On failure, send both the invalid output and the specific errors back to Claude.","Cap retries at a maximum count.","Keep retrying with the identical prompt and no error detail."],c:[0,1,2],
+  e:"Validate in code, return the invalid output plus specific errors, cap retries. Re-sending unchanged just repeats the mistake."},
+ {t:"single",w:2,s:"S4",q:"What is the complete, production-grade pipeline for reliable structured extraction at LexBrief?",
+  o:["A very detailed prompt instructing valid JSON, nothing more.","<code>tool_use</code> schema (syntax) + programmatic validation (semantics) + a retry loop returning errors to Claude.","Schema enforcement alone.","Manual human entry for every contract."],c:[1],
+  e:"The three layers: schema + validation + retry. Prompt-only is weakest; schema-only is incomplete."},
+ {t:"single",w:2,q:"A high-volume system relies solely on \"always return valid JSON\" and sees occasional malformed output. Best fix?",
+  o:["Strengthen wording to \"you MUST always return valid JSON.\"","Add <code>tool_use</code> schema enforcement, then validation, then a retry loop.","Lower temperature to 0 and keep prompt-only.","Strip characters until it parses."],c:[1],
+  e:"Prompt-only enforcement is probabilistic; at scale even 1% failure is large. Use schema + validation + retry."},
+ {t:"single",w:2,s:"S4",q:"LexBrief must process 80,000 archived contracts overnight; nothing waits in real time and cost matters. Is the Batch API appropriate?",
+  o:["No — it can't process documents.","Yes — non-blocking, high-volume background processing is the ideal use case, ~50% cheaper.","No — only the real-time API extracts structured data.","Yes, but only with multi-turn per request."],c:[1],
+  e:"Batch fits non-blocking, large-volume background work and gives ~50% savings."},
+ {t:"single",w:2,q:"A request/response pipeline where the user waits proposes switching to the Batch API for cost. Correct assessment?",
+  o:["Approve — 50% savings always justifies it.","Reject — Batch has no SLA within its 24-hour window, so it's inappropriate for blocking/real-time workflows.","Approve if latency is under a minute.","Approve if multi-turn is disabled."],c:[1],
+  e:"Batch returns within 24h with no in-window SLA; using it for blocking workflows is a named anti-pattern."},
+ {t:"multi",w:1,q:"Which statements about the Batch API are correct?",
+  o:["~50% cost reduction vs real-time calls.","Results within 24 hours, no guaranteed SLA inside that window.","Requests are independent; no multi-turn conversations.","Guarantees sub-minute latency for live chat."],c:[0,1,2],
+  e:"Cost savings, a 24h non-SLA window, and no multi-turn — true. No real-time latency guarantee."},
+ {t:"single",w:2,q:"For a critical output you add a review step. Key requirement for it to be effective?",
+  o:["The reviewer should be the same instance that generated, for consistency.","The reviewer must be independent of the generator (no shared generation context).","Use extended thinking on the generator instead.","Ask the generator to rate its own confidence."],c:[1],
+  e:"Independent review > self-review; an instance without the generator's context catches subtle issues."},
+ {t:"single",w:1,q:"Beyond using 2–4 examples, what makes few-shot examples most effective?",
+  o:["All illustrate the simplest happy path.","Diverse, covering edge cases, demonstrating the exact output format.","As long and detailed as possible.","Omit the output to avoid bias."],c:[1],
+  e:"Diversity, edge-case coverage, and exact-format demonstration drive consistency."},
+ {t:"single",w:1,q:"Outputs vary because the prompt says \"summarize well.\" Most effective change?",
+  o:["Add \"be consistent.\"","Specify measurable criteria — length, required sections, tone, exclusions.","Raise temperature.","Add five more examples beyond four."],c:[1],
+  e:"Replace vague terms with explicit, checkable criteria."},
+ {t:"single",w:2,s:"S6",q:"Some Sentinel claims lack a <code>diagnosis_code</code>. Schema design?",
+  o:["Make it required.","Make it nullable and let an enum carry 'unknown'/'unclear' so the model flags rather than guesses.","Default it to 0.","Drop those claims."],c:[1],
+  e:"Nullable fields plus an 'unclear' option let the model signal uncertainty for human routing."},
+ {t:"single",w:2,q:"At 1M requests/day, \"always return valid JSON\" as the only safeguard…",
+  o:["Is fine.","Will still produce many malformed outputs; add schema + validation + retry.","Guarantees validity at temperature 0.","Needs only stronger wording."],c:[1],
+  e:"Probabilistic prompting fails at scale; enforce programmatically."},
+ {t:"single",w:1,q:"The Batch API offers roughly…",
+  o:["No savings.","~50% cost savings vs standard calls.","2× cost.","Free usage."],c:[1],
+  e:"Batch trades latency for about half the cost."},
+ {t:"single",w:2,s:"S6",q:"Sentinel reprocesses 500k historical claims overnight; nothing waits in real time. Batch API?",
+  o:["Inappropriate.","Appropriate — non-blocking, high-volume background work, ~50% cheaper.","Only if multi-turn.","Only the real-time API works."],c:[1],
+  e:"Ideal Batch use case: large, non-blocking background jobs."},
+ {t:"single",w:1,q:"Batch API requests are…",
+  o:["Stateful multi-turn conversations.","Independent; multi-turn isn't supported.","Always two-turn.","Streamed live."],c:[1],
+  e:"Each batch request is independent — no multi-turn."},
+ {t:"single",w:1,q:"On a failed validation, the most effective retry…",
+  o:["Resends the same prompt unchanged.","Returns the invalid output plus the specific errors so Claude can correct them.","Lowers temperature only.","Gives up immediately."],c:[1],
+  e:"Feed back concrete errors; don't just repeat the request."},
+ {t:"single",w:2,s:"S6",q:"Sentinel adds a check on high-value payouts. For it to add value…",
+  o:["The same instance re-checks its own extraction.","An independent instance (no extraction context) reviews the result.","Ask the extractor its confidence.","Increase max_tokens."],c:[1],
+  e:"Independent review beats self-review or self-confidence."},
+ {t:"single",w:1,q:"To get consistent machine-readable output, you should…",
+  o:["Hope for the best.","Define the exact format and enforce it via schema, not just describe it loosely.","Raise temperature.","Use the Batch API."],c:[1],
+  e:"Specify and enforce the format explicitly."},
+ {t:"single",w:1,q:"Prompt engineering alone (no validation) is acceptable when…",
+  o:["Output feeds an automated, high-stakes pipeline.","Output is read by a human who can catch issues and stakes are low.","At massive scale with strict schemas.","It never matters."],c:[1],
+  e:"Low-stakes, human-in-the-loop reading tolerates prompt-only; automated/high-stakes needs enforcement."},
+ {t:"single",w:2,q:"To force a field to one of four statuses, the strongest method is…",
+  o:["Ask nicely in the prompt.","An enum in the schema (plus validation), optionally with 'unclear'.","Free text.","A regex in the description."],c:[1],
+  e:"Enums constrain allowed values structurally; add 'unclear' for ambiguity."},
+ {t:"single",w:1,q:"Beyond schema, what most reduces fabricated values in extraction?",
+  o:["Requiring every field.","Allowing nulls/'unclear' plus validation so the model can decline instead of guess.","Higher temperature.","Longer prompts."],c:[1],
+  e:"Letting the model signal 'absent/unclear' and validating it curbs fabrication; forcing all fields invites guesses."},
+ {t:"single",w:1,q:"Stable role and formatting instructions versus the specific input for one request belong, respectively, in…",o:["Both in the user message.","The system prompt (stable instructions) and the user message (the specific input).","Both in the system prompt.","The tool description."],c:[1],e:"Put durable instructions in the system prompt and the per-request data in the user message."},
+ {t:"single",w:1,q:"A lightweight way to push Claude toward starting its reply as JSON is to…",o:["Ask more forcefully in the prompt.","Prefill the assistant turn with an opening brace so it continues the structure.","Raise the temperature.","Use the Batch API."],c:[1],e:"Prefilling the assistant message (e.g. with an opening brace) nudges the format, though a schema plus validation is still the robust enforcement."},
+ {t:"single",w:1,q:"To clearly separate instructions, examples, and the input within one prompt, a reliable technique is…",o:["Run everything together in one paragraph.","Delimit sections with XML-style tags.","Remove all structure.","Use only emojis."],c:[1],e:"XML-style tags delimit prompt sections, reducing ambiguity about which text is instruction versus data."},
+ {t:"single",w:1,q:"For a deterministic extraction task, the temperature should generally be…",o:["High, for creativity.","Low (often 0), to make output stable and repeatable.","Irrelevant to output.","Maxed out."],c:[1],e:"Low temperature suits deterministic, structured tasks where you want consistent, repeatable output."},
+ {t:"single",w:2,q:"A schema accepts the JSON, but <code>end_date</code> precedes <code>start_date</code>. What catches this?",o:["The schema alone.","Programmatic semantic validation (business rules) after schema-checking.","A stronger prompt only.","Higher temperature."],c:[1],e:"Schemas check shape, not meaning; a date-ordering rule is a semantic check enforced in code, not by the schema."},
+ {t:"single",w:1,q:"For a hard classification, letting the model briefly reason before emitting the final structured answer tends to…",o:["Always hurt accuracy.","Improve accuracy, provided the reasoning and the final structured field are kept separate.","Violate the schema.","Require the Batch API."],c:[1],e:"Allowing brief reasoning before the final answer can improve quality; keep the reasoning separate from the validated structured field."},
+],
+D5:[
+ {t:"single",w:2,q:"An agent reliably forgets instructions in the middle of a long context but honors those at the ends. What is this, and a fix?",
+  o:["Token starvation; raise <code>max_tokens</code>.","The lost-in-the-middle effect; place persistent critical facts at the top, trim verbose outputs, add summaries at the top.","Temperature drift; set temperature to 0.","A model bug; switch models."],c:[1],
+  e:"Models attend most to the beginning and end of long contexts. Reposition critical info to high-attention zones and trim verbosity."},
+ {t:"multi",w:2,s:"S2",q:"HelixCare must define escalation. Which are VALID escalation triggers?",
+  o:["The user explicitly asks for a human.","The applicable policy is ambiguous.","No progress after N attempts.","Sentiment analysis flags 'seems upset.'"],c:[0,1,2],
+  e:"Explicit request, ambiguous policy, and no-progress — valid, observable triggers. Sentiment is poorly calibrated and not valid."},
+ {t:"single",w:2,s:"S2",q:"An engineer proposes adding sentiment-based escalation \"as an additional safety measure\" on top of the valid triggers. Best response?",
+  o:["Approve — extra safety never hurts.","Reject — sentiment is unreliable and injects a miscalibrated signal, causing false positives and negatives, even as an add-on.","Approve only for high-risk cases.","Replace the valid triggers with sentiment entirely."],c:[1],
+  e:"Sentiment-based escalation is incorrect even framed as an extra safeguard; it adds an unreliable signal."},
+ {t:"single",w:2,q:"Is asking Claude \"how confident are you (1–10)?\" and escalating below a threshold sound?",
+  o:["Yes — it directly measures accuracy.","No — self-assessed confidence is poorly calibrated; it's another generation, not an independent measurement.","Yes, if you average scores.","Yes, for low-risk domains only."],c:[1],
+  e:"Self-reported confidence is unreliable. Use observable, programmatic triggers instead."},
+ {t:"single",w:1,q:"Which context-degradation strategy best fits an interactive Claude Code session where a human can trigger management?",
+  o:["The scratchpad pattern only.","Subagent delegation only.","The <code>/compact</code> command, which summarizes and starts a fresh context with the summary.","Raising the iteration cap."],c:[2],
+  e:"<code>/compact</code> is the manual trigger for interactive sessions. Scratchpads suit growing single-agent context; delegation suits large volumes."},
+ {t:"single",w:2,s:"S4",q:"LexBrief sees accuracy drop when 50 contracts are stuffed into one context for cross-document comparison. Best approach?",
+  o:["Increase the context window and include all 50.","Extract key facts per document, then compare the extracted facts in a synthesis pass — avoid one giant context.","Tell it to 'pay attention to everything.'","Randomly drop half."],c:[1],
+  e:"\"Larger context = better attention\" is an anti-pattern. Use per-document passes plus synthesis."},
+ {t:"single",w:2,s:"S4",q:"LexBrief's overnight batch crashes midway. Which recovery pattern ensures no work is lost or duplicated?",
+  o:["Restart the whole job from scratch.","A manifest file: list all tasks up front, update completion status as each finishes, and on restart retry only incomplete tasks.","<code>fork_session</code> from the last response.","Increase the token budget and rerun."],c:[1],
+  e:"Manifest files track task list, status, and partial results, so recovery retries only what's incomplete."},
+ {t:"single",w:1,q:"Match recovery to context. Which pairing is correct?",
+  o:["Interactive interrupted session → manifest files.","Batch operation → <code>--resume</code>.","Interactive interrupted session → <code>--resume</code>; batch operation → manifest files.","Both → <code>fork_session</code>."],c:[2],
+  e:"Interactive interrupted work → <code>--resume</code>; batch operations → manifest files; multi-stage pipelines → checkpointing."},
+ {t:"single",w:2,q:"You can review only 5% of outputs, and random review misses the riskiest. Recommended approach?",
+  o:["Review 100% regardless of cost.","Stratified sampling — classify by risk and review a higher share of high-risk outputs, feeding results back to improve the system.","Review only the first 10 each day.","Review a flat random 5% with no weighting."],c:[1],
+  e:"Stratified sampling maximizes QA value per review: sample more from high-risk strata and use findings to improve the system."},
+ {t:"single",w:1,q:"The lost-in-the-middle effect is…",
+  o:["Token billing in the middle.","Reduced attention to information in the middle of a long context vs the ends.","A streaming bug.","A tokenizer error."],c:[1],
+  e:"Models attend most to the start and end; middle content is easily missed."},
+ {t:"single",w:2,q:"Critical, must-not-be-missed instructions in a long context should go…",
+  o:["Buried in the middle.","Near the top (and/or restated at the end).","In random positions.","Only in tool outputs."],c:[1],
+  e:"Place key instructions in high-attention positions — top and end."},
+ {t:"single",w:1,q:"The scratchpad pattern helps when…",
+  o:["You have many parallel agents.","A single agent's working context grows and benefits from externalizing notes/intermediate state.","You need the Batch API.","Routing fails."],c:[1],
+  e:"Scratchpads externalize intermediate state to manage a single agent's growing context."},
+ {t:"single",w:2,s:"S6",q:"Sentinel stuffs 100 claims into one prompt for cross-checking and accuracy drops. Better?",
+  o:["Enlarge the context and add all 100.","Extract per-claim, then compare the extracted facts in a synthesis step.","Tell it to 'focus on everything.'","Random-drop half."],c:[1],
+  e:"Avoid one giant context; use per-item passes plus synthesis."},
+ {t:"single",w:1,q:"\"A bigger context window automatically means better attention/accuracy\" is…",
+  o:["True.","False — more context can dilute attention; manage what you include.","True at temperature 0.","Only true for code."],c:[1],
+  e:"Capacity is not attention; curate context rather than maximizing it."},
+ {t:"single",w:2,s:"S4",q:"LexBrief's batch crashes at item 6,200 of 10,000. To resume cleanly…",
+  o:["Restart from item 1.","Use a manifest tracking each item's status and reprocess only the incomplete ones.","<code>fork_session</code>.","Raise the token budget."],c:[1],
+  e:"Manifests enable idempotent resume of only-unfinished work."},
+ {t:"single",w:1,q:"A multi-stage pipeline that can fail midway should…",
+  o:["Keep no intermediate state.","Checkpoint stage outputs so it can resume from the last good stage.","Always restart fully.","Use sentiment."],c:[1],
+  e:"Checkpointing lets multi-stage work resume from the last completed stage."},
+ {t:"single",w:2,s:"S2",q:"The unifying principle for HelixCare's escalation triggers is to use…",
+  o:["The model's feelings about the user.","Observable, programmatic conditions (explicit request, ambiguity, no progress).","Random sampling.","Longer prompts."],c:[1],
+  e:"Base escalation on observable, deterministic signals — not model self-assessment or sentiment."},
+ {t:"single",w:1,q:"When context would be overwhelmed by large, diverse material, a good strategy is…",
+  o:["Cram it all into one context.","Delegate chunks to subagents and synthesize their distilled outputs.","Raise temperature.","Disable tools."],c:[1],
+  e:"Distribute large/diverse context across subagents, then synthesize."},
+ {t:"single",w:1,q:"To keep a long-running agent reliable, you should periodically…",
+  o:["Never touch the context.","Trim verbose tool outputs and summarize, keeping key facts near the top.","Maximize every message.","Remove <code>stop_reason</code> checks."],c:[1],
+  e:"Trim/summarize and reposition key facts to sustain attention and reliability."},
+ {t:"single",w:1,q:"How does <code>/clear</code> differ from <code>/compact</code> in an interactive session?",o:["They are identical.","<code>/clear</code> wipes the context for a fresh start; <code>/compact</code> summarizes and continues with the gist.","<code>/clear</code> summarizes; <code>/compact</code> wipes.","Both fork the session."],c:[1],e:"<code>/clear</code> starts fresh with no history; <code>/compact</code> condenses history into a summary and keeps going."},
+ {t:"single",w:2,q:"A risk of over-aggressive context compaction is…",o:["Nothing; smaller is always better.","Dropping details the task still needs, so preserve critical facts when summarizing.","Higher token cost.","Slower models."],c:[1],e:"Compaction can discard needed detail; retain critical facts so summarization does not degrade the task."},
+ {t:"single",w:1,q:"For transient API or tool errors (timeouts, 429s), a reliable pattern is…",o:["Fail the whole job immediately.","Retry with exponential backoff up to a limit.","Retry forever with no delay.","Ignore the error and fabricate output."],c:[1],e:"Exponential backoff with a retry cap handles transient and rate-limit errors without hammering the dependency."},
+ {t:"single",w:1,q:"To detect regressions and misbehavior in a deployed agent over time, you should…",o:["Avoid logging to save space.","Log tool calls, errors, and escalations and monitor them.","Only check it once at launch.","Rely on user complaints alone."],c:[1],e:"Observability — logging key events and monitoring them — is how you catch regressions and reliability issues in production."},
+ {t:"single",w:2,q:"A non-critical enrichment tool is down. The most graceful behavior is to…",o:["Fail the entire request.","Proceed with the core task and note the missing enrichment clearly.","Silently pretend the data exists.","Retry forever and block the user."],c:[1],e:"Graceful degradation: complete what you can and clearly flag the missing non-critical piece rather than failing everything."},
+ {t:"single",w:1,q:"Restating a critical instruction at both the start and the end of a long prompt helps because…",o:["It wastes tokens for no reason.","Both positions are high-attention zones, countering the lost-in-the-middle effect.","It usefully confuses the model.","It disables truncation."],c:[1],e:"Start and end are the high-attention regions; reinforcing critical instructions there mitigates lost-in-the-middle."},
+],
+};
 
 /* ============================================================
    ENGINE
    ============================================================ */
 const TOTAL_SECONDS = 120*60;
 const PASS = 720;
+const BANK_TOTAL = Object.values(BANK).reduce((s,a)=>s+a.length,0);
 const state = {
   screen:"start", mode:"exam",
+  questions:[], totalWeight:0,
   current:0, answers:{}, flagged:new Set(),
-  remaining:TOTAL_SECONDS, timer:null, submitted:false,
+  remaining:TOTAL_SECONDS, timer:null, submitted:false, timeUsed:0,
   reviewFilter:"all", navOpen:false,
 };
 const app = document.getElementById('app');
 const letters = ["A","B","C","D","E","F"];
-const totalWeight = QUESTIONS.reduce((s,q)=>s+q.w,0);
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function prepare(q,d){
+  const pairs = q.o.map((text,idx)=>({text, ok:q.c.includes(idx)}));
+  shuffle(pairs);
+  let s = q.s;
+  if(s && !SCN[s]){ console.error(`CCA-F init: ${d} question references unknown scenario "${s}" — falling back to no scenario panel.`); s = undefined; }
+  return { d, t:q.t, w:q.w, s, q:q.q, e:q.e,
+           o:pairs.map(p=>p.text),
+           c:pairs.map((p,i)=>p.ok?i:-1).filter(i=>i>=0) };
+}
+function buildExam(){
+  let out=[];
+  for(const d of Object.keys(DRAW)){
+    const pool=[...BANK[d]]; shuffle(pool);
+    const take=pool.slice(0, Math.min(DRAW[d], pool.length)).map(q=>prepare(q,d));
+    out=out.concat(take);
+  }
+  shuffle(out);
+  state.questions=out;
+  state.totalWeight=out.reduce((s,q)=>s+q.w,0);
+}
 
 function setEqual(a,b){ if(a.length!==b.length) return false; const x=[...a].sort(),y=[...b].sort(); return x.every((v,i)=>v===y[i]); }
 function isAnswered(i){ const a=state.answers[i]; return a && a.length>0; }
-function isCorrect(i){ const a=state.answers[i]||[]; return setEqual(a,QUESTIONS[i].c); }
+function isCorrect(i){ const a=state.answers[i]||[]; return setEqual(a, state.questions[i].c); }
 function fmt(sec){ const m=Math.floor(sec/60),s=sec%60; return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`; }
 function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),1900); }
 function toggleNav(){ state.navOpen=!state.navOpen; const p=document.querySelector('.navpanel'); if(p) p.classList.toggle('open',state.navOpen); }
+
+/* ---------- safety: allow-list HTML sanitizer (keeps <code>, neutralizes anything else) ---------- */
+function safeText(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function safeHTML(s){ return safeText(s).replace(/&lt;code&gt;/g,'<code>').replace(/&lt;\/code&gt;/g,'</code>'); }
+function scenarioOf(q){ return (q && q.s && SCN[q.s]) ? SCN[q.s] : null; }
+function navLabel(j, ans, fl){ return `Question ${j+1}, ${ans?'answered':'not answered'}${fl?' and marked for review':''}`; }
+
+/* ---------- state persistence (best-effort; degrades gracefully if storage is blocked) ---------- */
+const STORAGE_KEY = 'ccaf_mock_session_v1';
+const storageOK = (function(){ try{ const t='__ccaf__'; localStorage.setItem(t,'1'); localStorage.removeItem(t); return true; }catch(e){ return false; } })();
+function persist(){
+  if(!storageOK || state.screen!=='exam' || state.submitted) return;
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      v:1, savedAt:Date.now(), mode:state.mode, current:state.current,
+      answers:state.answers, flagged:[...state.flagged],
+      remaining:state.remaining, questions:state.questions, totalWeight:state.totalWeight
+    }));
+  }catch(e){ /* quota/serialization — persistence is non-critical, ignore */ }
+}
+function loadSession(){
+  if(!storageOK) return null;
+  try{
+    const d = JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
+    if(!d || !Array.isArray(d.questions) || d.questions.length!==60) return null;
+    return d;
+  }catch(e){ return null; }
+}
+function clearSession(){ if(!storageOK) return; try{ localStorage.removeItem(STORAGE_KEY); }catch(e){} }
+
+function tick(){
+  state.remaining--;
+  updateTimer();
+  if(state.remaining % 5 === 0) persist();            // periodic time checkpoint
+  if(state.remaining<=0){ clearInterval(state.timer); state.timer=null; toast("Time's up — submitting."); finishExam(); }
+}
+function restoreSession(d){
+  state.mode = d.mode==='study' ? 'study' : 'exam';
+  state.questions = d.questions;
+  state.totalWeight = (d.totalWeight!=null) ? d.totalWeight : d.questions.reduce((s,q)=>s+q.w,0);
+  state.current = Math.min(Math.max(0, d.current|0), state.questions.length-1);
+  state.answers = (d.answers && typeof d.answers==='object') ? d.answers : {};
+  state.flagged = new Set(Array.isArray(d.flagged) ? d.flagged : []);
+  state.remaining = (d.remaining!=null) ? d.remaining : TOTAL_SECONDS;
+  state.submitted = false; state.screen = 'exam';
+  if(state.timer){ clearInterval(state.timer); state.timer=null; }
+  if(state.mode==='exam'){ state.timer = setInterval(tick, 1000); }
+  renderExam(); window.scrollTo(0,0);
+}
+
+/* ---------- targeted DOM updates (no full re-render on each click) ---------- */
+function paintOptions(){
+  const i=state.current, q=state.questions[i], sel=state.answers[i]||[];
+  document.querySelectorAll('#opts .opt').forEach((el,oi)=>{
+    if(el.classList.contains('locked')) return;
+    const chosen = sel.includes(oi);
+    el.classList.toggle('sel', chosen);
+    el.setAttribute('aria-pressed', chosen?'true':'false');
+    const mark = el.querySelector('.mark');
+    if(mark) mark.textContent = chosen ? (q.t==='single'?'●':'✓') : '';
+  });
+}
+function paintNavCell(j){
+  const el=document.getElementById('nav-'+j); if(!el) return;
+  const ans=isAnswered(j), fl=state.flagged.has(j);
+  el.classList.toggle('answered', !!ans);
+  el.classList.toggle('flagged', fl);
+  el.setAttribute('aria-label', navLabel(j, !!ans, fl));
+}
+function paintProgress(){
+  const answered=state.questions.filter((_,j)=>isAnswered(j)).length;
+  const pill=document.getElementById('progresspill');
+  if(pill) pill.innerHTML = `Question <b>${state.current+1}</b> of 60 · ${answered} answered${state.mode==='study'?' · study mode':''}`;
+  const cnt=document.getElementById('submitcnt');
+  if(cnt) cnt.textContent = `${60-answered} unanswered · ${state.flagged.size} flagged`;
+}
+function lockAndExplain(){
+  const i=state.current, q=state.questions[i], sel=state.answers[i]||[], ok=isCorrect(i);
+  document.querySelectorAll('#opts .opt').forEach((el,oi)=>{
+    el.classList.add('locked'); el.setAttribute('disabled',''); el.classList.remove('sel'); el.removeAttribute('aria-pressed');
+    const correct=q.c.includes(oi), chosen=sel.includes(oi), mark=el.querySelector('.mark');
+    el.classList.remove('correct','wrong','miss');
+    if(correct && chosen){ el.classList.add('correct'); if(mark) mark.textContent='✓'; }
+    else if(correct && !chosen){ el.classList.add('miss'); if(mark) mark.textContent=''; }
+    else if(!correct && chosen){ el.classList.add('wrong'); if(mark) mark.textContent='✕'; }
+    else if(mark){ mark.textContent=''; }
+  });
+  const card=document.querySelector('.qcard');
+  if(card && !card.querySelector('.explain')){
+    const ex=document.createElement('div'); ex.className='explain';
+    const v=document.createElement('div'); v.className='verdict '+(ok?'v-right':'v-wrong'); v.textContent = ok?'✓ Correct':'✕ Not quite';
+    const k=document.createElement('div'); k.className='ekey'; k.textContent='Why';
+    const p=document.createElement('p'); p.innerHTML=safeHTML(q.e);
+    ex.appendChild(v); ex.appendChild(k); ex.appendChild(p); card.appendChild(ex);
+  }
+}
+
+/* ---------- keyboard navigation (active only during the exam) ---------- */
+function onKey(e){
+  if(state.screen!=='exam' || state.submitted) return;
+  if(e.metaKey||e.ctrlKey||e.altKey) return;
+  const tag=(e.target && e.target.tagName)||''; if(tag==='INPUT'||tag==='TEXTAREA') return;
+  const q=state.questions[state.current]; if(!q) return;
+  const k=e.key, low=(k||'').toLowerCase();
+  if(k>='1' && k<='6'){ const oi=parseInt(k,10)-1; if(oi<q.o.length){ e.preventDefault(); selectOpt(oi); } return; }
+  if(k==='ArrowRight' || low==='n' || low==='d'){ e.preventDefault(); (state.current===state.questions.length-1) ? confirmSubmit() : go(1); return; }
+  if(k==='ArrowLeft'  || low==='p' || low==='a'){ e.preventDefault(); go(-1); return; }
+  if(low==='m'){ e.preventDefault(); toggleFlag(); return; }
+}
+
+/* ---------- partial-credit evaluation (console only; displayed score stays strict) ---------- */
+function logEvaluation(){
+  try{
+    const rows=[]; let strictPts=0, partialPts=0; const tw=state.totalWeight||1;
+    state.questions.forEach((q,i)=>{
+      const sel=new Set(state.answers[i]||[]), cor=new Set(q.c);
+      const strict = isCorrect(i)?1:0;
+      let partial;
+      if(q.t==='single'){ partial=strict; }
+      else {
+        const hit=[...sel].filter(x=>cor.has(x)).length;
+        const bad=[...sel].filter(x=>!cor.has(x)).length;
+        const wrongAvail=Math.max(1, q.o.length - cor.size);
+        partial=Math.max(0, Math.min(1, hit/cor.size - bad/wrongAvail));
+      }
+      strictPts+=strict*q.w; partialPts+=partial*q.w;
+      rows.push({Q:i+1, domain:q.d, type:q.t, weight:q.w, strict, partial:+partial.toFixed(2)});
+    });
+    const strictScaled=Math.round(strictPts/tw*1000), partialScaled=Math.round(partialPts/tw*1000);
+    console.groupCollapsed(`CCA-F evaluation — strict ${strictScaled}/1000 · partial-credit ${partialScaled}/1000 (pass ≥ ${PASS})`);
+    console.table(rows);
+    console.info('Displayed score is STRICT (all-or-nothing). Partial-credit is informational only: multi-select credit = (correct chosen ÷ total correct) − (wrong chosen ÷ wrong available), floored at 0.');
+    console.groupEnd();
+  }catch(e){ console.error('CCA-F evaluation logging failed:', e); }
+}
+
+/* ---------- boot: offer to resume an in-progress session ---------- */
+function boot(){
+  document.addEventListener('keydown', onKey);
+  const saved = loadSession();
+  if(saved){
+    const answered = Object.values(saved.answers||{}).filter(a=>a && a.length).length;
+    const resume = confirm(`Resume your in-progress exam?\n\nYou had ${answered} of 60 answered with ${fmt(saved.remaining||0)} remaining.\n\nOK = resume  ·  Cancel = start fresh`);
+    if(resume){ restoreSession(saved); return; }
+    clearSession();
+  }
+  renderStart();
+}
 
 /* ---------- START ---------- */
 function renderStart(){
   document.getElementById('navToggle').classList.add('hidden');
   const dl = Object.entries(DOMAINS).map(([k,v])=>`
     <div class="domain">
-      <div class="dn">${v.name}<span>Domain ${k.slice(1)}</span>
+      <div class="dn">${v.name}<span>Domain ${k.slice(1)} · pool of ${BANK[k].length}</span>
         <div class="meter"><i style="width:${v.weight/27*100}%"></i></div>
       </div>
-      <div class="pct">${v.weight}%</div>
+      <div class="pct"><b>${DRAW[k]} Q</b><span>${v.weight}% of exam</span></div>
     </div>`).join("");
   app.innerHTML = `
   <div class="hero">
@@ -774,20 +904,25 @@ function renderStart(){
         <div style="font-weight:700; font-size:15px; margin-top:2px">CCA-F · Claude Certified Architect — Foundations</div>
       </div>
     </div>
-    <h1 class="title">A full-length <em>mock exam</em>,<br>built to feel like the real thing.</h1>
-    <p class="lede">Sixty questions, a two-hour clock, scenario-based items, and scaled scoring against the 720 pass line — mirroring the published CCA-F format and domain weights.</p>
+    <h1 class="title">A randomized, full-length<br><em>mock exam</em> — fresh every time.</h1>
+    <p class="lede">Sixty questions drawn at random from a ${BANK_TOTAL}-question bank, weighted to the real domain split, on a two-hour clock and scored against the 720 pass line. Reload for an entirely new paper.</p>
 
     <div class="facts">
       <div class="fact"><div class="k">Questions</div><div class="v">60</div></div>
+      <div class="fact"><div class="k">Drawn from</div><div class="v">${BANK_TOTAL}<small> in bank</small></div></div>
       <div class="fact"><div class="k">Time limit</div><div class="v">120 <small>min</small></div></div>
       <div class="fact"><div class="k">Pass score</div><div class="v">720<small> / 1000</small></div></div>
       <div class="fact"><div class="k">Domains</div><div class="v">5</div></div>
-      <div class="fact"><div class="k">Format</div><div class="v" style="font-size:18px">Single &amp;<br><small>multi-select</small></div></div>
+    </div>
+
+    <div class="randnote">
+      <span style="font-size:18px; line-height:1">🔀</span>
+      <div><b>Every sitting is unique.</b> Each domain's share is sampled randomly from its own pool, and both question order and answer options are shuffled — so you can retake this indefinitely without seeing the same paper.</div>
     </div>
   </div>
 
   <div class="panel">
-    <h2>Domain weighting</h2>
+    <h2>Per-sitting composition</h2>
     <div class="domain-list">${dl}</div>
   </div>
 
@@ -800,31 +935,28 @@ function renderStart(){
       </button>
       <button class="mode-card" id="m-study" onclick="pickMode('study')">
         <div class="mt"><span class="dot"></span>Study mode</div>
-        <div class="md">Untimed. Each answer is locked on selection and the explanation appears immediately. Best for learning.</div>
+        <div class="md">Untimed. Each answer locks on selection and the explanation appears immediately. Best for learning.</div>
       </button>
     </div>
-
     <div class="start-cta">
       <button class="btn btn-primary" onclick="startExam()">Begin exam →</button>
       <span style="font-size:13.5px; color:var(--ink-soft)">Multi-select items are scored all-or-nothing, as on the real exam.</span>
     </div>
-
-    <p class="disclaimer"><b>Note on accuracy:</b> these are original community-style practice questions written to match the public CCA-F exam blueprint (the five domains and the seven anti-patterns). They are not official Anthropic exam items, and the live exam is currently gated behind Claude Partner Network access. Anchor your answers to current models and to <code>stop_reason</code>-driven, programmatic-over-prompt patterns.</p>
+    <p class="disclaimer"><b>Note on accuracy:</b> these are original community-style practice questions written to match the public CCA-F blueprint (the five domains and seven anti-patterns). They are not official Anthropic exam items, and the live exam is currently gated behind Claude Partner Network access. The reliable tiebreaker across every domain: <b>programmatic enforcement beats prompt-based guidance.</b></p>
   </div>
 
-  <div class="footnote">Tip: the reliable tiebreaker across every domain is “programmatic enforcement beats prompt-based guidance.”</div>`;
+  <div class="footnote">Reload the page or hit “Retake” after scoring to draw a brand-new 60-question paper.</div>`;
 }
 function pickMode(m){ state.mode=m; document.getElementById('m-exam').classList.toggle('sel',m==='exam'); document.getElementById('m-study').classList.toggle('sel',m==='study'); }
 
 /* ---------- EXAM ---------- */
 function startExam(){
+  buildExam();
   state.screen="exam"; state.current=0; state.answers={}; state.flagged=new Set(); state.submitted=false; state.remaining=TOTAL_SECONDS;
   if(state.timer){clearInterval(state.timer); state.timer=null;}
-  if(state.mode==='exam'){
-    state.timer=setInterval(()=>{ state.remaining--; updateTimer(); if(state.remaining<=0){ clearInterval(state.timer); state.timer=null; toast("Time's up — submitting."); finishExam(); } },1000);
-  }
-  renderExam();
-  window.scrollTo(0,0);
+  if(state.mode==='exam'){ state.timer=setInterval(tick,1000); }
+  clearSession(); persist();
+  renderExam(); window.scrollTo(0,0);
 }
 function updateTimer(){
   const el=document.getElementById('timer'); if(!el) return;
@@ -834,13 +966,12 @@ function updateTimer(){
 }
 function renderExam(){
   document.getElementById('navToggle').classList.remove('hidden');
-  const i=state.current, q=QUESTIONS[i];
+  const Q=state.questions, i=state.current, q=Q[i];
   const studyLocked = state.mode==='study' && isAnswered(i);
   const dom=DOMAINS[q.d];
-  const answeredCount=QUESTIONS.filter((_,j)=>isAnswered(j)).length;
-
-  const scn = q.s ? `<div class="scenario"><div class="sl">Production scenario</div><div class="st">${SCN[q.s].title}</div><div class="sb">${SCN[q.s].body}</div></div>` : "";
-
+  const answeredCount=Q.filter((_,j)=>isAnswered(j)).length;
+  const scenario = scenarioOf(q);
+  const scn = scenario ? `<div class="scenario"><div class="sl">Production scenario</div><div class="st">${safeHTML(scenario.title)}</div><div class="sb">${safeHTML(scenario.body)}</div></div>` : "";
   const sel=state.answers[i]||[];
   const opts=q.o.map((text,oi)=>{
     let cls = q.t==='single' ? 'opt radio' : 'opt check';
@@ -854,55 +985,46 @@ function renderExam(){
       else if(correct && !chosen){ cls+=' miss'; mark=''; }
       else if(!correct && chosen){ cls=cls.replace('sel','')+' wrong'; mark='✕'; }
     }
-    return `<button class="${cls}" onclick="selectOpt(${oi})" ${studyLocked?'disabled':''}>
+    const aria = studyLocked ? '' : ` aria-pressed="${chosen?'true':'false'}"`;
+    return `<button class="${cls}"${aria} onclick="selectOpt(${oi})" ${studyLocked?'disabled':''}>
         <span class="mark">${mark}</span>
-        <span><span class="lt">${letters[oi]}.</span> ${text}</span>
+        <span><span class="lt">${letters[oi]}.</span> ${safeHTML(text)}</span>
       </button>`;
   }).join("");
-
   let explain="";
   if(studyLocked){
     const ok=isCorrect(i);
-    explain=`<div class="explain">
-      <div class="verdict ${ok?'v-right':'v-wrong'}">${ok?'✓ Correct':'✕ Not quite'}</div>
-      <div class="ekey">Why</div><p>${q.e}</p></div>`;
+    explain=`<div class="explain"><div class="verdict ${ok?'v-right':'v-wrong'}">${ok?'✓ Correct':'✕ Not quite'}</div><div class="ekey">Why</div><p>${safeHTML(q.e)}</p></div>`;
   }
-
   app.innerHTML = `
   <div class="examhead">
+    <button class="homebtn" onclick="goHome()" title="Return to start" aria-label="Home — return to the start screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span>Home</span></button>
     <div class="brandmini"><span class="s">C</span> CCA-F Mock Exam</div>
-    <div class="progresspill"><b>${answeredCount}</b> / 60 answered${state.mode==='study'?' · study mode':''}</div>
+    <div class="progresspill" id="progresspill">Question <b>${i+1}</b> of 60 · ${answeredCount} answered${state.mode==='study'?' · study mode':''}</div>
     ${state.mode==='exam'?`<div class="timer" id="timer"><span>⏱</span><span class="clk mono">${fmt(state.remaining)}</span></div>`:`<div class="timer" id="timer" style="margin-left:auto"><span>∞</span><span class="clk">untimed</span></div>`}
   </div>
-
   <div class="examgrid">
     <div>
       <div class="qcard">
         <div class="qmeta">
           <span class="chip chip-num mono">Q${i+1}</span>
-          <span class="chip chip-dom">${dom.name}</span>
+          <span class="chip chip-dom">${safeHTML(dom.name)}</span>
           ${q.t==='multi'?'<span class="chip chip-multi">Select all that apply</span>':''}
-          ${q.s?'<span class="chip chip-scn">Scenario</span>':''}
+          ${scenario?'<span class="chip chip-scn">Scenario</span>':''}
         </div>
         ${scn}
-        <div class="stem">${q.q}</div>
+        <div class="stem">${safeHTML(q.q)}</div>
         ${q.t==='multi'?'<div class="multi-note">▸ More than one answer is correct.</div>':''}
-        <div class="opts">${opts}</div>
+        <div class="opts" id="opts">${opts}</div>
         ${explain}
       </div>
-
       <div class="navfoot">
         <button class="btn btn-ghost btn-sm" onclick="go(-1)" ${i===0?'disabled':''}>← Previous</button>
-        <button class="flagbtn ${state.flagged.has(i)?'on':''}" onclick="toggleFlag()">
-          ${state.flagged.has(i)?'★ Flagged':'☆ Flag for review'}
-        </button>
+        <button class="flagbtn ${state.flagged.has(i)?'on':''}" id="flagBtn" onclick="toggleFlag()">${state.flagged.has(i)?'★ Flagged':'☆ Flag for review'}</button>
         <span class="spacer"></span>
-        ${ i===QUESTIONS.length-1
-            ? `<button class="btn btn-primary btn-sm" onclick="confirmSubmit()">Review &amp; submit</button>`
-            : `<button class="btn btn-primary btn-sm" onclick="go(1)">Next →</button>` }
+        ${ i===Q.length-1 ? `<button class="btn btn-primary btn-sm" onclick="confirmSubmit()">Review &amp; submit</button>` : `<button class="btn btn-primary btn-sm" onclick="go(1)">Next →</button>` }
       </div>
     </div>
-
     <aside class="navpanel ${state.navOpen?'open':''}">
       <h3>Question navigator</h3>
       <div class="navgrid">${navCells()}</div>
@@ -913,66 +1035,75 @@ function renderExam(){
       </div>
       <div class="submitbar">
         <button class="btn btn-primary btn-sm" style="width:100%" onclick="confirmSubmit()">Submit exam</button>
-        <div class="cnt">${60-answeredCount} unanswered · ${state.flagged.size} flagged</div>
+        <div class="cnt" id="submitcnt">${60-answeredCount} unanswered · ${state.flagged.size} flagged</div>
       </div>
     </aside>
   </div>`;
   updateTimer();
 }
 function navCells(){
-  return QUESTIONS.map((_,j)=>{
+  return state.questions.map((_,j)=>{
     let cls='nq';
-    if(isAnswered(j)) cls+=' answered';
-    if(state.flagged.has(j)) cls+=' flagged';
+    const ans=isAnswered(j), fl=state.flagged.has(j);
+    if(ans) cls+=' answered';
+    if(fl) cls+=' flagged';
     if(j===state.current) cls+=' current';
-    return `<button class="${cls}" onclick="jump(${j})">${j+1}</button>`;
+    return `<button class="${cls}" id="nav-${j}" role="button" aria-label="${navLabel(j,!!ans,fl)}"${j===state.current?' aria-current="true"':''} onclick="jump(${j})">${j+1}</button>`;
   }).join("");
 }
 function selectOpt(oi){
-  const i=state.current, q=QUESTIONS[i];
+  const i=state.current, q=state.questions[i];
   if(state.mode==='study' && isAnswered(i)) return;
   let cur=state.answers[i]?[...state.answers[i]]:[];
-  if(q.t==='single'){ cur=[oi]; }
-  else { cur.includes(oi)? cur=cur.filter(x=>x!==oi) : cur.push(oi); }
+  if(q.t==='single'){ cur=[oi]; } else { cur.includes(oi)? cur=cur.filter(x=>x!==oi) : cur.push(oi); }
   state.answers[i]=cur;
-  renderExam();
+  paintOptions(); paintNavCell(i); paintProgress();
+  if(state.mode==='study'){ lockAndExplain(); }
+  persist();
 }
-function toggleFlag(){ const i=state.current; state.flagged.has(i)?state.flagged.delete(i):state.flagged.add(i); renderExam(); }
-function go(step){ const n=state.current+step; if(n<0||n>=QUESTIONS.length) return; state.current=n; renderExam(); window.scrollTo({top:0,behavior:'smooth'}); }
-function jump(j){ state.current=j; state.navOpen=false; renderExam(); window.scrollTo({top:0,behavior:'smooth'}); }
+function toggleFlag(){
+  const i=state.current;
+  state.flagged.has(i)? state.flagged.delete(i) : state.flagged.add(i);
+  const btn=document.getElementById('flagBtn');
+  if(btn){ const on=state.flagged.has(i); btn.classList.toggle('on',on); btn.textContent = on?'★ Flagged':'☆ Flag for review'; }
+  paintNavCell(i); paintProgress(); persist();
+}
+function go(step){ const n=state.current+step; if(n<0||n>=state.questions.length) return; state.current=n; persist(); renderExam(); window.scrollTo({top:0,behavior:'smooth'}); }
+function jump(j){ state.current=j; state.navOpen=false; persist(); renderExam(); window.scrollTo({top:0,behavior:'smooth'}); }
 function confirmSubmit(){
-  const unans=60-QUESTIONS.filter((_,j)=>isAnswered(j)).length;
-  const msg = unans>0
-    ? `You have ${unans} unanswered question${unans>1?'s':''}. Submit anyway and score now?`
-    : `All 60 answered. Submit and score now?`;
+  const unans=60-state.questions.filter((_,j)=>isAnswered(j)).length;
+  const msg = unans>0 ? `You have ${unans} unanswered question${unans>1?'s':''}. Submit anyway and score now?` : `All 60 answered. Submit and score now?`;
   if(confirm(msg)) finishExam();
 }
 function finishExam(){
   if(state.timer){clearInterval(state.timer); state.timer=null;}
   state.submitted=true; state.timeUsed=TOTAL_SECONDS-state.remaining; state.screen="results";
+  clearSession(); logEvaluation();
   renderResults(); window.scrollTo(0,0);
 }
 
 /* ---------- RESULTS ---------- */
 function computeScore(){
   let earned=0; const dom={};
-  for(const k in DOMAINS) dom[k]={c:0,t:0,wc:0,wt:0};
-  QUESTIONS.forEach((q,i)=>{
-    dom[q.d].t++; dom[q.d].wt+=q.w;
-    if(isCorrect(i)){ earned+=q.w; dom[q.d].c++; dom[q.d].wc+=q.w; }
+  for(const k in DOMAINS) dom[k]={c:0,t:0};
+  state.questions.forEach((q,i)=>{
+    dom[q.d].t++;
+    if(isCorrect(i)){ earned+=q.w; dom[q.d].c++; }
   });
-  const scaled=Math.round(earned/totalWeight*1000);
-  return {scaled, pass:scaled>=PASS, dom, rawCorrect:QUESTIONS.filter((_,i)=>isCorrect(i)).length};
+  const scaled=Math.round(earned/state.totalWeight*1000);
+  return {scaled, pass:scaled>=PASS, dom, rawCorrect:state.questions.filter((_,i)=>isCorrect(i)).length};
 }
 function renderResults(){
   document.getElementById('navToggle').classList.add('hidden');
   const r=computeScore();
+  const answeredCount = state.questions.filter((_,i)=>isAnswered(i)).length;
+  const wrongAnswered = answeredCount - r.rawCorrect;
+  const flaggedAnswered = state.questions.filter((_,i)=>isAnswered(i) && state.flagged.has(i)).length;
   const circ=2*Math.PI*86, frac=Math.min(r.scaled/1000,1);
   const col = r.pass? 'var(--green)':'var(--red)';
-  const passX=(PASS/1000); // marker position fraction along the arc
-
+  const passX=(PASS/1000);
   const breakdown=Object.entries(DOMAINS).map(([k,v])=>{
-    const d=r.dom[k]; const pct=Math.round(d.c/d.t*100);
+    const d=r.dom[k]; const pct = d.t? Math.round(d.c/d.t*100):0;
     const bc = pct>=72?'var(--green)':(pct>=50?'var(--amber)':'var(--red)');
     return `<div class="drow">
       <div>
@@ -982,25 +1113,19 @@ function renderResults(){
       <div class="dscore" style="color:${bc}">${d.c}/${d.t}<span style="display:block; font-size:12px; color:var(--ink-faint); font-family:var(--ui); font-weight:600">${pct}%</span></div>
     </div>`;
   }).join("");
-
   app.innerHTML=`
   <div class="resulthero">
     <div class="eyebrow">Result · CCA-F Mock Exam</div>
     <div class="scorering">
       <svg width="200" height="200" viewBox="0 0 200 200">
         <circle cx="100" cy="100" r="86" fill="none" stroke="var(--line)" stroke-width="14"/>
-        <circle cx="100" cy="100" r="86" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round"
-          stroke-dasharray="${circ}" stroke-dashoffset="${circ}" id="arc"/>
-        <circle cx="100" cy="100" r="86" fill="none" stroke="var(--ink)" stroke-width="14"
-          stroke-dasharray="2 ${circ}" stroke-dashoffset="${-(circ*passX)+1}" opacity="0.55"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${circ}" stroke-dashoffset="${circ}" id="arc"/>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="var(--ink)" stroke-width="14" stroke-dasharray="2 ${circ}" stroke-dashoffset="${-(circ*passX)+1}" opacity="0.55"/>
       </svg>
       <div class="mid"><div class="num" style="color:${col}">${r.scaled}</div><div class="den">OUT OF 1000</div></div>
     </div>
     <div><span class="verdictbig ${r.pass?'pass':'fail'}">${r.pass?'✓ Pass':'✕ Did not pass'}</span></div>
-    <div class="subline">${r.pass
-        ? `Above the ${PASS} pass line by ${r.scaled-PASS} point${r.scaled-PASS===1?'':'s'}.`
-        : `${PASS-r.scaled} point${PASS-r.scaled===1?'':'s'} short of the ${PASS} pass line.`} The tick on the ring marks 720.</div>
-
+    <div class="subline">${r.pass? `Above the ${PASS} pass line by ${r.scaled-PASS} point${r.scaled-PASS===1?'':'s'}.` : `${PASS-r.scaled} point${PASS-r.scaled===1?'':'s'} short of the ${PASS} pass line.`} The tick on the ring marks 720.</div>
     <div class="statrow">
       <div class="fact"><div class="k">Raw correct</div><div class="v">${r.rawCorrect}<small> / 60</small></div></div>
       <div class="fact"><div class="k">Accuracy</div><div class="v">${Math.round(r.rawCorrect/60*100)}<small>%</small></div></div>
@@ -1008,30 +1133,27 @@ function renderResults(){
       <div class="fact"><div class="k">Mode</div><div class="v" style="font-size:19px; text-transform:capitalize">${state.mode}</div></div>
     </div>
   </div>
-
   <div class="panel breakdown">
     <h2>Performance by domain</h2>
     <p style="color:var(--ink-soft); font-size:14px; margin:-6px 0 12px">Scaled scoring weights scenario and anti-pattern items more heavily, so your point total can differ from raw accuracy. Aim for ~80%+ per domain before sitting the real exam.</p>
     ${breakdown}
   </div>
-
   <div class="panel">
     <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between">
-      <h2 style="margin:0">Review every question</h2>
-      <button class="btn btn-ghost btn-sm" onclick="restart()">↻ Retake exam</button>
+      <h2 style="margin:0">Review your answers</h2>
+      <button class="btn btn-primary btn-sm" onclick="startExam()">🔀 Retake (new questions)</button>
     </div>
+    <p style="color:var(--ink-soft); font-size:14px; margin:10px 0 2px">Only the ${answeredCount} question${answeredCount===1?'':'s'} you answered are shown below, with the correct answer and explanation. Unanswered questions are hidden.</p>
     <div class="reviewfilters" style="margin-top:14px">
-      <button class="filt on" data-f="all" onclick="setFilter('all')">All 60</button>
-      <button class="filt" data-f="wrong" onclick="setFilter('wrong')">Incorrect (${60-r.rawCorrect})</button>
+      <button class="filt on" data-f="all" onclick="setFilter('all')">Answered (${answeredCount})</button>
+      <button class="filt" data-f="wrong" onclick="setFilter('wrong')">Incorrect (${wrongAnswered})</button>
       <button class="filt" data-f="right" onclick="setFilter('right')">Correct (${r.rawCorrect})</button>
-      <button class="filt" data-f="flag" onclick="setFilter('flag')">Flagged (${state.flagged.size})</button>
+      <button class="filt" data-f="flag" onclick="setFilter('flag')">Flagged (${flaggedAnswered})</button>
     </div>
     <div id="reviewList"></div>
+    <div style="margin-top:18px"><button class="btn btn-ghost btn-sm" onclick="restart()">← Back to start</button></div>
   </div>
-
   <div class="footnote">Original practice items aligned to the public CCA-F blueprint · not official Anthropic exam content.</div>`;
-
-  // animate arc
   requestAnimationFrame(()=>{ const arc=document.getElementById('arc'); if(arc){ arc.style.transition='stroke-dashoffset 1.1s cubic-bezier(.16,1,.3,1)'; arc.style.strokeDashoffset=`${circ*(1-frac)}`; } });
   renderReviewList();
 }
@@ -1039,45 +1161,56 @@ function setFilter(f){ state.reviewFilter=f; document.querySelectorAll('.filt').
 function renderReviewList(){
   const host=document.getElementById('reviewList'); if(!host) return;
   const f=state.reviewFilter;
-  const items=QUESTIONS.map((q,i)=>({q,i})).filter(({i})=>{
+  const items=state.questions.map((q,i)=>({q,i})).filter(({i})=>{
+    if(!isAnswered(i)) return false;            // only answered questions are ever revealed
     if(f==='wrong') return !isCorrect(i);
     if(f==='right') return isCorrect(i);
     if(f==='flag') return state.flagged.has(i);
     return true;
   });
-  if(items.length===0){ host.innerHTML=`<p style="color:var(--ink-faint); padding:18px 0">Nothing here.</p>`; return; }
+  if(items.length===0){
+    const ans=state.questions.filter((_,j)=>isAnswered(j)).length;
+    const msg = ans===0 ? "You didn't answer any questions, so there's nothing to review." : "No answered questions match this filter.";
+    host.innerHTML=`<p style="color:var(--ink-faint); padding:18px 0">${msg}</p>`; return;
+  }
   host.innerHTML=items.map(({q,i})=>{
     const sel=state.answers[i]||[]; const ok=isCorrect(i); const dom=DOMAINS[q.d];
-    const scn = q.s ? `<div class="scenario" style="margin-bottom:14px"><div class="sl">${SCN[q.s].title}</div><div class="sb">${SCN[q.s].body}</div></div>` : "";
+    const scenario = scenarioOf(q);
+    const scn = scenario ? `<div class="scenario" style="margin-bottom:14px"><div class="sl">${safeHTML(scenario.title)}</div><div class="sb">${safeHTML(scenario.body)}</div></div>` : "";
     const opts=q.o.map((text,oi)=>{
       let cls=q.t==='single'?'opt radio locked':'opt check locked'; let mark='';
       const correct=q.c.includes(oi), chosen=sel.includes(oi);
       if(correct && chosen){ cls+=' correct'; mark='✓'; }
       else if(correct && !chosen){ cls+=' miss'; mark=''; }
       else if(!correct && chosen){ cls+=' wrong'; mark='✕'; }
-      return `<div class="${cls}"><span class="mark">${mark}</span><span><span class="lt">${letters[oi]}.</span> ${text}</span></div>`;
+      return `<div class="${cls}"><span class="mark">${mark}</span><span><span class="lt">${letters[oi]}.</span> ${safeHTML(text)}</span></div>`;
     }).join("");
-    const verdict = sel.length===0
-        ? `<div class="verdict v-skip">○ Skipped</div>`
-        : (ok?`<div class="verdict v-right">✓ Correct</div>`:`<div class="verdict v-wrong">✕ Incorrect</div>`);
+    const verdict = ok?`<div class="verdict v-right">✓ Correct</div>`:`<div class="verdict v-wrong">✕ Incorrect</div>`;
     return `<div class="reviewcard">
       <div class="qmeta">
         <span class="chip chip-num mono">Q${i+1}</span>
-        <span class="chip chip-dom">${dom.name}</span>
+        <span class="chip chip-dom">${safeHTML(dom.name)}</span>
         ${q.t==='multi'?'<span class="chip chip-multi">Multi-select</span>':''}
-        ${q.s?'<span class="chip chip-scn">Scenario</span>':''}
+        ${scenario?'<span class="chip chip-scn">Scenario</span>':''}
       </div>
       ${scn}
-      <div class="stem" style="font-size:18px">${q.q}</div>
+      <div class="stem" style="font-size:18px">${safeHTML(q.q)}</div>
       <div class="opts" style="margin-top:14px">${opts}</div>
-      <div class="explain">${verdict}<div class="ekey">Why</div><p>${q.e}</p></div>
+      <div class="explain">${verdict}<div class="ekey">Why</div><p>${safeHTML(q.e)}</p></div>
     </div>`;
   }).join("");
 }
-function restart(){ state.screen="start"; state.reviewFilter="all"; renderStart(); window.scrollTo(0,0); }
+function restart(){ clearSession(); state.screen="start"; state.reviewFilter="all"; renderStart(); window.scrollTo(0,0); }
+function goHome(){
+  const activeExam = state.screen==='exam' && !state.submitted;
+  if(activeExam && !confirm('Return to the home screen? Your current exam progress will be lost.')) return;
+  if(state.timer){clearInterval(state.timer); state.timer=null;}
+  clearSession();
+  state.screen='start'; state.reviewFilter='all'; renderStart(); window.scrollTo(0,0);
+}
 
 /* boot */
-renderStart();
+boot();
 </script>
 </body>
 </html>
